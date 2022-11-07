@@ -31,11 +31,10 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Project</th>
-                                        <th>Client</th>
-                                        <th>Users</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
+                                        <th>Name</th>
+                                        <th>Nisn</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
                                     </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0">
@@ -172,11 +171,10 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Project</th>
-                                        <th>Client</th>
-                                        <th>Users</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
+                                        <th>Name</th>
+                                        <th>Nisn</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
                                     </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0">
@@ -313,11 +311,10 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Project</th>
-                                        <th>Client</th>
-                                        <th>Users</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
+                                        <th>Name</th>
+                                        <th>Nisn</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
                                     </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0">
