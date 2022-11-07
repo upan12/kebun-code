@@ -18,5 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', function () {
-    return view('dashboard.partials.index');
+    return view('dashboard.index');
+});
+
+Route::get('/admin/tables', function () {
+    return view('dashboard.tables');
 });
