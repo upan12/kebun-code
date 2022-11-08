@@ -22,7 +22,7 @@
                   <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required>
                 </div> <button class="btn btn-primary btn-block">Forgot Now</button>
               </form>
-              <div class="mt-4"> <a class="btn-link" href="signup.html">Back to sign in</a>
+              <div class="mt-4"> <a class="btn-link" href="/register">Back to sign in</a>
               </div>
             </div>
           </div>
