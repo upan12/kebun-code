@@ -30,7 +30,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="check1">
                     <label class="form-check-label" for="check1">Remember me</label>
-                  </div> <a class="btn-link" href="#">Forgot Password?</a>
+                  </div> <a class="btn-link" href="/forgot">Forgot Password?</a>
                 </div>
               </div> <button class="btn btn-primary">Login Now</button>
             </form>

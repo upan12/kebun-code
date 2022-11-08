@@ -21,6 +21,10 @@ Route::get('/login', function () {
     return view('homepage.login');
 });
 
+Route::get('/forgot', function () {
+    return view('homepage.forgot');
+});
+
 Route::get('/register', function () {
     return view('homepage.register');
 });
