@@ -38,7 +38,7 @@
               </ul>
             </div>
             <div class="d-flex align-items-center">
-              <a class="login-btn btn-link" href="login.html">
+              <a class="login-btn btn-link" href="/login">
                 <i class="bi bi-person me-2 fs-3 align-middle"></i>Login </a>
               <div class="right-menu ms-4">
                 <button class="navbar-toggler d-block border-0 p-3 bg-white shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">

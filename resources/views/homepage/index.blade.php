@@ -17,8 +17,8 @@
         <p class="lead text-dark mb-5">We're helped client to create your website with our talented experts.</p>
         <form id="mc-form1" class="group">
           <div class="form-group bg-light p-3 rounded-4 z-index-1 mb-0 d-flex align-items-center">
-            <a class="btn btn-dark" type="submit" name="subscribe">See All Works</a>
-            <input class="btn btn-dark mx-4" type="submit" name="subscribe" value="Upload Works">
+            <a class="btn btn-dark mx-2" type="submit" name="seeAllWorks">See All Works</a>
+            <a class="btn btn-dark mx-2" type="submit" name="uploadWorks">Upload Works</a>
           </div>
         </form>
       </div>
@@ -111,7 +111,7 @@
       </div>
       <div class="col-12 col-lg-6">
         <div>
-          <h2 class="mb-5">Benefit Of Working With Awesome Taypo</h2>
+          <h2 class="mb-5">Build Your Portfolio For Work</h2>
         </div>
         <div class="d-flex align-items-start mb-4">
           <div class="me-3">
@@ -264,7 +264,8 @@
           <button data-filter="" class="is-checked mb-2 mb-sm-0">All</button>
           <button data-filter=".cat1" class="mb-2 mb-sm-0">Web Design</button>
           <button data-filter=".cat2">App Design</button>
-          <button data-filter=".cat3">Branding</button>
+          <button data-filter=".cat3">UI/UX</button>
+          <button data-filter=".cat4">Desktop</button>
         </div>
       </div>
     </div>
@@ -365,6 +366,30 @@
                 <a class="popup-img btn-link" href="images/portfolio/large/06.jpg">
                   <i class="bi bi-patch-plus fs-4"></i>
                 </a>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item col-lg-12 col-md-12 cat4 bg-light-2 py-10 px-3 px-lg-8 rounded-4">
+            <div class="container">
+              <div class="row justify-content-center text-center mb-6">
+                <div class="col-12 col-lg-10">
+                  <div class="row mx-lg-n10">
+                    <div class="col">
+                      <div class=" owl-center">
+
+                          <div class="card p-3 p-md-5 border-0 bg-white rounded-4">
+                            <div class="card-body p-0">
+                            </div>
+                              <i class="bi bi-x fs-1 text-dark"></i>
+                              <p class="font-w-5 lead mb-1">No Works have been added yet.</p>
+                              <p class="font-w-2 mb-3">Please Check your search keyword or <a href="#">See all Works</a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

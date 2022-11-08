@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('homepage.index');
 });
 
+Route::get('/login', function () {
+    return view('homepage.login');
+});
+
+Route::get('/register', function () {
+    return view('homepage.register');
+});
+
 Route::get('/about', function () {
     return view('homepage.about');
 });
