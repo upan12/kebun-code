@@ -328,7 +328,7 @@
                 </div>
                 <div class="row text-center">
                   <div class="col"> <button class="btn btn-primary">Create Account</button>
-                    <span class="mt-4 d-block">Have An Account ? <a href="login.html"><i>Sign In!</i></a></span>
+                    <span class="mt-4 d-block">Have An Account ? <a href="/login"><i>Sign In!</i></a></span>
                   </div>
                 </div>
               </form>
