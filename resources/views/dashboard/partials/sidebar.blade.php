@@ -61,11 +61,11 @@
                <span class="menu-header-text">Content</span>
            </li>
            
-           <!-- Account -->
+           <!-- User -->
            <li class="menu-item {{ $active === 'account' ? 'active' : '' }}">
                <a href="/admin/user " class="menu-link">
                    <i class="menu-icon tf-icons bx bx-table"></i>
-                   <div data-i18n="Tables">Account</div>
+                   <div data-i18n="Tables">User</div>
                </a>
            </li>
            <!-- creation -->

@@ -22,7 +22,7 @@
                 <!-- Content -->
 
                 <div class="container-xxl flex-grow-1 container-p-y">
-                    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Account</h4>
+                    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> User</h4>
 
                     <!-- Verified -->
                     <div class="card">
@@ -38,19 +38,19 @@
                                     </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0">
-                                    @foreach ($accounts as $account)
+                                    @foreach ($users as $user)
                                     <tr>
-                                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $account->name }}</strong></td>
+                                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $user->name }}</strong></td>
                                         <td>
-                                            {{ $account->nisn }}
+                                            {{ $user->nisn }}
                                         </td>
 
                                         <td>
-                                            {{ $account->email }}
+                                            {{ $user->email }}
                                         </td>
 
                                         <td>
-                                            {{ $account->status }}
+                                            {{ $user->status }}
                                         </td>
 
                                         <td>
@@ -61,10 +61,11 @@
                                                 <div class="dropdown-menu">
                                                     <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
 
-                                                    <form action="/admin/user/{{$account->id}}" method="post">
+                                                    <form action="/admin/user/{{$user->id}}" method="post">
                                                         @method('delete')
                                                         @csrf
                                                         <button type="submit" class="dropdown-item" onclick="return confirm('Are you sure?')"><i class="bx bx-trash me-1"></i> Delete</button>
+                                                        
                                                     </form>
 
                                                 </div>
@@ -94,19 +95,19 @@
                                     </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0">
-                                    @foreach ($account2 as $account)
+                                    @foreach ($user2 as $user)
                                     <tr>
-                                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $account->name }}</strong></td>
+                                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $user->name }}</strong></td>
                                         <td>
-                                            {{ $account->nisn }}
+                                            {{ $user->nisn }}
                                         </td>
 
                                         <td>
-                                            {{ $account->email }}
+                                            {{ $user->email }}
                                         </td>
 
                                         <td>
-                                            {{ $account->status }}
+                                            {{ $user->status }}
                                         </td>
 
                                         <td>
@@ -144,19 +145,19 @@
                                     </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0">
-                                    @foreach ($account3 as $account)
+                                    @foreach ($user3 as $user)
                                     <tr>
-                                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $account->name }}</strong></td>
+                                        <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ $user->name }}</strong></td>
                                         <td>
-                                            {{ $account->nisn }}
+                                            {{ $user->nisn }}
                                         </td>
 
                                         <td>
-                                            {{ $account->email }}
+                                            {{ $user->email }}
                                         </td>
 
                                         <td>
-                                            {{ $account->status }}
+                                            {{ $user->status }}
                                         </td>
 
                                         <td>

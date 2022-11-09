@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DashboardAccountController;
+use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +21,4 @@ Route::get('/', function () {
 
 Route::get('/admin', [DashboardController::class, 'index']);
 
-Route::resource('/admin/user', DashboardAccountController::class);
+Route::resource('/admin/user', DashboardUserController::class);

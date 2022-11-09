@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Account;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class DashboardAccountController extends Controller
+class DashboardUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,15 +15,15 @@ class DashboardAccountController extends Controller
      */
     public function index()
     {
-        $accounts = DB::select("select * from account where status = '1'");
-        $account2 = DB::select("select * from account where status = '2'");
-        $account3 = DB::select("select * from account where status = '3'");
-        return view('dashboard.account', [
-            'active' => 'account',
-            'account' => Account::all(),
-            'accounts' => $accounts,
-            'account2' => $account2,
-            'account3' => $account3
+        $users = DB::select("select * from users where status = '1'");
+        $user2 = DB::select("select * from users where status = '2'");
+        $user3 = DB::select("select * from users where status = '3'");
+        return view('dashboard.user', [
+            'active' => 'user',
+            'user' => User::all(),
+            'users' => $users,
+            'user2' => $user2,
+            'user3' => $user3
         ]);
     }
 
@@ -51,10 +51,10 @@ class DashboardAccountController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Account  $account
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Account $account)
+    public function show(User $user)
     {
         //
     }
@@ -62,10 +62,10 @@ class DashboardAccountController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Account  $account
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Account $account)
+    public function edit(User $user)
     {
         //
     }
@@ -74,10 +74,10 @@ class DashboardAccountController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Account  $account
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Account $account)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -85,13 +85,13 @@ class DashboardAccountController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Account  $account
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Account $account)
+    public function destroy(User $user)
     {
-        dd($account->all());
-        Account::destroy($account->id);
+        // dd($user->id);
+        User::destroy($user->id);
         return redirect('/admin/user');
     }
 }
