@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardAccountController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +19,6 @@ Route::get('/', function () {
     return view('homepage.index');
 });
 
-Route::get('/admin', function () {
-    return view('dashboard.index');
-});
+Route::get('/admin', [DashboardController::class, 'index']);
 
-Route::get('/admin/tables', function () {
-    return view('dashboard.tables');
-});
+Route::resource('/admin/user', DashboardAccountController::class);

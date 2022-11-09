@@ -48,8 +48,8 @@
 
        <ul class="menu-inner py-1">
            <!-- Dashboard -->
-           <li class="menu-item active">
-               <a href="index.html" class="menu-link">
+           <li class="menu-item {{ $active === 'home' ? 'active' : '' }}">
+               <a href="/admin" class="menu-link">
                    <i class="menu-icon tf-icons bx bx-home-circle"></i>
                    <div data-i18n="Analytics">Dashboard</div>
                </a>
@@ -62,8 +62,8 @@
            </li>
            
            <!-- Account -->
-           <li class="menu-item">
-               <a href="/admin/tables" class="menu-link">
+           <li class="menu-item {{ $active === 'account' ? 'active' : '' }}">
+               <a href="/admin/user " class="menu-link">
                    <i class="menu-icon tf-icons bx bx-table"></i>
                    <div data-i18n="Tables">Account</div>
                </a>
