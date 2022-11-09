@@ -49,7 +49,7 @@
        <ul class="menu-inner py-1">
            <!-- Dashboard -->
            <li class="menu-item active">
-               <a href="index.html" class="menu-link">
+               <a href="/admin" class="menu-link">
                    <i class="menu-icon tf-icons bx bx-home-circle"></i>
                    <div data-i18n="Analytics">Dashboard</div>
                </a>
@@ -70,7 +70,7 @@
            </li>
            <!-- creation -->
            <li class="menu-item">
-               <a href="/admin/tables" class="menu-link">
+               <a href="/admin/creation" class="menu-link">
                    <i class="menu-icon tf-icons bx bx-table"></i>
                    <div data-i18n="Tables">Creation</div>
                </a>
