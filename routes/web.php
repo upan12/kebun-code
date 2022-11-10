@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,21 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage.index');
-});
 
 Route::get('/admin', [DashboardController::class, 'index']);
-Route::get('/login', function () {
-    return view('homepage.login');
-});
+Route::get('/', [HomepageController::class, 'index']);
+
+// login
+Route::get('/login', [LoginController::class, 'login']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+Route::get('/register', [LoginController::class, 'register']);
+Route::post('/register', [LoginController::class, 'registration']);
 
 Route::get('/forgot', function () {
     return view('homepage.forgot');
-});
-
-Route::get('/register', function () {
-    return view('homepage.register');
 });
 
 Route::get('/about', function () {
