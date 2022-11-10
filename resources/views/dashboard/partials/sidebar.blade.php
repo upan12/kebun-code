@@ -62,14 +62,14 @@
            </li>
            
            <!-- User -->
-           <li class="menu-item {{ $active === 'account' ? 'active' : '' }}">
+           <li class="menu-item {{ $active === 'user' ? 'active' : '' }}">
                <a href="/admin/user " class="menu-link">
                    <i class="menu-icon tf-icons bx bx-table"></i>
                    <div data-i18n="Tables">User</div>
                </a>
            </li>
            <!-- creation -->
-           <li class="menu-item">
+           <li class="menu-item {{ $active === 'creation' ? 'active' : '' }}">
                <a href="/admin/creation" class="menu-link">
                    <i class="menu-icon tf-icons bx bx-table"></i>
                    <div data-i18n="Tables">Creation</div>

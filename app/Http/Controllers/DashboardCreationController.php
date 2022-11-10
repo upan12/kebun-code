@@ -23,6 +23,7 @@ class DashboardCreationController extends Controller
         $creation2 = DB::select("select * from creations where status = '2'");
         $creation3 = DB::select("select * from creations where status = '3'");
         return view('dashboard.creation', [
+            'active' => 'creation',
             'creations' => Creation::all(),
             'creation1' => $creation1,
             'creation2' => $creation2,
@@ -48,17 +49,23 @@ class DashboardCreationController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request->file('image')->store('creation-images');
         $validateData = $request->validate([
             'title' => 'required|max:255',
             'name' => 'required|max:255',
             'technology' => 'required|max:255',
             'description' => 'required|max:255',
-            'category' => 'required'
+            'category' => 'required',
+            'image' => 'image|file|max:1024'
         ]);
+
+        if ($request->file('image')) {
+            $validateData['image'] = $request->file('image')->store('creation-images');
+            }
 
         Creation::create($validateData);
 
-        // return redirect('/admin/creation')->with('success', 'New menu has been added!');
+        return redirect('/admin/creation')->with('primary', 'Creation has been Updated!');
     }
 
     /**

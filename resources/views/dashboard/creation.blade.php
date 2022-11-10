@@ -365,13 +365,8 @@
                                                                                     class="img-preview  img-fluid mb-3 col-sm-5">
                                                                                 <input type="hidden" name="oldImage"
                                                                                     value="{{ $creation->image }}">
-                                                                                @if ($creation->image)
                                                                                     <img src="{{ asset('storage/' . $creation->image) }}"
                                                                                         class="img-preview img-fluid mb-3 col-sm-5 d-block">
-                                                                                @else
-                                                                                    <img class="img-preview img-fluid mb-3 col-sm-5"
-                                                                                        src="https://source.unsplash.com/600x450?website">
-                                                                                @endif
                                                                                 <input
                                                                                     class="form-control @error('image') is-invalid @enderror"
                                                                                     id="image" name="image"
@@ -424,15 +419,9 @@
                                                                                 value="{{ $creation->id }}">
                                                                             <div class="row">
                                                                                 <div class="col-md-4">
-                                                                                    @if ($creation->image)
                                                                                         <img src="{{ asset('storage/' . $creation->image) }}"
                                                                                             alt="img-menu"
                                                                                             class="img-fluid">
-                                                                                    @else
-                                                                                        <img src="https://source.unsplash.com/600x450?website"
-                                                                                            alt="img-menu"
-                                                                                            class="img-fluid">
-                                                                                    @endif
                                                                                 </div>
                                                                                 <div class="col-md-8 demo-inline-spacing">
                                                                                     <h4 class="">
@@ -721,13 +710,8 @@
                                                                                     class="img-preview  img-fluid mb-3 col-sm-5">
                                                                                 <input type="hidden" name="oldImage"
                                                                                     value="{{ $creation->image }}">
-                                                                                @if ($creation->image)
                                                                                     <img src="{{ asset('storage/' . $creation->image) }}"
                                                                                         class="img-preview img-fluid mb-3 col-sm-5 d-block">
-                                                                                @else
-                                                                                    <img class="img-preview img-fluid mb-3 col-sm-5"
-                                                                                        src="https://source.unsplash.com/600x450?website">
-                                                                                @endif
                                                                                 <input
                                                                                     class="form-control @error('image') is-invalid @enderror"
                                                                                     id="image" name="image"
