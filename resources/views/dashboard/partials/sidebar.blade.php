@@ -70,7 +70,7 @@
            </li>
            <!-- creation -->
            <li class="menu-item">
-               <a href="/admin/tables" class="menu-link">
+               <a href="/admin/creation" class="menu-link">
                    <i class="menu-icon tf-icons bx bx-table"></i>
                    <div data-i18n="Tables">Creation</div>
                </a>
