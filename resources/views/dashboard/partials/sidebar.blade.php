@@ -62,7 +62,7 @@
            </li>
            
            <!-- User -->
-           <li class="menu-item {{ $active === 'account' ? 'active' : '' }}">
+           <li class="menu-item {{ $active === 'user' ? 'active' : '' }}">
                <a href="/admin/user " class="menu-link">
                    <i class="menu-icon tf-icons bx bx-table"></i>
                    <div data-i18n="Tables">User</div>

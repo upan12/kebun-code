@@ -45,7 +45,13 @@ class DashboardUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'name' => 'required|max:255',
+            'nisn' => 'required|max:255',
+            'email' => 'required|max:255',
+        ]);
+
+        User::create($validateData);
     }
 
     /**
@@ -79,7 +85,18 @@ class DashboardUserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $rules = [
+            'name' => 'required|max:255',
+            'nisn' => 'required|max:255',
+            'email' => 'required|max:255',
+        ];
+
+        $validateData = $request->validate($rules);
+
+        User::where('id', $user->id)
+            ->update($validateData);
+
+        return redirect('/admin/user')->with('primary', 'User has been Updated!');
     }
 
     /**
@@ -93,5 +110,33 @@ class DashboardUserController extends Controller
         // dd($user->id);
         User::destroy($user->id);
         return redirect('/admin/user');
+    }
+
+    public function check_user(User $user)
+    {
+        User::where('id', $user->id)
+            ->update([
+                'status' => '2'
+            ]);
+
+        return redirect('/admin/user')->with('success', 'Confirmed');
+    }
+    public function disable_user(User $user)
+    {
+        User::where('id', $user->id)
+            ->update([
+                'status' => '3'
+            ]);
+
+        return redirect('/admin/user')->with('success', 'Disable');
+    }
+    public function active_user(User $user)
+    {
+        User::where('id', $user->id)
+            ->update([
+                'status' => '2'
+            ]);
+
+        return redirect('/admin/user')->with('success', 'Active');
     }
 }
