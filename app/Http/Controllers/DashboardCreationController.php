@@ -23,6 +23,7 @@ class DashboardCreationController extends Controller
         $creation2 = DB::select("select * from creations where status = '2'");
         $creation3 = DB::select("select * from creations where status = '3'");
         return view('dashboard.creation', [
+            'active' => 'creation',
             'creations' => Creation::all(),
             'creation1' => $creation1,
             'creation2' => $creation2,
