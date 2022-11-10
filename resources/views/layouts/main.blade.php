@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title -->
-    <title>Taypo - Multipurpose Bootstrap5 Template</title>
+    <title>KebunKode</title>
 
     <!-- Favicon Icon -->
     <link rel="shortcut icon" href="/images/favicon.ico" />
