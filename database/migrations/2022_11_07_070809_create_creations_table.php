@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('creations', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            // $table->foreignId('category_id');
-            $table->string('name');
+            $table->foreignId('category_id');
+            $table->foreignId('user_id');
+            $table->string('creator');
             $table->string('technology');
             $table->string('description');
-            $table->string('category');
             $table->string('status');
             $table->string('image')->nullable();
             $table->rememberToken();

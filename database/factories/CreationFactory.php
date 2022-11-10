@@ -18,11 +18,12 @@ class CreationFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence(mt_rand(2,5)),
-            'name' => $this->faker->sentence(mt_rand(1, 2)),
+            'title' => $this->faker->sentence(mt_rand(2, 5)),
+            'creator' => $this->faker->sentence(mt_rand(1, 2)),
             'technology' => $this->faker->sentence(mt_rand(2, 3)),
-            'description' => $this->faker->sentence(mt_rand(2,5)),
-            'category' => ('Website'),
+            'description' => $this->faker->sentence(mt_rand(2, 5)),
+            'user_id' => mt_rand(1, 3),
+            'category_id' => mt_rand(1, 4),
             'status' => '1',
             'remember_token' => Str::random(10),
         ];

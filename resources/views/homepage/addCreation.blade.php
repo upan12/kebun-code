@@ -32,44 +32,37 @@
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="bg-white shadow p-5 rounded-4">
-            <form id="contact-form" class="row" method="post" action="https://themeht.com/taypo/html/php/contact.php">
+            <form class="row" method="post" action="/create/creation">
+              @csrf
               <div class="messages"></div>
               <div class="form-group col-md-6">
-                <label class="font-w-6">First Name</label>
-                <input id="form_name" type="text" name="name" class="form-control" placeholder="First Name" required="required" data-error="Name is required.">
+                <label class="font-w-6">Title</label>
+                <input type="text" name="title" class="form-control" placeholder="Title" required="required" data-error="Title is required.">
                 <div class="help-block with-errors"></div>
               </div>
               <div class="form-group col-md-6">
-                <label class="font-w-6">Last Name</label>
-                <input id="form_name1" type="text" name="name" class="form-control" placeholder="Last Name" required="required" data-error="Name is required.">
+                <label class="font-w-6">Creator</label>
+                <input type="text" name="creator" class="form-control" placeholder="Creator" required="required" data-error="Creator is required.">
                 <div class="help-block with-errors"></div>
               </div>
               <div class="form-group col-md-6">
-                <label class="font-w-6">Email Address</label>
-                <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Valid email is required.">
+                <label class="font-w-6">Technology</label>
+                <input type="text" name="technology" class="form-control" placeholder="technology" required="required" data-error="Technology is required.">
                 <div class="help-block with-errors"></div>
               </div>
-              <div class="form-group col-md-6">
-                <label class="font-w-6">Phone Number</label>
-                <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone" required="required" data-error="Phone is required">
-                <div class="help-block with-errors"></div>
-              </div>
-              <div class="form-group col-md-12">
-                <label class="font-w-6">Topic</label>
-                <select class="form-select">
-                  <option selected>- Select Topic</option>
-                  <option value="1">Consulting</option>
-                  <option value="2">Finance</option>
-                  <option value="3">Marketing</option>
-                  <option value="4">Avanced Analytics</option>
-                  <option value="5">planning</option>
-                </select>
-              </div>
-              <div class="form-group col-md-12">
-                <label class="font-w-6">Message</label>
-                <textarea id="form_message" name="message" class="form-control rounded-4 h-auto" placeholder="Message" rows="4" required="required" data-error="Please,leave us a message."></textarea>
-                <div class="help-block with-errors"></div>
-              </div>
+              <div class="form-group">
+                <label class="font-w-6" for="description">Description</label>
+                <input id="description" type="hidden" name="description" value="{{ old('description') }}">
+                <trix-editor input="description"></trix-editor>
+            </div>
+                <div class="form-group col-md-12">
+                  <label class="font-w-6">Category</label>
+                  <select class="form-select" name="category">
+                    @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                  </select>
+                </div>
               <div class="col mt-4">
                 <button class="btn btn-primary">Send Messages</button>
               </div>
@@ -132,5 +125,24 @@
 </div>
   
   <!--body content end--> 
+  <script>
+    document.addEventListener('trix-file-accept', function(e) {
+        e.preventDefault();
+    })
+
+    function previewImage() {
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = function(oFREvent) {
+            imgPreview.src = oFREvent.target.result;
+        }
+    }
+</script>
 
 @endsection

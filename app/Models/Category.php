@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Creation;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
@@ -11,8 +12,8 @@ class Category extends Model
 
     protected $guarded = ['id'];
 
-    // public function creation()
-    // {
-    //     return $this->hasMany(Creation::class);
-    // }
+    public function creation()
+    {
+        return $this->hasMany(Creation::class);
+    }
 }

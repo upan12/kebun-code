@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardCreationController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomepageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage.index');
-});
-
+Route::get('/', [DashboardController::class, 'index']);
 Route::get('/admin', [DashboardController::class, 'index']);
 Route::get('/login', function () {
     return view('homepage.login');
@@ -45,14 +43,9 @@ Route::get('/myCreation', function () {
     return view('homepage.myCreation');
 });
 
-Route::get('/addCreation', function () {
-    return view('homepage.addCreation');
-});
+Route::get('/addCreation', [HomepageController::class, 'creation']);
 
-Route::get('/contact', function () {
-    return view('homepage.contact');
-});
-
+Route::post('/create/creation', [HomepageController::class, 'createCreation']);
 
 // dashboard
 
