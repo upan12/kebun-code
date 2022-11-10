@@ -20,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', [DashboardController::class, 'index']);
+Route::get('/admin/user', [DashboardUserController::class, 'index']);
+
 Route::get('/login', function () {
     return view('homepage.login');
 });
@@ -52,8 +54,5 @@ Route::get('/contact', function () {
     return view('homepage.contact');
 });
 
-Route::get('/admin', function () {
-    return view('dashboard.index');
-});
 
 Route::resource('/admin/user', DashboardUserController::class);
