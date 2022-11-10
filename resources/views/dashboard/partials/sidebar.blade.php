@@ -69,7 +69,7 @@
                </a>
            </li>
            <!-- creation -->
-           <li class="menu-item">
+           <li class="menu-item {{ $active === 'creation' ? 'active' : '' }}">
                <a href="/admin/creation" class="menu-link">
                    <i class="menu-icon tf-icons bx bx-table"></i>
                    <div data-i18n="Tables">Creation</div>
