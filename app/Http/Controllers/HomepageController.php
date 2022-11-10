@@ -2,16 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Creation;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomepageController extends Controller
 {
-    public function index()
+    public function creation()
     {
-        return view('homepage.index');
+        return view('homepage.addCreation', [
+            'active' => 'creation',
+            'categories' => Category::all()
+        ]);
     }
-    public function register()
+
+    public function createCreation(Request $request)
     {
-        return view('homepage.register');
+        // dd($request->all());
+        Creation::create([
+            'title' => $request->title,
+            'creator' => $request->creator,
+            'technology' => $request->technology,
+            'description' => $request->description,
+            'category_id' => $request->category,
+            'user_id' => '1',
+            'status' => '1',
+        ]);
+
+        return redirect('addCreation');
     }
 }
