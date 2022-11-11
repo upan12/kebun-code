@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\DB;
 
 class HomepageController extends Controller
 {
+    public function index()
+    {
+        return view('homepage.index');
+    }
     public function creation()
     {
         return view('homepage.addCreation', [
@@ -27,7 +31,7 @@ class HomepageController extends Controller
             'technology' => $request->technology,
             'description' => $request->description,
             'category_id' => $request->category,
-            'user_id' => '1',
+            'user_id' =>  $request->user,
             'status' => '1',
         ]);
 
