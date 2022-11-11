@@ -71,7 +71,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Id</th>
-                                                    <th>Name</th>
+                                                    <th>Creator</th>
                                                     <th>Title</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
@@ -96,8 +96,9 @@
                                                                             data-bs-dismiss="modal"
                                                                             aria-label="Close"></button>
                                                                     </div>
-                                                                    <form action="/creation/check/{{ $creation->id }}" id="verifiedCreation"
-                                                                        method="POST" enctype="multipart/form-data">
+                                                                    <form action="/creation/check/{{ $creation->id }}"
+                                                                        id="verifiedCreation" method="POST"
+                                                                        enctype="multipart/form-data">
                                                                         @method('put')
                                                                         @csrf
                                                                         <div class="modal-body">
@@ -125,14 +126,14 @@
                                                                                             <span
                                                                                                 class="d-flex justify-content-between align-items-center text-dark font-w-6">
                                                                                                 Category :
-                                                                                                {{ $creation->category }}
+                                                                                                {{ $creation->categories_name }}
                                                                                             </span>
                                                                                         </li>
                                                                                         <li class="list-group-item d-flex">
                                                                                             <span
                                                                                                 class="d-flex justify-content-between align-items-center text-dark font-w-6">
                                                                                                 Made by :
-                                                                                                {{ $creation->name }}
+                                                                                                {{ $creation->creator }}
                                                                                             </span>
                                                                                         <li
                                                                                             class="list-group-item d-flex justify-content-between align-items-center">
@@ -174,7 +175,7 @@
                                                             <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
                                                                 <strong>{{ $creation->id }}</strong>
                                                             </td>
-                                                            <td>{{ $creation->name }}</td>
+                                                            <td>{{ $creation->creator }}</td>
                                                             <td>{{ $creation->title }}</td>
                                                             <td>
                                                                 <span class="badge bg-label-warning me-1">Unverified</span>
@@ -208,17 +209,16 @@
                                             <thead>
                                                 <tr>
                                                     <th>Id</th>
-                                                    <th>Name</th>
+                                                    <th>Creator</th>
                                                     <th>Title</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="table-border-bottom-0">
-                                                @if (!$creation2)
+                                                @if (!count($creation2))
                                                     <div class="alert alert-warning text-center" role="alert">There is
-                                                        no
-                                                        data!</div>
+                                                        no data!</div>
                                                 @else
                                                     @foreach ($creation2 as $creation)
                                                         {{-- Modal edit --}}
@@ -254,78 +254,31 @@
                                                                             </div>
 
                                                                             <label for="category">Category</label>
-                                                                            <select class="form-control" name="category"
+                                                                            <select class="form-control"
+                                                                                name="category_id"
                                                                                 aria-label="Default select example">
-                                                                                @if (old('category', $creation->category) == 'Website')
-                                                                                    <option>Website / Mobile / UI/UX /
-                                                                                        Desktop
-                                                                                    </option>
-                                                                                    <option selected value="Website">
-                                                                                        Website
-                                                                                    </option>
-                                                                                    <option value="Mobile">Mobile</option>
-                                                                                    <option value="UI/UX">UI/UX
-                                                                                    </option>
-                                                                                    <option value="Desktop">Desktop
-                                                                                    </option>
-                                                                                @elseif (old('category', $creation->category) == 'Mobile')
-                                                                                    <option>Website / Mobile / UI/UX /
-                                                                                        Desktop
-                                                                                    </option>
-                                                                                    <option value="Website">Website
-                                                                                    </option>
-                                                                                    <option selected value="Mobile">Mobile
-                                                                                    </option>
-                                                                                    <option value="UI/UX">UI/UX
-                                                                                    </option>
-                                                                                    <option value="Desktop">Desktop
-                                                                                    </option>
-                                                                                @elseif (old('category', $creation->category) == 'UI/UX')
-                                                                                    <option>Website / Mobile / UI/UX /
-                                                                                        Desktop
-                                                                                    </option>
-                                                                                    <option value="Website">Website
-                                                                                    </option>
-                                                                                    <option value="Mobile">Mobile</option>
-                                                                                    <option selected value="UI/UX">
-                                                                                        UI/UX</option>
-                                                                                    <option value="Desktop">Desktop
-                                                                                    </option>
-                                                                                @elseif (old('category', $creation->category) == 'Desktop')
-                                                                                    <option>Website / Mobile / UI/UX /
-                                                                                        Desktop
-                                                                                    </option>
-                                                                                    <option value="Website">Website
-                                                                                    </option>
-                                                                                    <option value="Mobile">Mobile</option>
-                                                                                    <option value="UI/UX">UI/UX
-                                                                                    </option>
-                                                                                    <option selected value="Desktop">
-                                                                                        Desktop</option>
-                                                                                @else
-                                                                                    <option selected>Website / Mobile /
-                                                                                        UI/UX
-                                                                                        / Desktop
-                                                                                    </option>
-                                                                                    <option value="Website">Website
-                                                                                    </option>
-                                                                                    <option value="Mobile">Mobile</option>
-                                                                                    <option value="UI/UX">UI/UX
-                                                                                    </option>
-                                                                                    <option value="Desktop">Desktop
-                                                                                    </option>
-                                                                                @endif
-
+                                                                                @foreach ($categories as $category)
+                                                                                    @if (old('category_id', $creation->category_id) == $category->id)
+                                                                                        <option
+                                                                                            value="{{ $category->id }}"
+                                                                                            selected>{{ $category->name }}
+                                                                                        </option>
+                                                                                    @else
+                                                                                        <option
+                                                                                            value="{{ $category->id }}">
+                                                                                            {{ $category->name }}</option>
+                                                                                    @endif
+                                                                                @endforeach
                                                                             </select>
 
                                                                             <div class="form-group">
-                                                                                <label for="name">Name</label>
+                                                                                <label for="creator">Creator</label>
                                                                                 <input type="text"
-                                                                                    class="form-control @error('name') is-invalid @enderror"
-                                                                                    id="name" placeholder="Name"
-                                                                                    name="name" required autofocus
-                                                                                    value="{{ old('name', $creation->name) }}">
-                                                                                @error('name')
+                                                                                    class="form-control @error('creator') is-invalid @enderror"
+                                                                                    id="creator" placeholder="Creator"
+                                                                                    name="creator" required autofocus
+                                                                                    value="{{ old('creator', $creation->creator) }}">
+                                                                                @error('creator')
                                                                                     <div class="invalid-feedback">
                                                                                         {{ $message }}
                                                                                     </div>
@@ -365,8 +318,8 @@
                                                                                     class="img-preview  img-fluid mb-3 col-sm-5">
                                                                                 <input type="hidden" name="oldImage"
                                                                                     value="{{ $creation->image }}">
-                                                                                    <img src="{{ asset('storage/' . $creation->image) }}"
-                                                                                        class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                                                                                <img src="{{ asset('storage/' . $creation->image) }}"
+                                                                                    class="img-preview img-fluid mb-3 col-sm-5 d-block">
                                                                                 <input
                                                                                     class="form-control @error('image') is-invalid @enderror"
                                                                                     id="image" name="image"
@@ -419,9 +372,8 @@
                                                                                 value="{{ $creation->id }}">
                                                                             <div class="row">
                                                                                 <div class="col-md-4">
-                                                                                        <img src="{{ asset('storage/' . $creation->image) }}"
-                                                                                            alt="img-menu"
-                                                                                            class="img-fluid">
+                                                                                    <img src="{{ asset('storage/' . $creation->image) }}"
+                                                                                        alt="img-menu" class="img-fluid">
                                                                                 </div>
                                                                                 <div class="col-md-8 demo-inline-spacing">
                                                                                     <h4 class="">
@@ -433,14 +385,14 @@
                                                                                             <span
                                                                                                 class="d-flex justify-content-between align-items-center text-dark font-w-6">
                                                                                                 Category :
-                                                                                                {{ $creation->category }}
+                                                                                                {{ $creation->categories_name }}
                                                                                             </span>
                                                                                         </li>
                                                                                         <li class="list-group-item d-flex">
                                                                                             <span
                                                                                                 class="d-flex justify-content-between align-items-center text-dark font-w-6">
                                                                                                 Made by :
-                                                                                                {{ $creation->name }}
+                                                                                                {{ $creation->creator }}
                                                                                             </span>
                                                                                         <li
                                                                                             class="list-group-item d-flex justify-content-between align-items-center">
@@ -480,7 +432,7 @@
                                                             <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
                                                                 <strong>{{ $creation->id }}</strong>
                                                             </td>
-                                                            <td>{{ $creation->name }}</td>
+                                                            <td>{{ $creation->creator }}</td>
                                                             <td>{{ $creation->title }}</td>
                                                             <td>
                                                                 <span class="badge bg-label-primary me-1">Verified</span>
@@ -552,14 +504,14 @@
                                             <thead>
                                                 <tr>
                                                     <th>Id</th>
-                                                    <th>Name</th>
+                                                    <th>Creator</th>
                                                     <th>Title</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="table-border-bottom-0">
-                                                @if (!$creation3)
+                                                @if (!count($creation3))
                                                     <div class="alert alert-warning text-center" role="alert">There is
                                                         no
                                                         data!</div>
@@ -599,78 +551,31 @@
                                                                             </div>
 
                                                                             <label for="category">Category</label>
-                                                                            <select class="form-control" name="category"
+                                                                            <select class="form-control"
+                                                                                name="category_id"
                                                                                 aria-label="Default select example">
-                                                                                @if (old('category', $creation->category) == 'Website')
-                                                                                    <option>Website / Mobile / UI/UX /
-                                                                                        Desktop
-                                                                                    </option>
-                                                                                    <option selected value="Website">
-                                                                                        Website
-                                                                                    </option>
-                                                                                    <option value="Mobile">Mobile</option>
-                                                                                    <option value="UI/UX">UI/UX
-                                                                                    </option>
-                                                                                    <option value="Desktop">Desktop
-                                                                                    </option>
-                                                                                @elseif (old('category', $creation->category) == 'Mobile')
-                                                                                    <option>Website / Mobile / UI/UX /
-                                                                                        Desktop
-                                                                                    </option>
-                                                                                    <option value="Website">Website
-                                                                                    </option>
-                                                                                    <option selected value="Mobile">Mobile
-                                                                                    </option>
-                                                                                    <option value="UI/UX">UI/UX
-                                                                                    </option>
-                                                                                    <option value="Desktop">Desktop
-                                                                                    </option>
-                                                                                @elseif (old('category', $creation->category) == 'UI/UX')
-                                                                                    <option>Website / Mobile / UI/UX /
-                                                                                        Desktop
-                                                                                    </option>
-                                                                                    <option value="Website">Website
-                                                                                    </option>
-                                                                                    <option value="Mobile">Mobile</option>
-                                                                                    <option selected value="UI/UX">
-                                                                                        UI/UX</option>
-                                                                                    <option value="Desktop">Desktop
-                                                                                    </option>
-                                                                                @elseif (old('category', $creation->category) == 'Desktop')
-                                                                                    <option>Website / Mobile / UI/UX /
-                                                                                        Desktop
-                                                                                    </option>
-                                                                                    <option value="Website">Website
-                                                                                    </option>
-                                                                                    <option value="Mobile">Mobile</option>
-                                                                                    <option value="UI/UX">UI/UX
-                                                                                    </option>
-                                                                                    <option selected value="Desktop">
-                                                                                        Desktop</option>
-                                                                                @else
-                                                                                    <option selected>Website / Mobile /
-                                                                                        UI/UX
-                                                                                        / Desktop
-                                                                                    </option>
-                                                                                    <option value="Website">Website
-                                                                                    </option>
-                                                                                    <option value="Mobile">Mobile</option>
-                                                                                    <option value="UI/UX">UI/UX
-                                                                                    </option>
-                                                                                    <option value="Desktop">Desktop
-                                                                                    </option>
-                                                                                @endif
-
+                                                                                @foreach ($categories as $category)
+                                                                                    @if (old('category_id', $creation->category_id) == $category->id)
+                                                                                        <option
+                                                                                            value="{{ $category->id }}"
+                                                                                            selected>{{ $category->name }}
+                                                                                        </option>
+                                                                                    @else
+                                                                                        <option
+                                                                                            value="{{ $category->id }}">
+                                                                                            {{ $category->name }}</option>
+                                                                                    @endif
+                                                                                @endforeach
                                                                             </select>
 
                                                                             <div class="form-group">
-                                                                                <label for="name">Name</label>
+                                                                                <label for="creator">Creator</label>
                                                                                 <input type="text"
-                                                                                    class="form-control @error('name') is-invalid @enderror"
-                                                                                    id="name" placeholder="Name"
-                                                                                    name="name" required autofocus
-                                                                                    value="{{ old('name', $creation->name) }}">
-                                                                                @error('name')
+                                                                                    class="form-control @error('creator') is-invalid @enderror"
+                                                                                    id="creator" placeholder="Creator"
+                                                                                    name="creator" required autofocus
+                                                                                    value="{{ old('creator', $creation->creator) }}">
+                                                                                @error('creator')
                                                                                     <div class="invalid-feedback">
                                                                                         {{ $message }}
                                                                                     </div>
@@ -710,8 +615,8 @@
                                                                                     class="img-preview  img-fluid mb-3 col-sm-5">
                                                                                 <input type="hidden" name="oldImage"
                                                                                     value="{{ $creation->image }}">
-                                                                                    <img src="{{ asset('storage/' . $creation->image) }}"
-                                                                                        class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                                                                                <img src="{{ asset('storage/' . $creation->image) }}"
+                                                                                    class="img-preview img-fluid mb-3 col-sm-5 d-block">
                                                                                 <input
                                                                                     class="form-control @error('image') is-invalid @enderror"
                                                                                     id="image" name="image"
@@ -785,14 +690,14 @@
                                                                                             <span
                                                                                                 class="d-flex justify-content-between align-items-center text-dark font-w-6">
                                                                                                 Category :
-                                                                                                {{ $creation->category }}
+                                                                                                {{ $creation->categories_name }}
                                                                                             </span>
                                                                                         </li>
                                                                                         <li class="list-group-item d-flex">
                                                                                             <span
                                                                                                 class="d-flex justify-content-between align-items-center text-dark font-w-6">
                                                                                                 Made by :
-                                                                                                {{ $creation->name }}
+                                                                                                {{ $creation->creator }}
                                                                                             </span>
                                                                                         <li
                                                                                             class="list-group-item d-flex justify-content-between align-items-center">
@@ -830,15 +735,15 @@
                                                             <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
                                                                 <strong>{{ $creation->id }}</strong>
                                                             </td>
-                                                            <td>{{ $creation->name }}</td>
+                                                            <td>{{ $creation->creator }}</td>
                                                             <td>{{ $creation->title }}</td>
                                                             <td>
                                                                 <span class="badge bg-label-secondary me-1">Disable</span>
                                                             </td>
                                                             {{-- button check --}}
                                                             <td>
-                                                                <form action="/creation/active/{{ $creation->id }}" id="activeCreation"
-                                                                    method="post">
+                                                                <form action="/creation/active/{{ $creation->id }}"
+                                                                    id="activeCreation" method="post">
                                                                     @method('put')
                                                                     @csrf
                                                                     <button type="button" class="btn btn-sm btn-success"

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreCreationRequest;
 use App\Http\Requests\UpdateCreationRequest;
+use App\Models\Category;
 
 class DashboardCreationController extends Controller
 {
@@ -19,15 +20,22 @@ class DashboardCreationController extends Controller
      */
     public function index()
     {
-        $creation1 = DB::select("select * from creations where status = '1'");
-        $creation2 = DB::select("select * from creations where status = '2'");
-        $creation3 = DB::select("select * from creations where status = '3'");
+        // $creation2 = DB::select("select * from creations LEFT JOIN categories  on creations.category_id = categories.id where status = '2'");
+        // $creation3 = DB::select("select * from creations where status = '3'");
+
+        // $creation = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->get();
+
+        $creation1 = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('creations.status', 1)->get();
+        $creation2 = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('creations.status', 2)->get();
+        $creation3 = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('creations.status', 3)->get();
+
         return view('dashboard.creation', [
             'active' => 'creation',
             'creations' => Creation::all(),
             'creation1' => $creation1,
             'creation2' => $creation2,
-            'creation3' => $creation3
+            'creation3' => $creation3,
+            'categories' => Category::all()
         ]);
     }
 
@@ -52,7 +60,7 @@ class DashboardCreationController extends Controller
         // return $request->file('image')->store('creation-images');
         $validateData = $request->validate([
             'title' => 'required|max:255',
-            'name' => 'required|max:255',
+            'creator' => 'required|max:255',
             'technology' => 'required|max:255',
             'description' => 'required|max:255',
             'category' => 'required',
@@ -61,7 +69,7 @@ class DashboardCreationController extends Controller
 
         if ($request->file('image')) {
             $validateData['image'] = $request->file('image')->store('creation-images');
-            }
+        }
 
         Creation::create($validateData);
 
@@ -101,10 +109,10 @@ class DashboardCreationController extends Controller
     {
         $rules = [
             'title' => 'required|max:255',
-            'name' => 'required|max:255',
+            'creator' => 'required|max:255',
             'technology' => 'required|max:255',
             'description' => 'required|max:255',
-            'category' => 'required',
+            'category_id' => 'required',
             'image' => 'image|file|max:1024'
         ];
 
