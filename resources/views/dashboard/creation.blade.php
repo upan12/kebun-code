@@ -67,7 +67,8 @@
                                 <div class="card">
                                     <h5 class="card-header">Unverified</h5>
                                     <div class="table-responsive">
-                                        <table class="table table-hover" style="min-height: 220px">
+                                        <table class="table table-hover p-4" id="table-unverified" style="min-height: 220px">
+                                            
                                             <thead>
                                                 <tr>
                                                     <th>Id</th>
@@ -205,7 +206,7 @@
                                 <div class="card">
                                     <h5 class="card-header">Verified</h5>
                                     <div class="table-responsive">
-                                        <table class="table table-hover" style="min-height: 210px">
+                                        <table class="table table-hover" id="table-verified" style="min-height: 210px">
                                             <thead>
                                                 <tr>
                                                     <th>Id</th>
@@ -213,6 +214,7 @@
                                                     <th>Title</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody class="table-border-bottom-0">
@@ -500,7 +502,7 @@
                                 <div class="card">
                                     <h5 class="card-header">Disable</h5>
                                     <div class="table-responsive">
-                                        <table class="table table-hover" style="min-height: 210px">
+                                        <table class="table table-hover" id="table-disable" style="min-height: 210px">
                                             <thead>
                                                 <tr>
                                                     <th>Id</th>
@@ -508,6 +510,7 @@
                                                     <th>Title</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody class="table-border-bottom-0">
@@ -905,6 +908,22 @@
                 }
             })
         }
+
+        // Data table
+        $(document).ready(function() {
+            $('#table-unverified').DataTable({
+                // "dom" : 'lrtip'
+            });
+        });
+        // $('#serah').keyup(function () {
+        //     DataTable.search($(this).val()).draw()
+        // })
+        $(document).ready(function() {
+            $('#table-verified').DataTable();
+        });
+        $(document).ready(function() {
+            $('#table-disable').DataTable();
+        });
     </script>
     {{-- end script --}}
 @endsection
