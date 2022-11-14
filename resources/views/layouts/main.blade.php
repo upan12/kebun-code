@@ -113,6 +113,9 @@
         <!--== trix-editor -->
         <script type="text/javascript" src="/js/trix.js"></script>
 
+        <!--== image-script -->
+        <script src="/assets/js/pages-account-settings-account.js"></script>
+
         <!-- inject js end -->
 
     </body>

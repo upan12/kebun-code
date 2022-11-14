@@ -29,6 +29,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [LoginController::class, 'register']);
 Route::post('/register', [LoginController::class, 'registration']);
 
+// homepage
 Route::get('/forgot', function () {
     return view('homepage.forgot');
 });
@@ -45,7 +46,10 @@ Route::get('/myCreation', function () {
     return view('homepage.myCreation');
 })->middleware('auth');
 
-Route::get('/addCreation', [HomepageController::class, 'creation'])->middleware('auth');
+Route::get('/creation/{id}', [HomepageController::class, 'creation'])->middleware('auth');
+Route::get('/allCreation', [HomepageController::class, 'allCreation']);
+Route::get('/myCreation', [HomepageController::class, 'myCreation']);
+Route::get('/addCreation', [HomepageController::class, 'addCreation']);
 Route::post('/create/creation', [HomepageController::class, 'createCreation']);
 
 // dashboard

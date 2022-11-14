@@ -427,9 +427,9 @@
         width: 130,
         type: 'donut'
       },
-      labels: ['Electronic', 'Sports', 'Decor', 'Fashion'],
-      series: [35, 15, 25, 25],
-      colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
+      labels: ['Unverified', 'Disable', 'Verified'],
+      series: [35, 25, 25],
+      colors: [config.colors.primary, config.colors.info, config.colors.success],
       stroke: {
         width: 5,
         colors: cardColor
@@ -473,9 +473,9 @@
         width: 130,
         type: 'donut'
       },
-      labels: ['Electronic', 'Sports', 'Decor', 'Fashion'],
-      series: [35, 15, 25, 25],
-      colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
+      labels: ['Unverified', 'Disable', 'Verified'],
+      series: [35, 25, 25],
+      colors: [config.colors.primary, config.colors.info, config.colors.success],
       stroke: {
         width: 5,
         colors: cardColor
