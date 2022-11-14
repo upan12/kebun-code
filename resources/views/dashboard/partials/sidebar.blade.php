@@ -48,7 +48,7 @@
 
        <ul class="menu-inner py-1">
            <!-- Dashboard -->
-           <li class="menu-item ">
+           <li class="menu-item {{ $active === 'home' ? 'active' : '' }}">
                <a href="/admin" class="menu-link">
                    <i class="menu-icon tf-icons bx bx-home-circle"></i>
                    <div data-i18n="Analytics">Dashboard</div>

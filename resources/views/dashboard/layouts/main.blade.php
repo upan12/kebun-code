@@ -35,6 +35,14 @@
 
     <link rel="stylesheet" href="/assets/vendor/libs/apex-charts/apex-charts.css" />
 
+    {{-- CSS Data Table --}}
+    
+    <link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+    <script src="/assets/vendor/libs/jquery/jquery.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+
     <!-- Page CSS -->
 
     <!-- Helpers -->
@@ -44,10 +52,21 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="/assets/js/config.js"></script>
     <style>
-      .swal2-container{
-        z-index: 20000 !important;
-      }
+        .swal2-container {
+            z-index: 20000 !important;
+        }
+        /* css data table */
+        div.dataTables_filter, div.dataTables_length, div.dataTables_info {
+            /* background-color: red; */
+            padding: 0 20px;
+        }
+        div.dataTables_wrapper div.dataTables_length select {
+            width: 70px
+        }
     </style>
+
+
+
 </head>
 
 <body>
@@ -55,7 +74,7 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="/assets/vendor/libs/jquery/jquery.js"></script>
+    
     <script src="/assets/vendor/libs/popper/popper.js"></script>
     <script src="/assets/vendor/js/bootstrap.js"></script>
     <script src="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
@@ -76,7 +95,13 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     {{-- sweet alert --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
+    {{-- Js Data Table --}}
+    <script>
+        var $ = require('jquery');
+        var dt = require('datatables.net')();
+    </script>
+
 </body>
 
 </html>
