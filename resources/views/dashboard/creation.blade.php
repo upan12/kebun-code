@@ -801,8 +801,8 @@
 
                         </div>
                     </div>
+                    {{-- / Tabs --}}
                 </div>
-                {{-- / Tabs --}}
                 <!-- / Content -->
 
                 @include('dashboard.partials.footer')
