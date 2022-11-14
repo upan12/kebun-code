@@ -23,18 +23,21 @@ class LoginController extends Controller
             'nisn' => 'required',
             'password' => 'required',
         ]);
-
-        // dd('berhasil login');
         if (User::where('nisn', $credentials['nisn'])->first()?->status == 4 && Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect('/admin')->with('loginSuccess', 'Login success');
-        } elseif (User::where('nisn', $credentials['nisn'])->first()?->status != 2) return back()->with('loginError', 'Account unverified. Please contact admin');
-        if (Auth::attempt($credentials)) {
+        } elseif (User::where(
+            [
+                ['nisn', $credentials['nisn']],
+                ['password', $credentials['password']]
+            ])->first()?->status != 2) {
+            return back()->with('loginError', 'Account unverified. Please contact admin');
+        } elseif (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
             return redirect('/')->with('loginSuccess', 'Login success');
-        }
-        return back()->with('loginError', 'Login failed!');
+        } else 
+        {return back()->with('loginError', 'Login failed!');}
     }
 
     public function logout(Request $request)

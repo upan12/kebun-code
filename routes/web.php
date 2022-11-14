@@ -48,8 +48,8 @@ Route::get('/myCreation', function () {
 
 Route::get('/creation/{id}', [HomepageController::class, 'creation'])->middleware('auth');
 Route::get('/allCreation', [HomepageController::class, 'allCreation']);
-Route::get('/myCreation', [HomepageController::class, 'myCreation']);
-Route::get('/addCreation', [HomepageController::class, 'addCreation']);
+Route::get('/myCreation', [HomepageController::class, 'myCreation'])->middleware('auth');
+Route::get('/addCreation', [HomepageController::class, 'addCreation'])->middleware('auth');
 Route::post('/create/creation', [HomepageController::class, 'createCreation']);
 
 // dashboard
