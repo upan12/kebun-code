@@ -23,7 +23,7 @@ Route::get('/admin', [DashboardController::class, 'index']);
 Route::get('/', [HomepageController::class, 'index']);
 
 // login
-Route::get('/login', [LoginController::class, 'login']);
+Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [LoginController::class, 'register']);
@@ -43,9 +43,9 @@ Route::get('/allCreation', function () {
 
 Route::get('/myCreation', function () {
     return view('homepage.myCreation');
-});
+})->middleware('auth');
 
-Route::get('/addCreation', [HomepageController::class, 'creation']);
+Route::get('/addCreation', [HomepageController::class, 'creation'])->middleware('auth');
 Route::post('/create/creation', [HomepageController::class, 'createCreation']);
 
 // dashboard
@@ -57,10 +57,10 @@ Route::put('/creation/active/{creation}', [DashboardCreationController::class, '
 Route::resource('/admin/user', DashboardUserController::class);
 
 // dashboard user
-Route::resource('/admin/user', DashboardUserController::class);
+Route::resource('/admin/user', DashboardUserController::class)->middleware('auth'); 
 Route::put('/user/check/{user}', [DashboardUserController::class, 'check_user']);
 Route::put('/user/disable/{user}', [DashboardUserController::class, 'disable_user']);
 Route::put('/user/active/{user}', [DashboardUserController::class, 'active_user']);
 
 // dashboard active
-Route::get('/admin', [DashboardController::class, 'index']);
+Route::get('/admin', [DashboardController::class, 'index'])->middleware('auth');
