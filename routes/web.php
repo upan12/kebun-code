@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardCategoryController;
 use App\Http\Controllers\DashboardCreationController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\DashboardController;
@@ -59,6 +60,8 @@ Route::put('/creation/check/{creation}', [DashboardCreationController::class, 'c
 Route::put('/creation/disable/{creation}', [DashboardCreationController::class, 'disable_creation']);
 Route::put('/creation/active/{creation}', [DashboardCreationController::class, 'active_creation']);
 Route::resource('/admin/user', DashboardUserController::class);
+Route::resource('/admin/category', DashboardCategoryController::class);
+
 
 // dashboard user
 Route::resource('/admin/user', DashboardUserController::class)->middleware('auth'); 
@@ -67,4 +70,5 @@ Route::put('/user/disable/{user}', [DashboardUserController::class, 'disable_use
 Route::put('/user/active/{user}', [DashboardUserController::class, 'active_user']);
 
 // dashboard active
+
 Route::get('/admin', [DashboardController::class, 'index'])->middleware('auth');

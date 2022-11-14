@@ -58,22 +58,22 @@ class DashboardCreationController extends Controller
     public function store(Request $request)
     {
         // return $request->file('image')->store('creation-images');
-        $validateData = $request->validate([
-            'title' => 'required|max:255',
-            'creator' => 'required|max:255',
-            'technology' => 'required|max:255',
-            'description' => 'required|max:255',
-            'category' => 'required',
-            'image' => 'image|file|max:1024'
-        ]);
+        // $validateData = $request->validate([
+        //     'title' => 'required|max:255',
+        //     'creator' => 'required|max:255',
+        //     'technology' => 'required|max:255',
+        //     'description' => 'required|max:255',
+        //     'category' => 'required',
+        //     'image' => 'image|file|max:1024'
+        // ]);
 
-        if ($request->file('image')) {
-            $validateData['image'] = $request->file('image')->store('creation-images');
-        }
+        // if ($request->file('image')) {
+        //     $validateData['image'] = $request->file('image')->store('creation-images');
+        // }
 
-        Creation::create($validateData);
+        // Creation::create($validateData);
 
-        return redirect('/admin/creation')->with('primary', 'Creation has been Updated!');
+        // return redirect('/admin/creation')->with('primary', 'Creation has been Updated!');
     }
 
     /**
