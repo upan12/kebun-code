@@ -60,8 +60,8 @@
                         <div class="tab-pane fade show active" id="navs-top-unVerified" role="tabpanel">
                             <div class="card">
                                 <h5 class="card-header">UnVerified</h5>
-                                <div class="table-responsive text-nowrap" style="min-height: 190px;">
-                                    <table class="table table-hover">
+                                <div class="table-responsive">
+                                    <table class="table table-hover p-4" id="table-unverified" style="min-height: 220px">
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
@@ -70,6 +70,7 @@
                                                 <th>Email</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody class="table-border-bottom-0">
@@ -196,8 +197,8 @@
                         <div class="tab-pane fade" id="navs-top-verified" role="tabpanel">
                             <div class="card">
                                 <h5 class="card-header">Verified</h5>
-                                <div class="table-responsive text-nowrap" style="min-height: 190px;">
-                                    <table class="table table-hover">
+                                <div class="table-responsive">
+                                    <table class="table table-hover" id="table-verified" style="min-height: 210px">
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
@@ -206,6 +207,7 @@
                                                 <th>Email</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody class="table-border-bottom-0">
@@ -338,8 +340,8 @@
                         <div class="tab-pane fade" id="navs-top-disable" role="tabpanel">
                             <div class="card">
                                 <h5 class="card-header">Disable</h5>
-                                <div class="table-responsive text-nowrap" style="min-height: 190px;">
-                                    <table class="table table-hover">
+                                <div class="table-responsive">
+                                    <table class="table table-hover" id="table-disable" style="min-height: 210px">
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
@@ -348,6 +350,7 @@
                                                 <th>Email</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody class="table-border-bottom-0">
@@ -570,6 +573,17 @@
             }
         })
     }
+
+    // Data table
+    $(document).ready(function() {
+        $('#table-unverified').DataTable({});
+    });
+    $(document).ready(function() {
+        $('#table-verified').DataTable();
+    });
+    $(document).ready(function() {
+        $('#table-disable').DataTable();
+    });
 </script>
 {{-- end script --}}
 
