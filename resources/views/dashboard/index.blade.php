@@ -33,7 +33,7 @@
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex flex-column align-items-center gap-1">
-                      <h2 class="mb-2">8,258</h2>
+                      <h2 class="mb-2">{{ $count_user }}</h2>
                       <span>Total Users</span>
                     </div>
                     <div id="orderStatisticsChart"></div>
@@ -45,10 +45,10 @@
                       </div>
                       <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                         <div class="me-2">
-                          <h6 class="mb-0">UnVerified User</h6>
+                          <h6 class="mb-0">Unverified User</h6>
                         </div>
                         <div class="user-progress">
-                          <small class="fw-semibold">82.5k</small>
+                          <small class="fw-semibold">{{ $count_unveriUser }}</small>
                         </div>
                       </div>
                     </li>
@@ -61,7 +61,7 @@
                           <h6 class="mb-0">Verified User</h6>
                         </div>
                         <div class="user-progress">
-                          <small class="fw-semibold">10</small>
+                          <small class="fw-semibold">{{ $count_veriUser }}</small>
                         </div>
                       </div>
                     </li>
@@ -74,7 +74,7 @@
                           <h6 class="mb-0">Disable User</h6>
                         </div>
                         <div class="user-progress">
-                          <small class="fw-semibold">849k</small>
+                          <small class="fw-semibold">{{ $count_disableUser }}</small>
                         </div>
                       </div>
                     </li>
@@ -84,7 +84,7 @@
             </div>
             <!--/ User Statistics -->
 
-            <!-- User Statistics 2 -->
+            <!-- Creation Statistics -->
             <div class="col-md-6 col-lg-6 col-xl-6 order-0 mb-6">
               <div class="card h-100">
                 <div class="card-header d-flex align-items-center justify-content-between pb-0">
@@ -95,7 +95,7 @@
                 <div class="card-body">
                   <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex flex-column align-items-center gap-1">
-                      <h2 class="mb-2">8,258</h2>
+                      <h2 class="mb-2">{{ $count_creation }}</h2>
                       <span>Total Creations</span>
                     </div>
                     <div id="orderStatisticsCharts"></div>
@@ -107,10 +107,10 @@
                       </div>
                       <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                         <div class="me-2">
-                          <h6 class="mb-0">UnVerified Creation</h6>
+                          <h6 class="mb-0">Unverified Creation</h6>
                         </div>
                         <div class="user-progress">
-                          <small class="fw-semibold">82.5k</small>
+                          <small class="fw-semibold">{{ $count_unveriCreation }}</small>
                         </div>
                       </div>
                     </li>
@@ -123,7 +123,7 @@
                           <h6 class="mb-0">Verified Creation</h6>
                         </div>
                         <div class="user-progress">
-                          <small class="fw-semibold">10</small>
+                          <small class="fw-semibold">{{ $count_veriCreation }}</small>
                         </div>
                       </div>
                     </li>
@@ -136,7 +136,7 @@
                           <h6 class="mb-0">Disable Creation</h6>
                         </div>
                         <div class="user-progress">
-                          <small class="fw-semibold">849k</small>
+                          <small class="fw-semibold">{{ $count_disableCreation }}</small>
                         </div>
                       </div>
                     </li>
@@ -144,7 +144,7 @@
                 </div>
               </div>
             </div>
-            <!--/ User Statistics  2 -->
+            <!--/ Creation Statistics -->
 
           </div>
           

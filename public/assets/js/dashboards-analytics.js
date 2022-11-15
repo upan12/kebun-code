@@ -418,7 +418,7 @@
     profileReportChart.render();
   }
 
-  // Order Statistics Chart
+  // User Statistics Chart
   // --------------------------------------------------------------------
   const chartOrderStatistics = document.querySelector('#orderStatisticsChart'),
     orderChartConfig = {
@@ -464,7 +464,7 @@
     statisticsChart.render();
   }
 
-  // Order Statistics Chart 2
+  //  Statistics Chart 2
   // --------------------------------------------------------------------
   const chartOrderStatistics2 = document.querySelector('#orderStatisticsCharts'),
     orderChartConfig2 = {
