@@ -30,8 +30,19 @@ class HomepageController extends Controller
     }
     public function allCreation()
     {
+        $allCreations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->paginate(6);
+        $web_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'Web Design')->get();
+        $app_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'App Design')->get();
+        $ui_ux = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'UI/UX')->get();
+        $desktop = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'Desktop')->get();
+
         return view('homepage.allCreation', [
             'active' => 'allCreation',
+            // 'creations' => $allCreations,
+            'web_designs' => $web_design,
+            'app_designs' => $app_design,
+            'ui_uxs' => $ui_ux,
+            'desktops' => $desktop,
             'categories' => Category::all()
         ]);
     }
