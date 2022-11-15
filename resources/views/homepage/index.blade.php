@@ -11,10 +11,11 @@
                         background="transparent.html" speed="1" style="width: auto; height: auto;" loop autoplay>
                     </lottie-player>
                 </div>
-                <div class="col-12 col-lg-5">
-                    <h1 class="font-w-4 mb-4"> Build your <span
-                            class="title-bg text-primary position-relative font-w-7 d-inline-block">Product</span>
-                        <br class="d-md-block d-none"> with taypo.
+                <div class="col-12 col-lg-6">
+                    <h1 class="font-w-4 mb-4"> 
+Let's work and build your <span
+                            class="title-bg text-primary position-relative font-w-7 d-inline-block">portfolio.</span>
+                        {{-- <br class="d-md-block d-none"> with taypo. --}}
                     </h1>
                     <!-- Text -->
                     <p class="lead text-dark mb-5">We're helped client to create your website with our talented experts.</p>
@@ -51,51 +52,58 @@
                     <div class="row align-items-end justify-content-between mb-6">
                         <div class="col-12 col-lg-6 col-xl-5">
                             <div>
-                                <h2>We're Provide Quality Features Service</h2>
+                                <h2>Let's Show your creation here</h2>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 col-xl-5 ms-auto mt-5 mt-lg-0">
-                            <p class="lead">We are a team of experienced developers who are passionate about their work.
-                                No coding required to make customizations.</p>
+                            <p class="lead">Digital talent crisis! Indonesia needs 600,000 digital talents in one year. In the next 15 years it will require 9 million digital talents</p>
                         </div>
                     </div>
                     <div class="row gx-5">
-                        <div class="col-lg-4 col-md-6">
+                        <div class="col-lg-3 col-md-8 mt-6 mt-lg-0" >
                             <div class="bg-white p-6 rounded-4 f-icon-hover">
-                                <div class="mb-4 rounded f-icon-shape-sm" data-bg-color="#ffebda">
-                                    <i class="bi bi-sliders2 fs-1 text-dark"></i>
+                                <div class="mb-4 rounded f-icon-shape-sm">
+                                    <img src="/images/web.png" alt="">
                                 </div>
                                 <div>
-                                    <h5 class="mb-3">Develop Business</h5>
-                                    <p class="mb-4">Get the most of reduction in your team’s operating let’s come up with
-                                        taypo. But I must idea of denouncing pleasure.</p>
-                                    <a class="btn-arrow" href="#"></a>
+                                    <h5 class="mb-3">Web Developer</h5>
+                                    <p class="mb-5">
+                                        Build dynamic, fast and accessible web applications.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 mt-6 mt-md-0">
+                        <div class="col-lg-3 col-md-8 mt-6 mt-lg-0">
                             <div class="bg-white p-6 rounded-4 f-icon-hover">
-                                <div class="mb-4 rounded f-icon-shape-sm" data-bg-color="#dbf9f9">
-                                    <i class="bi bi-gear fs-1 text-dark"></i>
+                                <div class="mb-4 rounded f-icon-shape-sm">
+                                    <img src="/images/mobile.png" alt="">
                                 </div>
                                 <div>
-                                    <h5 class="mb-3">Easy Customize</h5>
-                                    <p class="mb-4">Get the most of reduction in your team’s operating let’s come up with
-                                        taypo. But I must idea of denouncing pleasure.</p>
-                                    <a class="btn-arrow" href="#"></a>
+                                    <h5 class="mb-3">Mobile Developer</h5>
+                                    <p class="mb-4">
+                                        develop mobile applications that can run on Android and iOS.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 mt-6 mt-lg-0">
+                        <div class="col-lg-3 col-md-8 mt-6 mt-lg-0">
                             <div class="bg-white p-6 rounded-4 f-icon-hover">
-                                <div class="mb-4 rounded f-icon-shape-sm" data-bg-color="#faedff">
-                                    <i class="bi bi-images fs-1 text-dark"></i>
+                                <div class="mb-4 rounded f-icon-shape-sm">
+                                    <img src="/images/uiux.png" alt="">
                                 </div>
                                 <div>
-                                    <h5 class="mb-3">Globle Design</h5>
-                                    <p class="mb-4">Get the most of reduction in your team’s operating let’s come up with
-                                        taypo. But I must idea of denouncing pleasure.</p>
-                                    <a class="btn-arrow" href="#"></a>
+                                    <h5 class="mb-3">UI/UX Designer</h5>
+                                    <p class="mb-0">Design an attractive display design to make the application look even more beautiful.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-8 mt-6 mt-lg-0">
+                            <div class="bg-white p-6 rounded-4 f-icon-hover">
+                                <div class="mb-4 rounded f-icon-shape-sm">
+                                    <img src="/images/more.png" alt="">
+                                </div>
+                                <div>
+                                    <h5 class="mb-3">
+                                        There is much more</h5>
+                                    <p class="mb-5">There is no limit to a career in IT, so keep the spirit!.</p>
                                 </div>
                             </div>
                         </div>
@@ -124,16 +132,16 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <div>
-                            <h2 class="mb-5">Build Your Portfolio For Work</h2>
+                            <h2 class="mb-5">About Us</h2>
                         </div>
                         <div class="d-flex align-items-start mb-4">
                             <div class="me-3">
                                 <i class="bi bi-columns-gap fs-3 text-primary"></i>
                             </div>
                             <div>
-                                <h5 class="mb-2">Fast & Minimal Design</h5>
-                                <p class="mb-0">Get the most of reduction in your team’s operating let’s come up with
-                                    taypo.</p>
+                                <h5 class="mb-2">Creative space</h5>
+                                <p class="mb-0">
+                                    A place for creation of software engineering students.</p>
                             </div>
                         </div>
                         <div class="d-flex align-items-start mb-4">
@@ -141,9 +149,8 @@
                                 <i class="bi bi-gear fs-3 text-primary"></i>
                             </div>
                             <div>
-                                <h5 class="mb-2">Easy ways to implement</h5>
-                                <p class="mb-0">Get the most of reduction in your team’s operating let’s come up with
-                                    taypo.</p>
+                                <h5 class="mb-2">Show off Creation</h5>
+                                <p class="mb-0">To showcase the work of software engineering students.</p>
                             </div>
                         </div>
                         <div class="d-flex align-items-start">
@@ -151,9 +158,8 @@
                                 <i class="bi bi-pencil-square fs-3 text-primary"></i>
                             </div>
                             <div>
-                                <h5 class="mb-2">Edited By Device</h5>
-                                <p class="mb-0">Get the most of reduction in your team’s operating let’s come up with
-                                    taypo.</p>
+                                <h5 class="mb-2">Reference</h5>
+                                <p class="mb-0">Making software engineering student references.</p>
                             </div>
                         </div>
                     </div>
@@ -183,17 +189,16 @@
                                 <div class="item">
                                     <div class="card p-3 p-md-5 border-0 bg-white rounded-4">
                                         <div class="card-body p-0">
-                                            <p class="font-w-5 lead mb-3">Taypo is something we are pleased with. We
-                                                consider it the little magnet; it is wanting to come here and afterward
-                                                difficult to leave it. Our office is additionally a big name.</p>
+                                            <p class="font-w-5 lead mb-3">yaa ini nanti isinya adalah komentar ya ges ya. yaa komentar apa aja gitu. yaa jadi begitulah</p>
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
                                                     <div>
-                                                        <img alt="Image" src="images/testimonial/01.jpg"
+                                                        
+                                                            <img alt="Image" src="images/testimonial/03.jpg"
                                                             class="img-fluid rounded-circle">
                                                     </div>
                                                     <div class="ms-3">
-                                                        <span class="font-w-6 text-dark mb-0">Preston Short</span>
+                                                        <span class="font-w-6 text-dark mb-0">MIMIN</span>
                                                         <small class="text-muted fst-italic">- CEO</small>
                                                     </div>
                                                 </div>
@@ -205,9 +210,7 @@
                                 <div class="item">
                                     <div class="card p-3 p-md-5 border-0 bg-white rounded-4">
                                         <div class="card-body p-0">
-                                            <p class="font-w-5 lead mb-3">Taypo is something we are pleased with. We
-                                                consider it the little magnet; it is wanting to come here and afterward
-                                                difficult to leave it. Our office is additionally a big name.</p>
+                                            <p class="font-w-5 lead mb-3">Semoga aplikasi web ini bisa bermanfaat bagi kita semua. yeyyy.</p>
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
                                                     <div>
@@ -215,7 +218,7 @@
                                                             class="img-fluid rounded-circle">
                                                     </div>
                                                     <div class="ms-3">
-                                                        <span class="font-w-6 text-dark mb-0">Jonas Rain</span>
+                                                        <span class="font-w-6 text-dark mb-0">Ires</span>
                                                         <small class="text-muted fst-italic">- Founder</small>
                                                     </div>
                                                 </div>
@@ -227,18 +230,16 @@
                                 <div class="item">
                                     <div class="card p-3 p-md-5 border-0 bg-white rounded-4">
                                         <div class="card-body p-0">
-                                            <p class="font-w-5 lead mb-3">Taypo is something we are pleased with. We
-                                                consider it the little magnet; it is wanting to come here and afterward
-                                                difficult to leave it. Our office is additionally a big name.</p>
+                                            <p class="font-w-5 lead mb-3">Berkat saya tidak sekolah 2 tahun karena corona, saya bisa menjadi desainer berkelas. itu semua berkat papoy</p>
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
                                                     <div>
-                                                        <img alt="Image" src="images/testimonial/03.jpg"
+                                                        <img alt="Image" src="images/testimonial/01.jpg"
                                                             class="img-fluid rounded-circle">
                                                     </div>
                                                     <div class="ms-3">
-                                                        <span class="font-w-6 text-dark mb-0">Kendra Luna</span>
-                                                        <small class="text-muted fst-italic">- Manager</small>
+                                                        <span class="font-w-6 text-dark mb-0">Yefti</span>
+                                                        <small class="text-muted fst-italic">-Designer Berkelas</small>
                                                     </div>
                                                 </div>
                                                 <i class="bi bi-quote fs-1 text-dark"></i>
@@ -249,9 +250,7 @@
                                 <div class="item">
                                     <div class="card p-3 p-md-5 border-0 bg-white rounded-4">
                                         <div class="card-body p-0">
-                                            <p class="font-w-5 lead mb-3">Taypo is something we are pleased with. We
-                                                consider it the little magnet; it is wanting to come here and afterward
-                                                difficult to leave it. Our office is additionally a big name.</p>
+                                            <p class="font-w-5 lead mb-3">Hasil karya anak anak didik saya baguss. pake bangett. itu berkat saya</p>
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
                                                     <div>
@@ -259,8 +258,8 @@
                                                             class="img-fluid rounded-circle">
                                                     </div>
                                                     <div class="ms-3">
-                                                        <span class="font-w-6 text-dark mb-0">Rechale John</span>
-                                                        <small class="text-muted fst-italic">- Supervisor</small>
+                                                        <span class="font-w-6 text-dark mb-0">Papoy</span>
+                                                        <small class="text-muted fst-italic">- Master Java</small>
                                                     </div>
                                                 </div>
                                                 <i class="bi bi-quote fs-1 text-dark"></i>
@@ -401,28 +400,6 @@
                                         <a class="popup-img btn-link" href="images/portfolio/large/06.jpg">
                                             <i class="bi bi-patch-plus fs-4"></i>
                                         </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="grid-item col-lg-12 col-md-12 cat4 bg-light-2 py-10 px-3 px-lg-8 rounded-4">
-                                <div class="container">
-                                    <div class="row justify-content-center text-center mb-6">
-                                        <div class="col-12 col-lg-10">
-                                            <div class="row mx-lg-n10">
-                                                <div class="col">
-                                                    <div class=" owl-center">
-                                                        <div class="card p-3 p-md-5 border-0 bg-white rounded-4">
-                                                            <div class="card-body p-0">
-                                                            </div>
-                                                            <i class="bi bi-x fs-1 text-dark"></i>
-                                                            <p class="font-w-5 lead mb-1">No Works have been added yet.</p>
-                                                            <p class="font-w-2 mb-3">Please Check your search keyword or <a
-                                                                    href="#">See all Works</a></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

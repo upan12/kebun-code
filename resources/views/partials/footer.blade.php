@@ -5,12 +5,12 @@
     <div class="row">
       <div class="col-md-12 col-lg-4 pe-lg-7">
         <a class="footer-logo" href="index.html">
-          <img class="img-fluid" src="images/logo.png" alt="">
+          <img class="img-fluid" src="images/favicon.ico" alt="">
         </a>
-        <p class="my-4">Taypo Multipurpose Bootstrap5 Template Is fully responsible, Build whatever you like with the Taypo, Taypo is the creative Template suitable for Your business.</p>
+        <p class="my-4">KebunKode Multipurpose Bootstrap5 Template Is fully responsible, Build whatever you like with the KebunKode, KebunKode is the creative Template suitable for Your business.</p>
         <ul class="media-icon list-unstyled">
           <li class="mb-2">
-            <a class="h6" href="mailto:themeht23@gmail.com">themeht23@gmail.com</a>
+            <a class="h6" href="mailto:SMKN1Banyuwangi@gmail.com">SMKN1Banyuwangi@gmail.com</a>
           </li>
           <li>
             <a class="h6" href="tel:+912345678900">+91-234-567-8900</a>
@@ -89,11 +89,6 @@
           </form>
         </div>
       </div>
-    </div>
-    <div class="row mt-7">
-      <div class="col text-center text-dark"> Copyright 2022 Taypo Theme by <u>
-          <a href="#">ThemeHt</a>
-        </u> | All Rights Reserved </div>
     </div>
   </div>
   <div class="position-absolute animation-1 opacity-1">
