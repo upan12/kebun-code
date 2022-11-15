@@ -21,15 +21,23 @@ class LoginController extends Controller
         // $userLogin = DB::table('users')->where('nisn', $request->nisn);
         $credentials = $request->validate([
             'nisn' => 'required',
-            'password' => 'required'
+            'password' => 'required',
         ]);
-        // dd('berhasil login');
-        if (Auth::attempt($credentials)) {
+        if (User::where('nisn', $credentials['nisn'])->first()?->status == 4 && Auth::attempt($credentials)) {
             $request->session()->regenerate();
-        
+            return redirect('/admin')->with('loginSuccess', 'Login success');
+        } elseif (User::where(
+            [
+                ['nisn', $credentials['nisn']],
+                ['password', $credentials['password']]
+            ])->first()?->status != 2) {
+            return back()->with('loginError', 'Account unverified. Please contact admin');
+        } elseif (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
             return redirect('/')->with('loginSuccess', 'Login success');
-        }
-        return back()->with('loginError', 'Login failed!');
+        } else 
+        {return back()->with('loginError', 'Login failed!');}
     }
 
     public function logout(Request $request)
@@ -52,7 +60,7 @@ class LoginController extends Controller
     {
         // return $request->all();
         $validatedData = $request->validate([
-            'name' => 'required|min:3|max:255',
+            'name' => 'required|min:3|max:15',
             'nisn' => 'required|numeric|min:8|max:12|unique:users',
             // 'username' => 'required|min:3|max:255|unique:users',
             'email' => 'required|email:dns|unique:users',

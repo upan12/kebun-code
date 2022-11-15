@@ -21,11 +21,13 @@
     <!-- inject css start -->
 
     <!--== bootstrap -->
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/bootstrap-icons.css" rel="stylesheet" type="text/css" />
 
     <!--== fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
 
     <!--== magnific-popup -->
     <link href="/css/magnific-popup.css" rel="stylesheet" type="text/css" />
@@ -47,7 +49,7 @@
 
     <style>
         trix-toolbar [data-trix-button-group="file-tools"] {
-            display:none;
+            display: none;
         }
     </style>
 
@@ -113,7 +115,12 @@
         <!--== trix-editor -->
         <script type="text/javascript" src="/js/trix.js"></script>
 
+        <!--== image-script -->
+        <script src="/assets/js/pages-account-settings-account.js"></script>
+
         <!-- inject js end -->
+
+        @yield('script')
 
     </body>
 

@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Creation::factory(100)->create();
+        Creation::factory(10)->create();
         User::factory(5)->create();
 
         Category::create([
@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Category::create([
-            'name' => 'Dekstop'
+            'name' => 'Desktop'
         ]);
     }
 }

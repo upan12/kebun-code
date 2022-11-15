@@ -22,6 +22,8 @@ class CreationFactory extends Factory
             'creator' => $this->faker->sentence(mt_rand(1, 2)),
             'technology' => $this->faker->sentence(mt_rand(2, 3)),
             'description' => $this->faker->sentence(mt_rand(2, 5)),
+            'link_website' => $this->faker->sentence(mt_rand(2, 5)),
+            'source_code' => $this->faker->sentence(mt_rand(2, 5)),
             'user_id' => mt_rand(1, 3),
             'category_id' => mt_rand(1, 4),
             'status' => '1',
