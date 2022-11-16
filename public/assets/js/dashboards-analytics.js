@@ -428,7 +428,7 @@
         type: 'donut'
       },
       labels: ['Unverified', 'Disable', 'Verified'],
-      series: [35, 25, 25],
+      series: [10, 25, 25],
       colors: [config.colors.primary, config.colors.info, config.colors.success],
       stroke: {
         width: 5,

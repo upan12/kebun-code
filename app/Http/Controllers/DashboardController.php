@@ -17,20 +17,12 @@ class DashboardController extends Controller
     {
         // dd(Creation::where('status', '3')->get());
         // dd(count(Creation::get()));
-        
-        // User
-        $unveriUser = User::where('status', '1');
-        $veriUser = User::where('status', '2');
-        $disableUser = User::where('status', '3');
-        
-        // Creation
-        $unveriCreation = Creation::where('status', '1');
-        $veriCreation = Creation::where('status', '2');
-        $disableCreation = Creation::where('status', '3');
-        
+
+
+
         return view('dashboard.index', [
             'active' => 'home',
-            'count_user' => count(User::get()),
+            'count_user' => count(User::where('status', '!=', '4')->get()),
             'count_creation' => count(Creation::get()),
             'count_unveriUser' => count(User::where('status', '1')->get()),
             'count_veriUser' => count(User::where('status', '2')->get()),
@@ -38,7 +30,7 @@ class DashboardController extends Controller
             'count_unveriCreation' => count(Creation::where('status', '1')->get()),
             'count_veriCreation' => count(Creation::where('status', '2')->get()),
             'count_disableCreation' => count(Creation::where('status', '3')->get())
-            
+
         ]);
     }
 

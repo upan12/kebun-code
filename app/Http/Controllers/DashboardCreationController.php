@@ -112,6 +112,8 @@ class DashboardCreationController extends Controller
             'creator' => 'required|max:255',
             'technology' => 'required|max:255',
             'description' => 'required|max:255',
+            'link_website' => 'required|max:255',
+            'source_code' => 'required|max:255',
             'category_id' => 'required',
             'image' => 'image|file|max:1024'
         ];

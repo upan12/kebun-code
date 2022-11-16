@@ -28,8 +28,7 @@ class LoginController extends Controller
             return redirect('/admin')->with('loginSuccess', 'Login success');
         } elseif (User::where(
             [
-                ['nisn', $credentials['nisn']],
-                ['password', $credentials['password']]
+                ['nisn', $credentials['nisn']]
             ])->first()?->status != 2) {
             return back()->with('loginError', 'Account unverified. Please contact admin');
         } elseif (Auth::attempt($credentials)) {
