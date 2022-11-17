@@ -444,10 +444,10 @@
                                                 </td>
 
                                                 <td>
-                                                    <form action="/user/active/{{ $user->id }}" id="activeUser" method="post">
+                                                    <form action="/user/active/{{ $user->id }}" id="activeUser_{{$user->id}}" method="post">
                                                         @method('put')
-                                                        @csrf
-                                                        <button type="button" class="btn btn-sm btn-success" onclick="activeUser()">
+                                                        @csrf   
+                                                        <button type="button" class="btn btn-sm btn-success" onclick="activeUser({{$user->id}})">
                                                             Active
                                                         </button>
                                                     </form>
@@ -561,7 +561,7 @@
     }
 
     // status 3
-    function activeUser() {
+    function activeUser(id) {
         Swal.fire({
             title: 'Do you want to Active this work?',
             showCancelButton: true,
@@ -569,7 +569,7 @@
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                document.getElementById('activeUser').submit()
+                document.getElementById(`activeUser_${id}`).submit()
             }
         })
     }
