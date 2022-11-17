@@ -67,8 +67,9 @@
                                 <div class="card">
                                     <h5 class="card-header">Unverified</h5>
                                     <div class="table-responsive">
-                                        <table class="table table-hover p-4" id="table-unverified" style="min-height: 220px">
-                                            
+                                        <table class="table table-hover p-4" id="table-unverified"
+                                            style="min-height: 220px">
+
                                             <thead>
                                                 <tr>
                                                     <th>Id</th>
@@ -142,6 +143,22 @@
                                                                                                 class="d-flex justify-content-between align-items-center text-dark font-w-6">
                                                                                                 Technology use :
                                                                                                 {{ $creation->technology }}
+                                                                                            </span>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                                                            <span
+                                                                                                class="d-flex justify-content-between align-items-center text-dark font-w-6">
+                                                                                                Link Website :
+                                                                                                {{ $creation->link_website }}
+                                                                                            </span>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                                                            <span
+                                                                                                class="d-flex justify-content-between align-items-center text-dark font-w-6">
+                                                                                                Source Code :
+                                                                                                {{ $creation->source_code }}
                                                                                             </span>
                                                                                         </li>
                                                                                         <li
@@ -303,6 +320,36 @@
                                                                             </div>
 
                                                                             <div class="form-group">
+                                                                                <label for="link_website">Link Website</label>
+                                                                                <input type="text"
+                                                                                    class="form-control @error('link_website') is-invalid @enderror"
+                                                                                    id="link_website"
+                                                                                    placeholder="Link Website"
+                                                                                    name="link_website" required autofocus
+                                                                                    value="{{ old('link_website', $creation->link_website) }}">
+                                                                                @error('link_website')
+                                                                                    <div class="invalid-feedback">
+                                                                                        {{ $message }}
+                                                                                    </div>
+                                                                                @enderror
+                                                                            </div>
+
+                                                                            <div class="form-group">
+                                                                                <label for="source_code">Source Code</label>
+                                                                                <input type="text"
+                                                                                    class="form-control @error('source_code') is-invalid @enderror"
+                                                                                    id="source_code"
+                                                                                    placeholder="Source Code"
+                                                                                    name="source_code" required autofocus
+                                                                                    value="{{ old('source_code', $creation->source_code) }}">
+                                                                                @error('source_code')
+                                                                                    <div class="invalid-feedback">
+                                                                                        {{ $message }}
+                                                                                    </div>
+                                                                                @enderror
+                                                                            </div>
+
+                                                                            <div class="form-group">
                                                                                 <label for="description">
                                                                                     About the app</label>
                                                                                 <textarea id="description" name="description" class="form-control @error('description') is-invalid @enderror"
@@ -402,6 +449,22 @@
                                                                                                 class="d-flex justify-content-between align-items-center text-dark font-w-6">
                                                                                                 Technology use :
                                                                                                 {{ $creation->technology }}
+                                                                                            </span>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                                                            <span
+                                                                                                class="d-flex justify-content-between align-items-center text-dark font-w-6">
+                                                                                                Link Website :
+                                                                                                {{ $creation->link_website }}
+                                                                                            </span>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                                                            <span
+                                                                                                class="d-flex justify-content-between align-items-center text-dark font-w-6">
+                                                                                                Source Code :
+                                                                                                {{ $creation->source_code }}
                                                                                             </span>
                                                                                         </li>
                                                                                         <li class="list-group-item d-flex justify-content-between align-items-center text-dark font-w-6"
@@ -601,6 +664,35 @@
                                                                             </div>
 
                                                                             <div class="form-group">
+                                                                                <label for="link_website">Link Website</label>
+                                                                                <input type="text"
+                                                                                    class="form-control @error('link_website') is-invalid @enderror"
+                                                                                    id="link_website"
+                                                                                    placeholder="Link Website"
+                                                                                    name="link_website" required autofocus
+                                                                                    value="{{ old('link_website', $creation->link_website) }}">
+                                                                                @error('link_website')
+                                                                                    <div class="invalid-feedback">
+                                                                                        {{ $message }}
+                                                                                    </div>
+                                                                                @enderror
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="source_code">Source Code</label>
+                                                                                <input type="text"
+                                                                                    class="form-control @error('source_code') is-invalid @enderror"
+                                                                                    id="source_code"
+                                                                                    placeholder="Source Code"
+                                                                                    name="source_code" required autofocus
+                                                                                    value="{{ old('source_code', $creation->source_code) }}">
+                                                                                @error('source_code')
+                                                                                    <div class="invalid-feedback">
+                                                                                        {{ $message }}
+                                                                                    </div>
+                                                                                @enderror
+                                                                            </div>
+
+                                                                            <div class="form-group">
                                                                                 <label for="description">
                                                                                     About the app</label>
                                                                                 <textarea id="description" name="description" class="form-control @error('description') is-invalid @enderror"
@@ -708,6 +800,22 @@
                                                                                                 class="d-flex justify-content-between align-items-center text-dark font-w-6">
                                                                                                 Technology use :
                                                                                                 {{ $creation->technology }}
+                                                                                            </span>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                                                            <span
+                                                                                                class="d-flex justify-content-between align-items-center text-dark font-w-6">
+                                                                                                Link Website :
+                                                                                                {{ $creation->link_website }}
+                                                                                            </span>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                                                            <span
+                                                                                                class="d-flex justify-content-between align-items-center text-dark font-w-6">
+                                                                                                Source Code :
+                                                                                                {{ $creation->source_code }}
                                                                                             </span>
                                                                                         </li>
                                                                                         <li class="list-group-item d-flex justify-content-between align-items-center text-dark font-w-6"

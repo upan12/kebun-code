@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Creation;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -13,8 +15,22 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        // dd(Creation::where('status', '3')->get());
+        // dd(count(Creation::get()));
+
+
+
         return view('dashboard.index', [
-            'active' => 'home'
+            'active' => 'home',
+            'count_user' => count(User::where('status', '!=', '4')->get()),
+            'count_creation' => count(Creation::get()),
+            'count_unveriUser' => count(User::where('status', '1')->get()),
+            'count_veriUser' => count(User::where('status', '2')->get()),
+            'count_disableUser' => count(User::where('status', '3')->get()),
+            'count_unveriCreation' => count(Creation::where('status', '1')->get()),
+            'count_veriCreation' => count(Creation::where('status', '2')->get()),
+            'count_disableCreation' => count(Creation::where('status', '3')->get())
+
         ]);
     }
 

@@ -418,7 +418,7 @@
     profileReportChart.render();
   }
 
-  // Order Statistics Chart
+  // User Statistics Chart
   // --------------------------------------------------------------------
   const chartOrderStatistics = document.querySelector('#orderStatisticsChart'),
     orderChartConfig = {
@@ -428,7 +428,7 @@
         type: 'donut'
       },
       labels: ['Unverified', 'Disable', 'Verified'],
-      series: [35, 25, 25],
+      series: [10, 25, 25],
       colors: [config.colors.primary, config.colors.info, config.colors.success],
       stroke: {
         width: 5,
@@ -464,7 +464,7 @@
     statisticsChart.render();
   }
 
-  // Order Statistics Chart 2
+  //  Statistics Chart 2
   // --------------------------------------------------------------------
   const chartOrderStatistics2 = document.querySelector('#orderStatisticsCharts'),
     orderChartConfig2 = {
