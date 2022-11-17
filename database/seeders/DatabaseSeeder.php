@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Creation::factory(10)->create();
+        Creation::factory(5)->create();
         User::factory(5)->create();
-
+        
         Category::create([
             'name' => 'Web Design'
         ]);

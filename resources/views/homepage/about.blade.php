@@ -268,35 +268,19 @@
             <img class="img-fluid rounded-4 mb-3" src="images/contact-img.jpg" alt="">
             <p class="font-w-6">We help companies develop powerful corporate social responsibility, grantmaking, and employee engagement strategies. </p>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <h6>Indonesia:</h6>
                 <ul class="contact-info list-unstyled">
                   <li class="mb-4 text-dark">
-                    <i class="text-primary fs-4 align-middle bi bi-geo-alt me-2"></i> 423B, Road Wordwide Country, USA
+                    <i class="text-primary fs-4 align-middle bi bi-geo-alt me-2"></i>Jl. Wijaya Kusuma No.46, Banyuwangi, Jawa Timur 68425
                   </li>
                   <li class="mb-4">
                     <i class="text-primary fs-4 align-middle bi bi-telephone me-2"></i>
-                    <a class="btn-link" href="tel:+912345678900">+91-234-567-8900</a>
+                    <a class="btn-link" href="tel:(0333) - 424541">(0333) - 424541 </a>
                   </li>
                   <li>
                     <i class="text-primary fs-4 align-middle bi bi-envelope me-2"></i>
-                    <a class="btn-link" href="mailto:themeht23@gmail.com"> SMKN1Bayuwangi@gmail.com</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md-6">
-                <h6>Indonesia:</h6>
-                <ul class="contact-info list-unstyled">
-                  <li class="mb-4 text-dark">
-                    <i class="text-primary fs-4 align-middle bi bi-geo-alt me-2"></i> 423B, Road Wordwide Country, USA
-                  </li>
-                  <li class="mb-4">
-                    <i class="text-primary fs-4 align-middle bi bi-telephone me-2"></i>
-                    <a class="btn-link" href="tel:+912345678900">+91-234-567-8900</a>
-                  </li>
-                  <li>
-                    <i class="text-primary fs-4 align-middle bi bi-envelope me-2"></i>
-                    <a class="btn-link" href="mailto:themeht23@gmail.com"> SMKN1Bayuwangi@gmail.com</a>
+                    <a class="btn-link" href="mailto:smkn1bwi_wk46@yahoo.co.id">smkn1bwi_wk46@yahoo.co.id </a>
                   </li>
                 </ul>
               </div>
@@ -305,7 +289,7 @@
         </div>
         <div class="col-12 col-lg-6">
           <div class="map h-100">
-            <iframe class="w-100 h-100 border-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.840108181602!2d144.95373631539215!3d-37.8172139797516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sin!4v1497005461921" allowfullscreen=""></iframe>
+            <iframe class="w-100 h-100 border-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.9046564672235!2d114.34868731478086!3d-8.21234299408991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd14ff70f397b65%3A0xd4855a1d5d5b2480!2sSMK%20Negeri%201%20Banyuwangi!5e0!3m2!1sid!2sid!4v1668662575530!5m2!1sid!2sid" allowfullscreen=""></iframe>
           </div>
         </div>
       </div>
