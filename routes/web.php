@@ -21,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/admin', [DashboardController::class, 'index']);
-Route::get('/', [HomepageController::class, 'index']);
 
 // login
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
@@ -34,24 +33,15 @@ Route::post('/register', [LoginController::class, 'registration']);
 Route::get('/forgot', function () {
     return view('homepage.forgot');
 });
-
-Route::get('/about', function () {
-    return view('homepage.about');
-});
-
-Route::get('/allCreation', function () {
-    return view('homepage.allCreation');
-});
-
-Route::get('/myCreation', function () {
-    return view('homepage.myCreation');
-})->middleware('auth');
-
+Route::get('/', [HomepageController::class, 'index']);
+Route::get('aboutUs', [HomepageController::class, 'aboutUs']);
 Route::get('/creation/{id}', [HomepageController::class, 'creation'])->middleware('auth');
 Route::get('/allCreation', [HomepageController::class, 'allCreation']);
 Route::get('/myCreation', [HomepageController::class, 'myCreation'])->middleware('auth');
 Route::get('/addCreation', [HomepageController::class, 'addCreation'])->middleware('auth');
 Route::post('/create/creation', [HomepageController::class, 'createCreation']);
+Route::put('/updateCreation/{creation}', [HomepageController::class, 'updateCreation']);
+Route::delete('/deleteCreation/{creation}', [HomepageController::class, 'deleteCreation']);
 
 // dashboard
 
@@ -71,4 +61,4 @@ Route::put('/user/active/{user}', [DashboardUserController::class, 'active_user'
 
 // dashboard active
 
-Route::get('/admin', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/admin', [DashboardController::class, 'index'])->middleware(['auth', 'isAdmin']);

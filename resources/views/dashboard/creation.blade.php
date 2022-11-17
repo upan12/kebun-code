@@ -99,8 +99,8 @@
                                                                             aria-label="Close"></button>
                                                                     </div>
                                                                     <form action="/creation/check/{{ $creation->id }}"
-                                                                        id="verifiedCreation" method="POST"
-                                                                        enctype="multipart/form-data">
+                                                                        id="verifiedCreation_{{ $creation->id }}"
+                                                                        method="POST" enctype="multipart/form-data">
                                                                         @method('put')
                                                                         @csrf
                                                                         <div class="modal-body">
@@ -182,7 +182,7 @@
                                                                                 Close
                                                                             </button>
                                                                             <button type="button" class="btn btn-primary"
-                                                                                onclick="verifiedCreation()">Confirm</button>
+                                                                                onclick="verifiedCreation({{ $creation->id }})">Confirm</button>
                                                                         </div>
                                                                     </form>
                                                                 </div>
@@ -320,7 +320,8 @@
                                                                             </div>
 
                                                                             <div class="form-group">
-                                                                                <label for="link_website">Link Website</label>
+                                                                                <label for="link_website">Link
+                                                                                    Website</label>
                                                                                 <input type="text"
                                                                                     class="form-control @error('link_website') is-invalid @enderror"
                                                                                     id="link_website"
@@ -335,7 +336,8 @@
                                                                             </div>
 
                                                                             <div class="form-group">
-                                                                                <label for="source_code">Source Code</label>
+                                                                                <label for="source_code">Source
+                                                                                    Code</label>
                                                                                 <input type="text"
                                                                                     class="form-control @error('source_code') is-invalid @enderror"
                                                                                     id="source_code"
@@ -505,12 +507,12 @@
                                                             {{-- button check --}}
                                                             <td>
                                                                 <form action="/creation/disable/{{ $creation->id }}"
-                                                                    id="disableCreation" method="post">
+                                                                    id="disableCreation_{{ $creation->id }}" method="post">
                                                                     @method('put')
                                                                     @csrf
                                                                     <button type="button"
                                                                         class="btn btn-sm btn-secondary"
-                                                                        onclick="disableCreation()">
+                                                                        onclick="disableCreation({{ $creation->id }})">
                                                                         Disable
                                                                     </button>
                                                                 </form>
@@ -535,12 +537,12 @@
                                                                                 class="bx bx-edit-alt me-1"></i> Edit</a>
                                                                         {{-- button delete --}}
                                                                         <form action="/admin/creation/{{ $creation->id }}"
-                                                                            id="modalDeleteCreationVerified"
+                                                                            id="modalDeleteCreationVerified_{{ $creation->id }}"
                                                                             method="post">
                                                                             @method('delete')
                                                                             @csrf
                                                                             <button class="dropdown-item" type="button"
-                                                                                onclick="deleteCreationVerified()"><i
+                                                                                onclick="deleteCreationVerified({{ $creation->id }})"><i
                                                                                     class="bx bx-trash me-1"></i>
                                                                                 Delete</button>
                                                                         </form>
@@ -664,7 +666,8 @@
                                                                             </div>
 
                                                                             <div class="form-group">
-                                                                                <label for="link_website">Link Website</label>
+                                                                                <label for="link_website">Link
+                                                                                    Website</label>
                                                                                 <input type="text"
                                                                                     class="form-control @error('link_website') is-invalid @enderror"
                                                                                     id="link_website"
@@ -678,7 +681,8 @@
                                                                                 @enderror
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <label for="source_code">Source Code</label>
+                                                                                <label for="source_code">Source
+                                                                                    Code</label>
                                                                                 <input type="text"
                                                                                     class="form-control @error('source_code') is-invalid @enderror"
                                                                                     id="source_code"
@@ -854,11 +858,11 @@
                                                             {{-- button check --}}
                                                             <td>
                                                                 <form action="/creation/active/{{ $creation->id }}"
-                                                                    id="activeCreation" method="post">
+                                                                    id="activeCreation_{{ $creation->id }}" method="post">
                                                                     @method('put')
                                                                     @csrf
                                                                     <button type="button" class="btn btn-sm btn-success"
-                                                                        onclick="activeCreation()">
+                                                                        onclick="activeCreation({{ $creation->id }})">
                                                                         Active
                                                                     </button>
                                                                 </form>
@@ -883,12 +887,12 @@
                                                                                 class="bx bx-edit-alt me-1"></i> Edit</a>
                                                                         {{-- button delete --}}
                                                                         <form action="/admin/creation/{{ $creation->id }}"
-                                                                            id="modalDeleteCreationDisable"
+                                                                            id="modalDeleteCreationDisable_{{ $creation->id }}"
                                                                             method="post">
                                                                             @method('delete')
                                                                             @csrf
                                                                             <button class="dropdown-item" type="button"
-                                                                                onclick="deleteCreationDisable()"><i
+                                                                                onclick="deleteCreationDisable({{ $creation->id }})"><i
                                                                                     class="bx bx-trash me-1"></i>
                                                                                 Delete</button>
                                                                         </form>
@@ -943,7 +947,7 @@
             }
         }
 
-        function deleteCreationVerified() {
+        function deleteCreationVerified(id) {
             Swal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to return this work!",
@@ -954,12 +958,12 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    document.getElementById('modalDeleteCreationVerified').submit()
+                    document.getElementById(`modalDeleteCreationVerified_${id}`).submit()
                 }
             })
         }
 
-        function deleteCreationDisable() {
+        function deleteCreationDisable(id) {
             Swal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to return this work!",
@@ -970,13 +974,13 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    document.getElementById('modalDeleteCreationDisable').submit()
+                    document.getElementById(`modalDeleteCreationDisable_${id}`).submit()
                 }
             })
         }
 
         // status 1
-        function verifiedCreation() {
+        function verifiedCreation(id) {
             Swal.fire({
                 title: 'Do you want to Verified this work?',
                 showCancelButton: true,
@@ -984,13 +988,13 @@
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
-                    document.getElementById('verifiedCreation').submit()
+                    document.getElementById(`verifiedCreation_${id}`).submit()
                 }
             })
         }
 
         // status 2
-        function disableCreation() {
+        function disableCreation(id) {
             Swal.fire({
                 title: 'Do you want to Disable this work?',
                 showCancelButton: true,
@@ -998,13 +1002,13 @@
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
-                    document.getElementById('disableCreation').submit()
+                    document.getElementById(`disableCreation_${id}`).submit()
                 }
             })
         }
 
         // status 3
-        function activeCreation() {
+        function activeCreation(id) {
             Swal.fire({
                 title: 'Do you want to Active this work?',
                 showCancelButton: true,
@@ -1012,7 +1016,7 @@
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
-                    document.getElementById('activeCreation').submit()
+                    document.getElementById(`activeCreation_${id}`).submit()
                 }
             })
         }
