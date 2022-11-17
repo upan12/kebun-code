@@ -158,10 +158,10 @@
                                                 </td>
 
                                                 <td>
-                                                    <form action="/user/check/{{ $user->id }}" id="verifiedUser" method="post">
+                                                    <form action="/user/check/{{ $user->id }}" id="verifiedUser_{{$user->id}}" method="post">
                                                         @method('put')
                                                         @csrf
-                                                        <button type="button" class="btn btn-sm btn-primary" onclick="verifiedUser()">
+                                                        <button type="button" class="btn btn-sm btn-primary" onclick="verifiedUser({{ $user->id }})">
                                                             Verified
                                                         </button>
                                                     </form>
@@ -299,10 +299,10 @@
                                                 </td>
 
                                                 <td>
-                                                    <form action="/user/disable/{{ $user->id }}" id="disableUser" method="post">
+                                                    <form action="/user/disable/{{ $user->id }}" id="disableUser_{{$user->id}}" method="post">
                                                         @method('put')
                                                         @csrf
-                                                        <button type="button" class="btn btn-sm btn-warning" onclick="disableUser()">
+                                                        <button type="button" class="btn btn-sm btn-warning" onclick="disableUser({{ $user->id }})">
                                                             Disable
                                                         </button>
                                                     </form>
@@ -533,7 +533,7 @@
     }
 
     // status 1
-    function verifiedUser() {
+    function verifiedUser(id) {
         Swal.fire({
             title: 'Do you want to Verified this work?',
             showCancelButton: true,
@@ -541,13 +541,13 @@
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                document.getElementById('verifiedUser').submit()
+                document.getElementById(`verifiedUser_${id}`).submit()
             }
         })
     }
 
     // status 2
-    function disableUser() {
+    function disableUser(id) {
         Swal.fire({
             title: 'Do you want to Disable this work?',
             showCancelButton: true,
@@ -555,7 +555,7 @@
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                document.getElementById('disableUser').submit()
+                document.getElementById(`disableUser_${id}`).submit()
             }
         })
     }
