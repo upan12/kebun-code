@@ -18,7 +18,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->sentence(mt_rand(2)),
+            'name' => $this->faker->sentence(2),
             'nisn' => $this->faker->randomNumber(8),
             'email' => Str::random(7) . '@gmail.com',
             'status' => '1',
