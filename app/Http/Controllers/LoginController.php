@@ -61,7 +61,7 @@ class LoginController extends Controller
     {
         // return $request->all();
         $validatedData = $request->validate([
-            'name' => 'required|min:3|max:15',
+            'name' => 'required|min:5|max:15',
             'nisn' => 'required|numeric|min_digits:8|max_digits:12|unique:users',
             // 'username' => 'required|min:3|max:255|unique:users',
             'email' => 'required|email:dns|unique:users',

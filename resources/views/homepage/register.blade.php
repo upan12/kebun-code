@@ -67,7 +67,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row text-center mt-4">
+                                {{-- <div class="row text-center mt-4">
                                     <div class="col-md-12">
                                         <div class="remember-checkbox clearfix mb-4">
                                             <div class="form-check">
@@ -78,7 +78,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="row text-center">
                                     <div class="col"> <button class="btn btn-primary">Create Account</button>
                                         <span class="mt-4 d-block">Have An Account ? <a href="/login"><i>Sign

@@ -2,7 +2,7 @@
 @section('container')
     <!--hero section start-->
 
-    <section class="position-relative overflow-hidden">
+    <section class="position-relative overflow-hidden pb-0">
         <div class="container">
             <div class="row text-center">
                 <div class="col">
@@ -46,16 +46,25 @@
                                 <li class="mb-3 border-bottom border-light pb-3">
                                     <span class="text-dark font-w-6"> Category: </span> {{ $creation->category->name }}
                                 </li>
-                                <li class="mb-3 border-bottom border-light pb-3">
-                                    <span class="text-dark font-w-6"> GitHub: </span> <a href="{{ $creation->source_code }}"
-                                        target="_blank">{{ $creation->source_code }}</a>
-                                </li>
-                                <li class="mb-3 border-bottom border-light pb-3">
-                                  <span class="text-dark font-w-6"> Description: </span><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quia eius recusandae magni eum maiores minus sint enim praesentium numquam earum vero minima amet aliquid ipsam quos, corporis porro nobis eligendi! Quae, cupiditate aliquam! Voluptate recusandae deleniti deserunt! Harum voluptatibus eos nemo dolore tempore quis veritatis sed enim, repudiandae ea?{!! $creation->description !!}</p>
+                                <li class="mb-3 border-bottom border-light ">
+                                    <span class="text-dark font-w-6"> Description: </span>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quia eius recusandae
+                                        magni eum maiores minus sint enim praesentium numquam earum vero minima amet aliquid
+                                        ipsam quos, corporis porro nobis eligendi! Quae, cupiditate aliquam! Voluptate
+                                        recusandae deleniti deserunt! Harum voluptatibus eos nemo dolore tempore quis
+                                        veritatis sed enim, repudiandae ea?{!! $creation->description !!}</p>
                                 </li>
                                 <li>
-                                    <a class="text-dark btn btn-outline-primary w-100 font-w-6"
-                                        href="{{ $creation->link_website }}" target="_blank">Visit Website</a>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <a class="text-dark btn btn-outline-primary w-100 font-w-6"
+                                                href="{{ $creation->source_code }}" target="_blank">Source Code</a>
+                                        </div>
+                                        <div class="col-6">
+                                            <a class="text-dark btn btn-outline-primary w-100 font-w-6"
+                                                href="{{ $creation->link_website }}" target="_blank">Visit Website</a>
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>

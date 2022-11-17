@@ -35,7 +35,7 @@ Route::get('/forgot', function () {
 });
 Route::get('/', [HomepageController::class, 'index']);
 Route::get('aboutUs', [HomepageController::class, 'aboutUs']);
-Route::get('/creation/{id}', [HomepageController::class, 'creation'])->middleware('auth');
+Route::get('/creation/{id}', [HomepageController::class, 'creation']);
 Route::get('/allCreation', [HomepageController::class, 'allCreation']);
 Route::get('/myCreation', [HomepageController::class, 'myCreation'])->middleware('auth');
 Route::get('/addCreation', [HomepageController::class, 'addCreation'])->middleware('auth');

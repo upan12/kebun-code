@@ -12,19 +12,17 @@
                     </lottie-player>
                 </div>
                 <div class="col-12 col-lg-6">
-                    <h1 class="font-w-4 mb-4"> 
-Let's work and build your <span
-                            class="title-bg text-primary position-relative font-w-7 d-inline-block">portfolio.</span>
+                    <h1 class="font-w-4 mb-4">
+                        Show your <span
+                            class="title-bg text-primary position-relative font-w-5 d-inline-block">skill</span>. and build
+                        your <span class="title-bg text-primary position-relative font-w-5 d-inline-block">portfolio.</span>
                         {{-- <br class="d-md-block d-none"> with taypo. --}}
                     </h1>
                     <!-- Text -->
-                    <p class="lead text-dark mb-5">We're helped client to create your website with our talented experts.</p>
-                    <form id="mc-form1" class="group">
-                        <div class="form-group bg-light p-3 rounded-4 z-index-1 mb-0 d-flex align-items-center">
-                            <a class="btn btn-dark mx-2" type="submit" name="seeAllWorks">See All Works</a>
-                            <a class="btn btn-dark mx-2" type="submit" name="uploadWorks">Upload Works</a>
-                        </div>
-                    </form>
+                    <p class="lead text-dark mb-5">A career in technology such as Web Development, or User-Interface
+                        Designer, we need real work result.</p>
+                    <a class="btn btn-dark mx-2" href="/allCreation" name="seeAllWorks">See All Works</a>
+                    <a class="btn btn-dark mx-2" href="/addCreation" name="uploadWorks">Upload Works</a>
                 </div>
             </div>
             <!-- / .row -->
@@ -56,11 +54,12 @@ Let's work and build your <span
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 col-xl-5 ms-auto mt-5 mt-lg-0">
-                            <p class="lead">Digital talent crisis! Indonesia needs 600,000 digital talents in one year. In the next 15 years it will require 9 million digital talents</p>
+                            <p class="lead">Digital talent crisis! Indonesia needs 600,000 digital talents in one year. In
+                                the next 15 years it will require 9 million digital talents</p>
                         </div>
                     </div>
                     <div class="row gx-5">
-                        <div class="col-lg-3 col-md-8 mt-6 mt-lg-0" >
+                        <div class="col-lg-3 col-md-8 mt-6 mt-lg-0">
                             <div class="bg-white p-6 rounded-4 f-icon-hover">
                                 <div class="mb-4 rounded f-icon-shape-sm">
                                     <img src="/images/web.png" alt="">
@@ -91,7 +90,8 @@ Let's work and build your <span
                                 </div>
                                 <div>
                                     <h5 class="mb-3">UI/UX Designer</h5>
-                                    <p class="mb-0">Design an attractive display design to make the application look even more beautiful.</p>
+                                    <p class="mb-0">Design an attractive display design to make the application look even
+                                        more beautiful.</p>
                                 </div>
                             </div>
                         </div>
@@ -189,12 +189,13 @@ Let's work and build your <span
                                 <div class="item">
                                     <div class="card p-3 p-md-5 border-0 bg-white rounded-4">
                                         <div class="card-body p-0">
-                                            <p class="font-w-5 lead mb-3">yaa ini nanti isinya adalah komentar ya ges ya. yaa komentar apa aja gitu. yaa jadi begitulah</p>
+                                            <p class="font-w-5 lead mb-3">yaa ini nanti isinya adalah komentar ya ges ya.
+                                                yaa komentar apa aja gitu. yaa jadi begitulah</p>
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
                                                     <div>
-                                                        
-                                                            <img alt="Image" src="images/testimonial/03.jpg"
+
+                                                        <img alt="Image" src="images/testimonial/03.jpg"
                                                             class="img-fluid rounded-circle">
                                                     </div>
                                                     <div class="ms-3">
@@ -210,7 +211,8 @@ Let's work and build your <span
                                 <div class="item">
                                     <div class="card p-3 p-md-5 border-0 bg-white rounded-4">
                                         <div class="card-body p-0">
-                                            <p class="font-w-5 lead mb-3">Semoga aplikasi web ini bisa bermanfaat bagi kita semua. yeyyy.</p>
+                                            <p class="font-w-5 lead mb-3">Semoga aplikasi web ini bisa bermanfaat bagi kita
+                                                semua. yeyyy.</p>
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
                                                     <div>
@@ -230,7 +232,8 @@ Let's work and build your <span
                                 <div class="item">
                                     <div class="card p-3 p-md-5 border-0 bg-white rounded-4">
                                         <div class="card-body p-0">
-                                            <p class="font-w-5 lead mb-3">Berkat saya tidak sekolah 2 tahun karena corona, saya bisa menjadi desainer berkelas. itu semua berkat papoy</p>
+                                            <p class="font-w-5 lead mb-3">Berkat saya tidak sekolah 2 tahun karena corona,
+                                                saya bisa menjadi desainer berkelas. itu semua berkat papoy</p>
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
                                                     <div>
@@ -250,7 +253,8 @@ Let's work and build your <span
                                 <div class="item">
                                     <div class="card p-3 p-md-5 border-0 bg-white rounded-4">
                                         <div class="card-body p-0">
-                                            <p class="font-w-5 lead mb-3">Hasil karya anak anak didik saya baguss. pake bangett. itu berkat saya</p>
+                                            <p class="font-w-5 lead mb-3">Hasil karya anak anak didik saya baguss. pake
+                                                bangett. itu berkat saya</p>
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
                                                     <div>
@@ -289,120 +293,176 @@ Let's work and build your <span
                     </div>
                     <div class="col-12 col-md-12 col-lg-6 ms-auto">
                         <div class="portfolio-filter d-sm-flex align-items-center justify-content-lg-end">
-                            <button data-filter="" class="is-checked mb-2 mb-sm-0">All</button>
+                            <button data-filter=".all" class="is-checked mb-2 mb-sm-0">All</button>
                             <button data-filter=".cat1" class="mb-2 mb-sm-0">Web Design</button>
                             <button data-filter=".cat2">App Design</button>
-                            <button data-filter=".cat3">UI/UX</button>
+                            <button data-filter=".cat3">UI /UX</button>
                             <button data-filter=".cat4">Desktop</button>
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="grid columns-3 row popup-gallery">
                             <div class="grid-sizer"></div>
-                            <div class="grid-item col-lg-4 col-md-6 mb-5 cat2">
-                                <div
-                                    class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                    <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg" alt="">
-                                    <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
-                                        <div>
-                                            <small class="mb-2">Mobile App</small>
-                                            <h6 class="mb-0">
-                                                <a class="btn-link" href="portfolio-single.html">Social Marketing</a>
-                                            </h6>
-                                        </div>
-                                        <a class="popup-img btn-link" href="images/portfolio/large/01.jpg">
-                                            <i class="bi bi-patch-plus fs-4"></i>
+
+                            @forelse ($web_designs as $web_design)
+                                <div class="grid-item col-lg-4 col-md-6 mb-5 cat1 all">
+                                    <div
+                                        class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
+                                        <a class="popup-img btn-link" href="">
+                                            <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
+                                                alt="">
                                         </a>
+                                        <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
+                                            <div>
+                                                <small class="mb-2">{{ $web_design->categories_name }}</small>
+                                                <h6 class="mb-0">
+                                                    <a class="btn-link"
+                                                        href="/creation/{{ $web_design->id }}">{{ $web_design->title }}</a>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="grid-item col-lg-4 col-md-6 mb-5 cat3">
-                                <div
-                                    class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                    <img class="img-fluid w-100 rounded-4" src="images/portfolio/02.jpg" alt="">
-                                    <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
-                                        <div>
-                                            <small class="mb-2">Developing</small>
-                                            <h6 class="mb-0">
-                                                <a class="btn-link" href="portfolio-single.html">Web Development</a>
-                                            </h6>
+                            @empty
+                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat1">
+                                    <div class="container">
+                                        <div class="row justify-content-center text-center ">
+                                            <div class="col-12 col-lg-10">
+                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
+                                                    <div class="card-body p-0">
+                                                    </div>
+                                                    <i class="bi bi-x fs-1 text-dark"></i>
+                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
+                                                    </p>
+                                                    <p class="font-w-2">Please Check your search keyword or
+                                                        <a href="/allCreation">See all Works</a>
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <a class="popup-img btn-link" href="images/portfolio/large/02.jpg">
-                                            <i class="bi bi-patch-plus fs-4"></i>
-                                        </a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="grid-item col-lg-4 col-md-6 mb-5 cat1">
-                                <div
-                                    class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                    <img class="img-fluid w-100 rounded-4" src="images/portfolio/03.jpg" alt="">
-                                    <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
-                                        <div>
-                                            <small class="mb-2">Web Design</small>
-                                            <h6 class="mb-0">
-                                                <a class="btn-link" href="portfolio-single.html">Design Work</a>
-                                            </h6>
-                                        </div>
-                                        <a class="popup-img btn-link" href="images/portfolio/large/03.jpg">
-                                            <i class="bi bi-patch-plus fs-4"></i>
+                            @endforelse
+                            @forelse ($app_designs as $app_design)
+                                <div class="grid-item col-lg-4 col-md-6 mb-5 cat2 all">
+                                    <div
+                                        class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
+                                        <a class="popup-img btn-link" href="">
+                                            <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
+                                                alt="">
                                         </a>
+                                        <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
+                                            <div>
+                                                <small class="mb-2">{{ $app_design->categories_name }}</small>
+                                                <h6 class="mb-0">
+                                                    <a class="btn-link"
+                                                        href="/creation/{{ $app_design->id }}">{{ $app_design->title }}</a>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="grid-item col-lg-4 col-md-6 mb-5 mb-lg-0 cat2">
-                                <div
-                                    class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                    <img class="img-fluid w-100 rounded-4" src="images/portfolio/04.jpg" alt="">
-                                    <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
-                                        <div>
-                                            <small class="mb-2">Developing</small>
-                                            <h6 class="mb-0">
-                                                <a class="btn-link" href="portfolio-single.html">App Management</a>
-                                            </h6>
+                            @empty
+                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat2">
+                                    <div class="container">
+                                        <div class="row justify-content-center text-center ">
+                                            <div class="col-12 col-lg-10">
+                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
+                                                    <div class="card-body p-0">
+                                                    </div>
+                                                    <i class="bi bi-x fs-1 text-dark"></i>
+                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
+                                                    </p>
+                                                    <p class="font-w-2">Please Check your search keyword or
+                                                        <a href="/allCreation">See all Works</a>
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <a class="popup-img btn-link" href="images/portfolio/large/04.jpg">
-                                            <i class="bi bi-patch-plus fs-4"></i>
-                                        </a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="grid-item col-lg-4 col-md-6 mb-5 mb-md-0 cat3">
-                                <div
-                                    class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                    <img class="img-fluid w-100 rounded-4" src="images/portfolio/05.jpg" alt="">
-                                    <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
-                                        <div>
-                                            <small class="mb-2">Branding</small>
-                                            <h6 class="mb-0">
-                                                <a class="btn-link" href="portfolio-single.html">Hosting Service</a>
-                                            </h6>
-                                        </div>
-                                        <a class="popup-img btn-link" href="images/portfolio/large/05.jpg">
-                                            <i class="bi bi-patch-plus fs-4"></i>
+                            @endforelse
+                            @forelse ($ui_uxs as $ui_ux)
+                                <div class="grid-item col-lg-4 col-md-6 mb-5 cat3 all">
+                                    <div
+                                        class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
+                                        <a class="popup-img btn-link" href="">
+                                            <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
+                                                alt="">
                                         </a>
+                                        <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
+                                            <div>
+                                                <small class="mb-2">{{ $ui_ux->categories_name }}</small>
+                                                <h6 class="mb-0">
+                                                    <a class="btn-link"
+                                                        href="/creation/{{ $ui_ux->id }}">{{ $ui_ux->title }}</a>
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="grid-item col-lg-4 col-md-6 cat1">
-                                <div
-                                    class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                    <img class="img-fluid w-100 rounded-4" src="images/portfolio/06.jpg" alt="">
-                                    <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
-                                        <div>
-                                            <small class="mb-2">Web Design</small>
-                                            <h6 class="mb-0">
-                                                <a class="btn-link" href="portfolio-single.html">Clean Coding</a>
-                                            </h6>
+                                @empty
+                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat3">
+                                    <div class="container">
+                                        <div class="row justify-content-center text-center ">
+                                            <div class="col-12 col-lg-10">
+                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
+                                                    <div class="card-body p-0">
+                                                    </div>
+                                                    <i class="bi bi-x fs-1 text-dark"></i>
+                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
+                                                    </p>
+                                                    <p class="font-w-2">Please Check your search keyword or
+                                                        <a href="/allCreation">See all Works</a>
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <a class="popup-img btn-link" href="images/portfolio/large/06.jpg">
-                                            <i class="bi bi-patch-plus fs-4"></i>
-                                        </a>
                                     </div>
                                 </div>
-                            </div>
+                            @endforelse
+                            @forelse ($desktops as $desktop)
+                                <div class="grid-item col-lg-4 col-md-6 mb-5 cat4 all">
+                                    <div
+                                        class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
+                                        <a class="popup-img btn-link" href="">
+                                            <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
+                                                alt="">
+                                        </a>
+                                        <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
+                                            <div>
+                                                <small class="mb-2">{{ $desktop->categories_name }}</small>
+                                                <h6 class="mb-0">
+                                                    <a class="btn-link"
+                                                        href="/creation/{{ $desktop->id }}">{{ $desktop->title }}</a>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @empty
+                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat4">
+                                    <div class="container">
+                                        <div class="row justify-content-center text-center ">
+                                            <div class="col-12 col-lg-10">
+                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
+                                                    <div class="card-body p-0">
+                                                    </div>
+                                                    <i class="bi bi-x fs-1 text-dark"></i>
+                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
+                                                    </p>
+                                                    <p class="font-w-2">Please Check your search keyword or
+                                                        <a href="/allCreation">See all Works</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforelse
                         </div>
                     </div>
                 </div>
@@ -416,4 +476,11 @@ Let's work and build your <span
     </div>
 
     <!--body content end-->
+@endsection
+@section('script')
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelector(".portfolio-filter .is-checked").click();
+        });
+    </script>
 @endsection

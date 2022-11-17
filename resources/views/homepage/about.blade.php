@@ -2,7 +2,7 @@
 @section('container')
 <!--hero section start-->
 
-<section class="position-relative overflow-hidden">
+<section class="position-relative overflow-hidden pb-0">
     <div class="container">
       <div class="row text-center">
         <div class="col">
@@ -266,7 +266,7 @@
         <div class="col-12 col-lg-6 mb-6 mb-lg-0">
           <div>
             <img class="img-fluid rounded-4 mb-3" src="images/contact-img.jpg" alt="">
-            <p class="font-w-6">We help companies develop powerful corporate social responsibility, grantmaking, and employee engagement strategies. </p>
+            <p class="font-w-6 ">We help companies develop powerful corporate social responsibility, grantmaking, and employee engagement strategies. </p>
             <div class="row">
               <div class="col-md-12">
                 <h6>Indonesia:</h6>

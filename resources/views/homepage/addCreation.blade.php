@@ -4,7 +4,7 @@
 
 <!--hero section start-->
 
-<section class="position-relative overflow-hidden">
+<section class="position-relative overflow-hidden pb-0">
     <div class="container">
       <div class="row text-center">
         <div class="col">

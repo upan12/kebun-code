@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('creator');
             $table->string('technology');
-            $table->string('description');
+            $table->text('description');
             $table->string('link_website');
             $table->string('source_code');
             $table->string('status');

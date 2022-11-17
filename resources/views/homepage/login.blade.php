@@ -37,14 +37,14 @@
                                     <input type="password" name="password" class="form-control" placeholder="Password"
                                         required>
                                 </div>
-                                <div class="mt-4 mb-5">
+                                {{-- <div class="mt-4 mb-5">
                                     <div class="remember-checkbox d-flex align-items-center justify-content-between">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value="" id="check1">
                                             <label class="form-check-label" for="check1">Remember me</label>
                                         </div> <a class="btn-link" href="/forgot">Forgot Password?</a>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <button type="submit" class="btn btn-primary">Login Now</button>
                             </form>
                             <div class="d-flex align-items-center mt-4"> <span class="text-muted me-1">Don't have an

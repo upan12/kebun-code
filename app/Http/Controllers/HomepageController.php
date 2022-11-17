@@ -14,9 +14,18 @@ class HomepageController extends Controller
 {
     public function index()
     {
+        $web_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'Web Design')->latest()->get();
+        $app_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'App Design')->latest()->get();
+        $ui_ux = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'UI/UX')->latest()->get();
+        $desktop = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'Desktop')->latest()->get();
+
         return view('homepage.index', [
             'active' => 'home',
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'web_designs' => $web_design,
+            'app_designs' => $app_design,
+            'ui_uxs' => $ui_ux,
+            'desktops' => $desktop,
         ]);
     }
     public function creation(Creation $id)

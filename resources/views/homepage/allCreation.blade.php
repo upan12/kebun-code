@@ -2,7 +2,7 @@
 @section('container')
     <!--hero section start-->
 
-    <section class="position-relative overflow-hidden">
+    <section class="position-relative overflow-hidden pb-0">
         <div class="container">
             <div class="row text-center">
                 <div class="col">
@@ -71,32 +71,26 @@
                                     </div>
                                 </div>
                             @empty
-                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-10 px-3 px-lg-8 rounded-4 cat1">
+                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat1">
                                     <div class="container">
-                                        <div class="row justify-content-center text-center mb-6">
+                                        <div class="row justify-content-center text-center ">
                                             <div class="col-12 col-lg-10">
-                                                <div class="row mx-lg-n10">
-                                                    <div class="col">
-                                                        <div class=" owl-center">
-                                                            <div class="card p-3 p-md-5 border-0 bg-white rounded-4">
-                                                                <div class="card-body p-0">
-                                                                </div>
-                                                                <i class="bi bi-x fs-1 text-dark"></i>
-                                                                <p class="font-w-5 lead mb-1">No Works have been added yet.
-                                                                </p>
-                                                                <p class="font-w-2 mb-3">Please Check your search keyword or
-                                                                    <a href="#">See all Works</a>
-                                                                </p>
-                                                            </div>
-                                                        </div>
+                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
+                                                    <div class="card-body p-0">
                                                     </div>
+                                                    <i class="bi bi-x fs-1 text-dark"></i>
+                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
+                                                    </p>
+                                                    <p class="font-w-2">Please Check your search keyword or
+                                                        <a href="/allCreation">See all Works</a>
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             @endforelse
-                            @foreach ($app_designs as $app_design)
+                            @forelse ($app_designs as $app_design)
                                 <div class="grid-item col-lg-4 col-md-6 mb-5 cat2 all">
                                     <div
                                         class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
@@ -115,8 +109,27 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-                            @foreach ($ui_uxs as $ui_ux)
+                            @empty
+                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat2">
+                                    <div class="container">
+                                        <div class="row justify-content-center text-center ">
+                                            <div class="col-12 col-lg-10">
+                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
+                                                    <div class="card-body p-0">
+                                                    </div>
+                                                    <i class="bi bi-x fs-1 text-dark"></i>
+                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
+                                                    </p>
+                                                    <p class="font-w-2">Please Check your search keyword or
+                                                        <a href="/allCreation">See all Works</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforelse
+                            @forelse ($ui_uxs as $ui_ux)
                                 <div class="grid-item col-lg-4 col-md-6 mb-5 cat3 all">
                                     <div
                                         class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
@@ -135,8 +148,27 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-                            @foreach ($desktops as $desktop)
+                                @empty
+                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat3">
+                                    <div class="container">
+                                        <div class="row justify-content-center text-center ">
+                                            <div class="col-12 col-lg-10">
+                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
+                                                    <div class="card-body p-0">
+                                                    </div>
+                                                    <i class="bi bi-x fs-1 text-dark"></i>
+                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
+                                                    </p>
+                                                    <p class="font-w-2">Please Check your search keyword or
+                                                        <a href="/allCreation">See all Works</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforelse
+                            @forelse ($desktops as $desktop)
                                 <div class="grid-item col-lg-4 col-md-6 mb-5 cat4 all">
                                     <div
                                         class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
@@ -155,7 +187,26 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                                @empty
+                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat4">
+                                    <div class="container">
+                                        <div class="row justify-content-center text-center ">
+                                            <div class="col-12 col-lg-10">
+                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
+                                                    <div class="card-body p-0">
+                                                    </div>
+                                                    <i class="bi bi-x fs-1 text-dark"></i>
+                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
+                                                    </p>
+                                                    <p class="font-w-2">Please Check your search keyword or
+                                                        <a href="/allCreation">See all Works</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforelse
                         </div>
                     </div>
                 </div>
