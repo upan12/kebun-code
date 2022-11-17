@@ -12,7 +12,7 @@ class LoginController extends Controller
 {
     public function login()
     {
-        return view('homepage.login');
+        return view('homepage.login', ['active'=>'']);
     }
 
     public function authenticate(Request $request)
@@ -28,8 +28,7 @@ class LoginController extends Controller
             return redirect('/admin')->with('loginSuccess', 'Login success');
         } elseif (User::where(
             [
-                ['nisn', $credentials['nisn']],
-                ['password', $credentials['password']]
+                ['nisn', $credentials['nisn']]
             ])->first()?->status != 2) {
             return back()->with('loginError', 'Account unverified. Please contact admin');
         } elseif (Auth::attempt($credentials)) {
@@ -53,7 +52,9 @@ class LoginController extends Controller
 
     public function register()
     {
-        return view('homepage.register');
+        return view('homepage.register', [
+            'active' => ''
+        ]);
     }
 
     public function Registration(Request $request)
@@ -61,7 +62,7 @@ class LoginController extends Controller
         // return $request->all();
         $validatedData = $request->validate([
             'name' => 'required|min:3|max:15',
-            'nisn' => 'required|numeric|min:8|max:12|unique:users',
+            'nisn' => 'required|numeric|min_digits:8|max_digits:12|unique:users',
             // 'username' => 'required|min:3|max:255|unique:users',
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:8|max:255',

@@ -119,9 +119,11 @@
         <script src="/assets/js/pages-account-settings-account.js"></script>
 
         <!-- inject js end -->
+        {{-- sweet alert --}}
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         @yield('script')
-
+        
     </body>
 
 

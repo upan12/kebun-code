@@ -35,6 +35,7 @@
           <div class="bg-white shadow p-5 rounded-4">
             <form class="row" method="post" action="/create/creation" enctype="multipart/form-data">
               @csrf
+              <input type="hidden" name="user" value="{{ auth()->user()['id'] }}">
               <div class="messages"></div>
               <div class="form-group col-md-6">
                 <label class="font-w-6">Title</label>
@@ -142,7 +143,8 @@
                         <div class="bg-white shadow p-5 rounded-4">
                             <form class="row" method="post" action="/create/creation">
                                 @csrf
-                                <input type="hidden" name="user" value="{{ auth()->user()['id'] }}">
+                                <input type="text" name="user" value="{{ auth()->user()['id'] }}">
+                                <input type="text" name="user" value="msodmaiosdmioasdmo">
                                 <div class="messages"></div>
                                 <div class="form-group col-md-6">
                                     <label class="font-w-6">Title</label>

@@ -8,7 +8,7 @@
                 <div class="col">
                     <nav class="navbar navbar-expand-lg p-4 shadow bg-white">
                         <a class="navbar-brand logo" href="/">
-                            <img class="img-fluid" src="images/favicon.ico" alt="">
+                            <img class="img-fluid" src="/images/favicon.ico" alt="">
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,11 +17,11 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link active" href="/">Home</a>
+                                    <a class="nav-link {{ $active === 'home' ? 'active' : '' }}" href="/">Home</a>
                                 </li>
                                 @auth
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#"
+                                        <a class="nav-link dropdown-toggle {{ $active === 'creation' ? 'active' : '' }}" href="#"
                                             data-bs-toggle="dropdown">Creation</a>
                                         <ul class="dropdown-menu">
                                             <li>
@@ -38,11 +38,11 @@
                                 @endauth
                                 @guest
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link " href="allCreation">Creation</a>
+                                        <a class="nav-link {{ $active === 'creation' ? 'active' : '' }}" href="allCreation">Creation</a>
                                     </li>
                                 @endguest
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link" href="/about">About us</a>
+                                    <a class="nav-link {{ $active === 'aboutUs' ? 'active' : '' }}" href="/aboutUs">About us</a>
                                 </li>
                             </ul>
                         </div>

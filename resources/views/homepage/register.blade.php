@@ -20,7 +20,7 @@
                                         <div class="form-group">
                                             <input id="form_name" type="text" name="name"
                                                 class="form-control @error('name') is-invalid @enderror" placeholder="Name"
-                                                  >
+                                                value="{{ old('name') }}">
                                             @error('name')
                                                 <div id="" class="invalid-feedback">
                                                     {{ $message }}
@@ -32,7 +32,7 @@
                                         <div class="form-group">
                                             <input id="form_lastname" type="text  " name="nisn"
                                                 class="form-control @error('nisn') is-invalid @enderror" placeholder="NISN"
-                                                  >
+                                                value="{{ old('nisn') }}">
                                             @error('nisn')
                                                 <div id="" class="invalid-feedback">
                                                     {{ $message }}
@@ -46,7 +46,7 @@
                                         <div class="form-group">
                                             <input id="form_email" type="email" name="email"
                                                 class="form-control @error('email') is-invalid @enderror"
-                                                placeholder="Email"   >
+                                                placeholder="Email"   value="{{ old('email') }}">
                                             @error('email')
                                                 <div id="" class="invalid-feedback">
                                                     {{ $message }}
@@ -58,7 +58,7 @@
                                         <div class="form-group">
                                             <input id="form_password" type="password" name="password"
                                                 class="form-control @error('password') is-invalid @enderror"
-                                                placeholder="Password"  >
+                                                placeholder="Password"  value="{{ old('password') }}">
                                             @error('password')
                                                 <div id="" class="invalid-feedback">
                                                     {{ $message }}
