@@ -55,7 +55,7 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="grid columns-3 row popup-gallery">
                             <div class="grid-sizer"></div>
-                            @foreach ($web_designs as $web_design)
+                            @forelse ($web_designs as $web_design)
                                 <!-- Modal -->
                                 <div class="modal fade modal-lg" id="editModalCenter{{ $web_design->id }}" tabindex="-1"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -227,8 +227,27 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-                            @foreach ($app_designs as $app_design)
+                            @empty
+                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat1">
+                                    <div class="container">
+                                        <div class="row justify-content-center text-center ">
+                                            <div class="col-12 col-lg-10">
+                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
+                                                    <div class="card-body p-0">
+                                                    </div>
+                                                    <i class="bi bi-x fs-1 text-dark"></i>
+                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
+                                                    </p>
+                                                    <p class="font-w-2">Please Check your search keyword or
+                                                        <a href="/allCreation">See all Works</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforelse
+                            @forelse ($app_designs as $app_design)
                                 <div class="modal fade modal-lg" id="editModalCenter{{ $app_design->id }}"
                                     tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
@@ -400,10 +419,29 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-                            @foreach ($ui_uxs as $ui_ux)
-                                <div class="modal fade modal-lg" id="editModalCenter{{ $ui_ux->id }}"
-                                    tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            @empty
+                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat2">
+                                    <div class="container">
+                                        <div class="row justify-content-center text-center ">
+                                            <div class="col-12 col-lg-10">
+                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
+                                                    <div class="card-body p-0">
+                                                    </div>
+                                                    <i class="bi bi-x fs-1 text-dark"></i>
+                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
+                                                    </p>
+                                                    <p class="font-w-2">Please Check your search keyword or
+                                                        <a href="/allCreation">See all Works</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforelse
+                            @forelse ($ui_uxs as $ui_ux)
+                                <div class="modal fade modal-lg" id="editModalCenter{{ $ui_ux->id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -477,8 +515,7 @@
                                                             <label class="font-w-6">Link Website</label>
                                                             <input type="text" name="link_website"
                                                                 class="form-control" placeholder="Link Website"
-                                                                required="required"
-                                                                value="{{ $ui_ux->link_website }}">
+                                                                required="required" value="{{ $ui_ux->link_website }}">
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-md-12">
@@ -572,10 +609,29 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-                            @foreach ($desktops as $desktop)
-                                <div class="modal fade modal-lg" id="editModalCenter{{ $desktop->id }}"
-                                    tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            @empty
+                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat3">
+                                    <div class="container">
+                                        <div class="row justify-content-center text-center ">
+                                            <div class="col-12 col-lg-10">
+                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
+                                                    <div class="card-body p-0">
+                                                    </div>
+                                                    <i class="bi bi-x fs-1 text-dark"></i>
+                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
+                                                    </p>
+                                                    <p class="font-w-2">Please Check your search keyword or
+                                                        <a href="/allCreation">See all Works</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforelse
+                            @forelse ($desktops as $desktop)
+                                <div class="modal fade modal-lg" id="editModalCenter{{ $desktop->id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -649,8 +705,7 @@
                                                             <label class="font-w-6">Link Website</label>
                                                             <input type="text" name="link_website"
                                                                 class="form-control" placeholder="Link Website"
-                                                                required="required"
-                                                                value="{{ $desktop->link_website }}">
+                                                                required="required" value="{{ $desktop->link_website }}">
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-md-12">
@@ -745,7 +800,26 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            @empty
+                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat4">
+                                    <div class="container">
+                                        <div class="row justify-content-center text-center ">
+                                            <div class="col-12 col-lg-10">
+                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
+                                                    <div class="card-body p-0">
+                                                    </div>
+                                                    <i class="bi bi-x fs-1 text-dark"></i>
+                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
+                                                    </p>
+                                                    <p class="font-w-2">Please Check your search keyword or
+                                                        <a href="/allCreation">See all Works</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforelse
                         </div>
                     </div>
                 </div>
@@ -759,6 +833,11 @@
     <!--body content end-->
 @endsection
 @section('script')
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelector(".portfolio-filter .is-checked").click();
+        });
+    </script>
     <script>
         function deleteCreationVerified() {
             Swal.fire({
@@ -782,7 +861,7 @@
                 Swal.fire({
                     icon: 'success',
                     title: 'Success!!',
-                    text: 'Deleted!',
+                    text: 'Updated!',
                     html: 'Your file has been Updated.',
                     timer: 1700,
                     showCancelButton: false,
@@ -798,6 +877,20 @@
                     title: 'Success!!',
                     text: 'Deleted!',
                     html: 'Your file has been deleted.',
+                    timer: 1700,
+                    showCancelButton: false,
+                    showConfirmButton: false
+                })
+            });
+        </script>
+    @elseif (session('createSuccess'))
+        <script>
+            $(document).ready(function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!!',
+                    text: 'Created!',
+                    html: 'Your file has been created.',
                     timer: 1700,
                     showCancelButton: false,
                     showConfirmButton: false

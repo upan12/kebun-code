@@ -90,24 +90,26 @@ class HomepageController extends Controller
     public function createCreation(Request $request)
     {
         // dd($request->all());
-        Creation::create([
-            'title' => $request->title,
-            'creator' => $request->creator,
-            'technology' => $request->technology,
-            'description' => $request->description,
-            'category_id' => $request->category,
-            'link_website' => $request->link_website,
-            'source_code' => $request->source_code,
-            'image' => $request->file('image')->store('creation-images'),
-            'user_id' =>  $request->user,
-            'status' => '1'
+        $validatedData =  $request->validate([
+            'title' => 'required|max:255',
+            'creator' => 'required|max:255',
+            'technology' => 'required|max:255',
+            'category_id' => 'required',
+            'description' => 'required',
+            'image' => 'image|file|max:1024'
         ]);
 
-        return redirect('addCreation');
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('creation-images');
+        }
+
+        Creation::create($validatedData);
+
+        return redirect('/myCreation')->with('createSuccess', 'createSuccess');
     }
     public function updateCreation(Request $request, Creation $creation)
     {
-        // dd($request->all());
+        dd($request->all());
         $rules = [
             'title' => 'required|max:255',
             'creator' => 'required|max:255',
