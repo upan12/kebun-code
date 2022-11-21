@@ -96,7 +96,7 @@ class HomepageController extends Controller
             'technology' => 'required|max:255',
             'category_id' => 'required',
             'description' => 'required',
-            'image' => 'image|file|max:1024'
+            'image' => 'required|image|file|max:8000'
         ]);
 
         if ($request->file('image')) {
