@@ -96,12 +96,16 @@ class HomepageController extends Controller
             'technology' => 'required|max:255',
             'category_id' => 'required',
             'description' => 'required',
-            'image' => 'required|image|file|max:8000'
+            'image' => 'required|file|max:10'
         ]);
 
         if ($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('creation-images');
         }
+        $validatedData['source_code'] = $request->source_code;
+        $validatedData['link_website'] = $request->link_website;
+        $validatedData['user_id'] = $request->user_id;
+        $validatedData['status'] = $request->status;
 
         Creation::create($validatedData);
 

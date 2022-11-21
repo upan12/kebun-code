@@ -161,10 +161,7 @@
                                                                                             class="list-group-item d-flex justify-content-between align-items-center">
                                                                                             <span
                                                                                                 class="d-flex justify-content-between align-items-center text-dark font-w-6">
-                                                                                                <p>
-                                                                                                    About the app :
-                                                                                                    {{ $creation->description }}
-                                                                                                </p>
+                                                                                                <article>About the app : {!! $creation->description !!}</article>
                                                                                             </span>
                                                                                         </li>
                                                                                     </ul>
@@ -463,10 +460,7 @@
                                                                                         <li class="list-group-item d-flex justify-content-between align-items-center text-dark font-w-6"
                                                                                             style="overflow-wrap: break-word;">
                                                                                             <span>
-                                                                                                <p>
-                                                                                                    About the app :
-                                                                                                    {{ $creation->description }}
-                                                                                                </p>
+                                                                                                <article>About the app : {!! $creation->description !!}</article>
                                                                                             </span>
                                                                                         </li>
                                                                                     </ul>
@@ -809,10 +803,7 @@
                                                                                         </li>
                                                                                         <li class="list-group-item d-flex justify-content-between align-items-center text-dark font-w-6"
                                                                                             style="overflow-wrap: break-word;">
-                                                                                            <span>
-                                                                                                About the app :
-                                                                                                {{ $creation->description }}
-                                                                                            </span>
+                                                                                            <article>About the app : {!! $creation->description !!}</article>
                                                                                         </li>
                                                                                     </ul>
                                                                                 </div>

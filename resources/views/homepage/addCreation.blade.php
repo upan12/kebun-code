@@ -37,7 +37,7 @@
                             <form class="row" method="post" action="/create/creation" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="status" value="1">
-                                <input type="hidden" name="user" value="{{ auth()->user()['id'] }}">
+                                <input type="hidden" name="user_id" value="{{ auth()->user()['id'] }}">
                                 <div class="messages"></div>
                                 <div class="form-group col-md-6">
                                     <label class="font-w-6">Title</label>
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="font-w-6">Category</label>
-                                    <select class="form-select" name="category" required>
+                                    <select class="form-select" name="category_id" required>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
@@ -83,12 +83,12 @@
                                 <div class="form-group col-md-6">
                                     <label class="font-w-6">Link Source Code</label>
                                     <input type="text" name="source_code" class="form-control"
-                                        placeholder="Link Source Code">
+                                        placeholder="Link Source Code" value="{{ old('source_code') }}">
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="font-w-6">Link Website</label>
-                                    <input type="text" name="link_website" class="form-control"
+                                    <input type="text" name="link_website" class="form-control" value="{{ old('link_website') }}"
                                         placeholder="Link Website">
                                 </div>
                                 <!-- Account -->
@@ -100,7 +100,7 @@
                                             <label for="upload" class="btn btn-primary " tabindex="0">
                                                 <span class="d-none d-sm-block">Upload photo</span>
                                                 <i class="bx bx-upload d-block d-sm-none"></i>
-                                                <input required type="file" id="upload" name="image"
+                                                <input type="file" id="upload" name="image"
                                                 class="account-file-input" hidden accept="image/png, image/jpeg" />
                                                
                                                 </label>
@@ -127,7 +127,7 @@
 
                         </div>
                         <div class="col mt-4">
-                            <button class="btn btn-primary">Create Creation</button>
+                            <button type="submit" class="btn btn-primary">Create Creation</button>
                         </div>
                         </form>
                     </div>
