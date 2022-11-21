@@ -100,15 +100,16 @@
                                             <label for="upload" class="btn btn-primary " tabindex="0">
                                                 <span class="d-none d-sm-block">Upload photo</span>
                                                 <i class="bx bx-upload d-block d-sm-none"></i>
-                                                <input type="file" id="upload" name="image"
-                                                    class="account-file-input" hidden accept="image/png, image/jpeg" />
-                                            </label>
-                                            <button type="button"
+                                                <input required type="file" id="upload" name="image"
+                                                class="account-file-input" hidden accept="image/png, image/jpeg" />
+                                               
+                                                </label>
+                                                <button type="button"
                                                 class="btn btn-outline-secondary account-image-reset mb-1">
                                                 <span class="d-none d-sm-block">Reset</span>
                                             </button>
-
                                             <p class="text-muted my-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+                                            
                                         </div>
                                     </div>
                                 </div>
