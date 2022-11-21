@@ -30,7 +30,7 @@
             <a class="nav-link" href="addCreation">Add Creation</a>
           </li>
           <li>
-            <a class="nav-link" href="/about">About Us</a>
+            <a class="nav-link" href="/aboutUs">About Us</a>
           </li>
         </ul>
       </div>

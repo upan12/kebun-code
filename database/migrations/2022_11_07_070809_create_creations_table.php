@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('creator');
             $table->string('technology');
             $table->text('description');
-            $table->string('link_website');
-            $table->string('source_code');
+            $table->string('link_website')->nullable();
+            $table->string('source_code')->nullable();
             $table->string('status');
             $table->string('image')->nullable();
             $table->rememberToken();
