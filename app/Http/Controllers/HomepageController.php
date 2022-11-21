@@ -14,10 +14,10 @@ class HomepageController extends Controller
 {
     public function index()
     {
-        $web_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'Web Design')->latest()->get();
-        $app_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'App Design')->latest()->get();
-        $ui_ux = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'UI/UX')->latest()->get();
-        $desktop = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'Desktop')->latest()->get();
+        $web_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'Web Design'], ['status', '2']])->latest()->get();
+        $app_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'App Design'], ['status', '2']])->latest()->get();
+        $ui_ux = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'UI/UX'], ['status', '2']])->latest()->get();
+        $desktop = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'Desktop'], ['status', '2']])->latest()->get();
 
         return view('homepage.index', [
             'active' => 'home',
@@ -41,10 +41,10 @@ class HomepageController extends Controller
     public function allCreation()
     {
         // $allCreations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->paginate(6);
-        $web_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'Web Design')->latest()->get();
-        $app_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'App Design')->latest()->get();
-        $ui_ux = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'UI/UX')->latest()->get();
-        $desktop = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('categories.name', 'Desktop')->latest()->get();
+        $web_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'Web Design'], ['status', '2']])->latest()->get();
+        $app_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'App Design'], ['status', '2']])->latest()->get();
+        $ui_ux = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'UI/UX'], ['status', '2']])->latest()->get();
+        $desktop = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'Desktop'], ['status', '2']])->latest()->get();
 
         return view('homepage.allCreation', [
             'active' => 'creation',
