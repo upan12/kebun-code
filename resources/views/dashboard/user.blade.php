@@ -74,10 +74,6 @@
                                             </tr>
                                         </thead>
                                         <tbody class="table-border-bottom-0">
-                                            @if (!$users)
-                                            <div class="alert alert-warning text-center" role="alert">There is no
-                                                data!</div>
-                                            @elseif ($users)
                                             @foreach ($users as $user)
 
                                             {{-- Modal edit --}}
@@ -185,7 +181,6 @@
                                                 </td>
                                             </tr>
                                             @endforeach
-                                            @endif
                                         </tbody>
                                     </table>
                                 </div>
@@ -211,10 +206,6 @@
                                             </tr>
                                         </thead>
                                         <tbody class="table-border-bottom-0">
-                                            @if (!$user2)
-                                            <div class="alert alert-warning text-center" role="alert">There is no
-                                                data!</div>
-                                            @elseif ($user2)
                                             @foreach ($user2 as $user)
 
                                             {{-- Modal edit --}}
@@ -328,7 +319,6 @@
                                                 </td>
                                             </tr>
                                             @endforeach
-                                            @endif
                                         </tbody>
                                     </table>
                                 </div>
@@ -354,10 +344,6 @@
                                             </tr>
                                         </thead>
                                         <tbody class="table-border-bottom-0">
-                                            @if (!$user3)
-                                            <div class="alert alert-warning text-center" role="alert">There is no
-                                                data!</div>
-                                            @elseif ($user3)
                                             @foreach ($user3 as $user)
 
                                             {{-- Modal edit --}}
@@ -471,7 +457,6 @@
                                                 </td>
                                             </tr>
                                             @endforeach
-                                            @endif
                                         </tbody>
                                     </table>
                                 </div>
@@ -503,7 +488,7 @@
     function deleteUserVerified() {
         Swal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to return this work!",
+            text: "You won't be able to return this User!",
             icon: 'question',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -519,7 +504,7 @@
     function deleteUserDisable() {
         Swal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to return this work!",
+            text: "You won't be able to return this User!",
             icon: 'question',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -535,7 +520,7 @@
     // status 1
     function verifiedUser(id) {
         Swal.fire({
-            title: 'Do you want to Verified this work?',
+            title: 'Do you want to Verified this User?',
             showCancelButton: true,
             confirmButtonText: 'Yes',
         }).then((result) => {
@@ -549,7 +534,7 @@
     // status 2
     function disableUser(id) {
         Swal.fire({
-            title: 'Do you want to Disable this work?',
+            title: 'Do you want to Disable this User?',
             showCancelButton: true,
             confirmButtonText: 'Yes',
         }).then((result) => {
@@ -563,7 +548,7 @@
     // status 3
     function activeUser(id) {
         Swal.fire({
-            title: 'Do you want to Active this work?',
+            title: 'Do you want to Active this User?',
             showCancelButton: true,
             confirmButtonText: 'Yes',
         }).then((result) => {

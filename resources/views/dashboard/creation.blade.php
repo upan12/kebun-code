@@ -80,10 +80,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="table-border-bottom-0">
-                                                @if (!$creation1)
-                                                    <div class="alert alert-warning text-center" role="alert">There is no
-                                                        data!</div>
-                                                @elseif ($creation1)
                                                     @foreach ($creation1 as $creation)
                                                         {{-- Modal verified --}}
                                                         <div class="modal fade" id="modalCenter{{ $creation->id }}"
@@ -208,7 +204,6 @@
                                                             </td>
                                                         </tr>
                                                     @endforeach
-                                                @endif
                                             </tbody>
                                         </table>
                                     </div>
@@ -235,10 +230,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="table-border-bottom-0">
-                                                @if (!count($creation2))
-                                                    <div class="alert alert-warning text-center" role="alert">There is
-                                                        no data!</div>
-                                                @else
                                                     @foreach ($creation2 as $creation)
                                                         {{-- Modal edit --}}
                                                         <div class="modal fade" id="editModalCenter{{ $creation->id }}"
@@ -552,7 +543,6 @@
 
                                                         </tr>
                                                     @endforeach
-                                                @endif
                                             </tbody>
                                         </table>
                                     </div>
@@ -579,11 +569,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="table-border-bottom-0">
-                                                @if (!count($creation3))
-                                                    <div class="alert alert-warning text-center" role="alert">There is
-                                                        no
-                                                        data!</div>
-                                                @else
                                                     @foreach ($creation3 as $creation)
                                                         {{-- Modal edit --}}
                                                         <div class="modal fade"
@@ -902,7 +887,6 @@
 
                                                         </tr>
                                                     @endforeach
-                                                @endif
                                             </tbody>
                                         </table>
                                     </div>
