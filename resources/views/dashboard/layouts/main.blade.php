@@ -51,6 +51,10 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="/assets/js/config.js"></script>
+
+    <!--== trix.editor -->
+    <link rel="stylesheet" type="text/css" href="/css/trix.css">
+
     <style>
         .swal2-container {
             z-index: 20000 !important;
@@ -67,6 +71,11 @@
         div.dataTables_wrapper div.dataTables_length select {
             width: 70px
         }
+
+        /* trix-editor */
+        /* trix-toolbar [data-trix-button-group="file-tools"] {
+            display: none;
+        } */
     </style>
 
 
@@ -99,6 +108,9 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     {{-- sweet alert --}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--== trix-editor -->
+    <script type="text/javascript" src="/js/trix.js"></script>
 
     {{-- Js Data Table --}}
     <script>

@@ -46,7 +46,6 @@ class DashboardCreationController extends Controller
      */
     public function create()
     {
-        return view('homepage.creation');
     }
 
     /**
@@ -107,6 +106,7 @@ class DashboardCreationController extends Controller
      */
     public function update(Request $request, Creation $creation)
     {
+        // dd($_POST);
         $rules = [
             'title' => 'required|max:255',
             'creator' => 'required|max:255',
