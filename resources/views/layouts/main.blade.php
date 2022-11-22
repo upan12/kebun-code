@@ -44,14 +44,6 @@
     <!--== theme.min -->
     <link href="/css/theme.min.css" rel="stylesheet" />
 
-    <!--== trix.editor -->
-    <link rel="stylesheet" type="text/css" href="/css/trix.css">
-
-    <style>
-        trix-toolbar [data-trix-button-group="file-tools"] {
-            display: none;
-        }
-    </style>
 
     <!-- inject css end -->
 
@@ -112,8 +104,6 @@
         <!--== theme-script -->
         <script src="/js/theme-script.js"></script>
 
-        <!--== trix-editor -->
-        <script type="text/javascript" src="/js/trix.js"></script>
 
         <!--== image-script -->
         <script src="/assets/js/pages-account-settings-account.js"></script>

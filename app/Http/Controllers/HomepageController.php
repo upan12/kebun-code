@@ -89,14 +89,14 @@ class HomepageController extends Controller
 
     public function createCreation(Request $request)
     {
-        // dd($request->all());
+        // dd($request);
         $validatedData =  $request->validate([
             'title' => 'required|max:255',
             'creator' => 'required|max:255',
             'technology' => 'required|max:255',
             'category_id' => 'required',
             'description' => 'required',
-            'image' => 'required|file|max:10'
+            'image' => 'required|file|max:8000'
         ]);
 
         if ($request->file('image')) {
@@ -113,7 +113,7 @@ class HomepageController extends Controller
     }
     public function updateCreation(Request $request, Creation $creation)
     {
-        dd($request->all());
+        // dd($request->all());
         $rules = [
             'title' => 'required|max:255',
             'creator' => 'required|max:255',

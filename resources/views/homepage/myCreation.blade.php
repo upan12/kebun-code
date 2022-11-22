@@ -55,7 +55,7 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="grid columns-3 row popup-gallery">
                             <div class="grid-sizer"></div>
-                            @if (!count($web_designs) && !count($app_designs) && !count($ui_uxs) && !count($desktops) )
+                            @if (!count($web_designs) && !count($app_designs) && !count($ui_uxs) && !count($desktops))
                                 <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 all">
                                     <div class="container">
                                         <div class="row justify-content-center text-center ">
@@ -181,12 +181,12 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-md-12">
-                                                        <label class="font-w-6" for="description">Description</label>
-                                                        <input id="description" type="hidden" name="description"
-                                                            value="{{ old('description', $web_design->description) }}">
-                                                        <trix-editor input="description"></trix-editor>
+                                                        <div class="mb-3">
+                                                            <label for="description"
+                                                                class="form-label font-w-6">Description</label>
+                                                            <textarea class="form-control" id="description" name="description" rows="3">{{ $web_design->description }}</textarea>
+                                                        </div>
                                                     </div>
-
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -216,11 +216,14 @@
                                             class="portfolio-title d-flex justify-content-between align-items-center mt-3">
                                             <div>
                                                 @if ($web_design->status == 1)
-                                                <small class="mb-2">{{ $web_design->categories_name }} <span class="badge rounded-pill text-bg-warning">Unverified!</span></small>
+                                                    <small class="mb-2">{{ $web_design->categories_name }} <span
+                                                            class="badge rounded-pill text-bg-warning">Unverified!</span></small>
                                                 @elseif($web_design->status == 2)
-                                                <small class="mb-2">{{ $web_design->categories_name }} <span class="badge rounded-pill text-bg-success">Actived!</span></small>
+                                                    <small class="mb-2">{{ $web_design->categories_name }} <span
+                                                            class="badge rounded-pill text-bg-success">Actived!</span></small>
                                                 @elseif($web_design->status == 3)
-                                                <small class="mb-2">{{ $web_design->categories_name }} <span class="badge rounded-pill text-bg-secondary">Disabled!</span></small>
+                                                    <small class="mb-2">{{ $web_design->categories_name }} <span
+                                                            class="badge rounded-pill text-bg-secondary">Disabled!</span></small>
                                                 @endif
                                                 <h6 class="mb-0">
                                                     <a class="btn-link"
@@ -379,10 +382,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-md-12">
-                                                        <label class="font-w-6" for="description">Description</label>
-                                                        <input id="description" type="hidden" name="description"
-                                                            value="{{ old('description', $app_design->description) }}">
-                                                        <trix-editor input="description"></trix-editor>
+                                                        <div class="mb-3">
+                                                            <label for="description"
+                                                                class="form-label font-w-6">Description</label>
+                                                            <textarea class="form-control" id="description" name="description" rows="3">{{ $app_design->description }}</textarea>
+                                                        </div>
                                                     </div>
 
                                                 </div>
@@ -414,11 +418,14 @@
                                             class="portfolio-title d-flex justify-content-between align-items-center mt-3">
                                             <div>
                                                 @if ($app_design->status == 1)
-                                                <small class="mb-2">{{ $app_design->categories_name }} <span class="badge rounded-pill text-bg-warning">Unverified!</span></small>
+                                                    <small class="mb-2">{{ $app_design->categories_name }} <span
+                                                            class="badge rounded-pill text-bg-warning">Unverified!</span></small>
                                                 @elseif($app_design->status == 2)
-                                                <small class="mb-2">{{ $app_design->categories_name }} <span class="badge rounded-pill text-bg-success">Actived!</span></small>
+                                                    <small class="mb-2">{{ $app_design->categories_name }} <span
+                                                            class="badge rounded-pill text-bg-success">Actived!</span></small>
                                                 @elseif($app_design->status == 3)
-                                                <small class="mb-2">{{ $app_design->categories_name }} <span class="badge rounded-pill text-bg-secondary">Disabled!</span></small>
+                                                    <small class="mb-2">{{ $app_design->categories_name }} <span
+                                                            class="badge rounded-pill text-bg-secondary">Disabled!</span></small>
                                                 @endif
                                                 <h6 class="mb-0">
                                                     <a class="btn-link"
@@ -576,10 +583,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-md-12">
-                                                        <label class="font-w-6" for="description">Description</label>
-                                                        <input id="description" type="hidden" name="description"
-                                                            value="{{ old('description', $ui_ux->description) }}">
-                                                        <trix-editor input="description"></trix-editor>
+                                                        <div class="mb-3">
+                                                            <label for="description"
+                                                                class="form-label font-w-6">Description</label>
+                                                            <textarea class="form-control" id="description" name="description" rows="3">{{ $ui_ux->description }}</textarea>
+                                                        </div>
                                                     </div>
 
                                                 </div>
@@ -610,11 +618,14 @@
                                             class="portfolio-title d-flex justify-content-between align-items-center mt-3">
                                             <div>
                                                 @if ($ui_ux->status == 1)
-                                                <small class="mb-2">{{ $ui_ux->categories_name }} <span class="badge rounded-pill text-bg-warning">Unverified!</span></small>
+                                                    <small class="mb-2">{{ $ui_ux->categories_name }} <span
+                                                            class="badge rounded-pill text-bg-warning">Unverified!</span></small>
                                                 @elseif($ui_ux->status == 2)
-                                                <small class="mb-2">{{ $ui_ux->categories_name }} <span class="badge rounded-pill text-bg-success">Actived!</span></small>
+                                                    <small class="mb-2">{{ $ui_ux->categories_name }} <span
+                                                            class="badge rounded-pill text-bg-success">Actived!</span></small>
                                                 @elseif($ui_ux->status == 3)
-                                                <small class="mb-2">{{ $ui_ux->categories_name }} <span class="badge rounded-pill text-bg-secondary">Disabled!</span></small>
+                                                    <small class="mb-2">{{ $ui_ux->categories_name }} <span
+                                                            class="badge rounded-pill text-bg-secondary">Disabled!</span></small>
                                                 @endif
                                                 <h6 class="mb-0">
                                                     <a class="btn-link"
@@ -772,10 +783,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-md-12">
-                                                        <label class="font-w-6" for="description">Description</label>
-                                                        <input id="description" type="hidden" name="description"
-                                                            value="{{ old('description', $desktop->description) }}">
-                                                        <trix-editor input="description"></trix-editor>
+                                                        <div class="mb-3">
+                                                            <label for="description"
+                                                                class="form-label font-w-6">Description</label>
+                                                            <textarea class="form-control" id="description" name="description" rows="3">{{ $desktop->description }}</textarea>
+                                                        </div>
                                                     </div>
 
                                                 </div>
@@ -807,11 +819,14 @@
                                             class="portfolio-title d-flex justify-content-between align-items-center mt-3">
                                             <div>
                                                 @if ($desktop->status == 1)
-                                                <small class="mb-2">{{ $desktop->categories_name }} <span class="badge rounded-pill text-bg-warning">Unverified!</span></small>
+                                                    <small class="mb-2">{{ $desktop->categories_name }} <span
+                                                            class="badge rounded-pill text-bg-warning">Unverified!</span></small>
                                                 @elseif($desktop->status == 2)
-                                                <small class="mb-2">{{ $desktop->categories_name }} <span class="badge rounded-pill text-bg-success">Actived!</span></small>
+                                                    <small class="mb-2">{{ $desktop->categories_name }} <span
+                                                            class="badge rounded-pill text-bg-success">Actived!</span></small>
                                                 @elseif($desktop->status == 3)
-                                                <small class="mb-2">{{ $desktop->categories_name }} <span class="badge rounded-pill text-bg-secondary">Disabled!</span></small>
+                                                    <small class="mb-2">{{ $desktop->categories_name }} <span
+                                                            class="badge rounded-pill text-bg-secondary">Disabled!</span></small>
                                                 @endif
                                                 <h6 class="mb-0">
                                                     <a class="btn-link"

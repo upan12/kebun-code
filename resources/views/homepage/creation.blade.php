@@ -57,12 +57,20 @@
                                 <li>
                                     <div class="row">
                                         <div class="col-6">
-                                            <a class="text-dark btn btn-outline-primary w-100 font-w-6"
-                                                href="{{ $creation->source_code }}" target="_blank">Source Code</a>
+                                            @if (!$creation->source_code)
+                                                <button class="btn btn-outline-primary disabled">Source Code</button>
+                                            @else
+                                                <a class="text-dark btn btn-outline-primary w-100 font-w-6"
+                                                    href="{{ $creation->source_code }}" target="_blank">Source Code</a>
+                                            @endif
                                         </div>
                                         <div class="col-6">
-                                            <a class="text-dark btn btn-outline-primary w-100 font-w-6"
-                                                href="{{ $creation->link_website }}" target="_blank">Visit Website</a>
+                                            @if (!$creation->link_website)
+                                                <button class="btn btn-outline-primary disabled">Visit Website</button>
+                                            @else
+                                                <a class="text-dark btn btn-outline-primary w-100 font-w-6"
+                                                    href="{{ $creation->link_website }}" target="_blank">Visit Website</a>
+                                            @endif
                                         </div>
                                     </div>
                                 </li>

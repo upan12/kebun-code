@@ -74,50 +74,64 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="font-w-6">Category</label>
-                                    <select class="form-select" name="category_id" required>
+                                    <select class="form-select @error('category_id') is-invalid @enderror"
+                                        name="category_id">
+                                        <option value="">Select your category</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
+                                    @error('category_id')
+                                        <div id="" class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="font-w-6">Link Source Code</label>
                                     <input type="text" name="source_code" class="form-control"
                                         placeholder="Link Source Code" value="{{ old('source_code') }}">
                                     <div class="help-block with-errors"></div>
+                                    <p><small>*can be empty</small></p>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="font-w-6">Link Website</label>
-                                    <input type="text" name="link_website" class="form-control" value="{{ old('link_website') }}"
-                                        placeholder="Link Website">
+                                    <input type="text" name="link_website" class="form-control"
+                                        value="{{ old('link_website') }}" placeholder="Link Website">
+                                    <p><small>*can be empty</small></p>
                                 </div>
                                 <!-- Account -->
                                 <div class="form-group col-md-12">
                                     <div class="d-flex align-items-start gap-4">
                                         <img src="images/portfolio/large/01.jpg" alt="user-avatar" class="d-block rounded"
-                                            height="200" {{-- width="200" --}} id="uploadedAvatar" />
+                                            height="200" id="uploadedAvatar" />
                                         <div class="button-wrapper">
-                                            <label for="upload" class="btn btn-primary " tabindex="0">
+                                            <label for="upload" class="btn btn-primary" tabindex="0">
                                                 <span class="d-none d-sm-block">Upload photo</span>
                                                 <i class="bx bx-upload d-block d-sm-none"></i>
                                                 <input type="file" id="upload" name="image"
-                                                class="account-file-input" hidden accept="image/png, image/jpeg" />
-                                               
-                                                </label>
-                                                <button type="button"
+                                                    class="account-file-input @error('image') is-invalid @enderror" hidden
+                                                    accept="image/png, image/jpeg" />
+                                            </label>
+                                            <button type="button"
                                                 class="btn btn-outline-secondary account-image-reset mb-1">
                                                 <span class="d-none d-sm-block">Reset</span>
                                             </button>
-                                            <p class="text-muted my-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
-                                            
+                                            <p class="text-muted my-0 is-invalid">Allowed JPG, GIF or PNG. Max size of 800K
+                                            </p>
+                                            @error('image')
+                                                <div id="" class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label class="font-w-6" for="description">Description</label>
-                                    <input id="description" class="@error('description') is-invalid @enderror"
-                                        type="hidden" name="description" value="{{ old('description') }}">
-                                    <trix-editor input="description"></trix-editor>
+                                    <div class="mb-3">
+                                        <label for="description" class="form-label font-w-6">Description</label>
+                                        <textarea class="form-control @error('category_id') is-invalid @enderror" id="description" name="description" rows="3">{{ old('description') }}</textarea>
                                     @error('description')
                                         <div id="" class="invalid-feedback">
                                             {{ $message }}

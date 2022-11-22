@@ -21,7 +21,14 @@ class DatabaseSeeder extends Seeder
     {
         Creation::factory(5)->create();
         User::factory(5)->create();
-        
+        User::create([
+            'name' => 'admin',
+            'nisn' => '11223344',
+            'email' => 'admin@gmail.com',
+            'status' => '4',
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+            
+        ]);
         Category::create([
             'name' => 'Web Design'
         ]);
