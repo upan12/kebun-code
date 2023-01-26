@@ -168,11 +168,13 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="button"
-                                                                            class="btn btn-outline-secondary"
-                                                                            data-bs-dismiss="modal">
-                                                                            Close
-                                                                        </button>
+                                                                        <form action="/creation/check/{{ $creation->id }}"
+                                                                            method="post" enctype="multipart/form-data">
+                                                                            @method('put')
+                                                                            @csrf
+                                                                            <button type="submit" class="btn btn-danger"
+                                                                                onclick="deleteCreationVerified()"><i></i>Delete</button>
+                                                                        </form>
                                                                         <button type="button" class="btn btn-primary"
                                                                             onclick="verifiedCreation({{ $creation->id }})">Confirm</button>
                                                                     </div>

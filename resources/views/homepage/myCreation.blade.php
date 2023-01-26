@@ -142,8 +142,7 @@
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Link Source Code</label>
                                                             <input type="text" name="source_code" class="form-control"
-                                                                placeholder="Link Source Code" required="required"
-                                                                data-error="Link is required."
+                                                                placeholder="Link Source Code"
                                                                 value="{{ $web_design->source_code }}">
                                                             <div class="help-block with-errors"></div>
                                                         </div>
@@ -151,7 +150,6 @@
                                                             <label class="font-w-6">Link Website</label>
                                                             <input type="text" name="link_website"
                                                                 class="form-control" placeholder="Link Website"
-                                                                required="required"
                                                                 value="{{ $web_design->link_website }}">
                                                         </div>
                                                     </div>
@@ -343,8 +341,7 @@
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Link Source Code</label>
                                                             <input type="text" name="source_code" class="form-control"
-                                                                placeholder="Link Source Code" required="required"
-                                                                data-error="Link is required."
+                                                                placeholder="Link Source Code"
                                                                 value="{{ $app_design->source_code }}">
                                                             <div class="help-block with-errors"></div>
                                                         </div>
@@ -352,7 +349,6 @@
                                                             <label class="font-w-6">Link Website</label>
                                                             <input type="text" name="link_website"
                                                                 class="form-control" placeholder="Link Website"
-                                                                required="required"
                                                                 value="{{ $app_design->link_website }}">
                                                         </div>
                                                     </div>
@@ -545,16 +541,14 @@
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Link Source Code</label>
                                                             <input type="text" name="source_code" class="form-control"
-                                                                placeholder="Link Source Code" required="required"
-                                                                data-error="Link is required."
+                                                                placeholder="Link Source Code"
                                                                 value="{{ $ui_ux->source_code }}">
                                                             <div class="help-block with-errors"></div>
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Link Website</label>
                                                             <input type="text" name="link_website"
-                                                                class="form-control" placeholder="Link Website"
-                                                                required="required" value="{{ $ui_ux->link_website }}">
+                                                                class="form-control" placeholder="Link Website" value="{{ $ui_ux->link_website }}">
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-md-12">
@@ -745,16 +739,14 @@
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Link Source Code</label>
                                                             <input type="text" name="source_code" class="form-control"
-                                                                placeholder="Link Source Code" required="required"
-                                                                data-error="Link is required."
+                                                                placeholder="Link Source Code"
                                                                 value="{{ $desktop->source_code }}">
                                                             <div class="help-block with-errors"></div>
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Link Website</label>
                                                             <input type="text" name="link_website"
-                                                                class="form-control" placeholder="Link Website"
-                                                                required="required" value="{{ $desktop->link_website }}">
+                                                                class="form-control" placeholder="Link Website" value="{{ $desktop->link_website }}">
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-md-12">

@@ -119,8 +119,6 @@ class HomepageController extends Controller
             'creator' => 'required|max:255',
             'technology' => 'required|max:255',
             'category_id' => 'required',
-            'source_code' => 'required',
-            'link_website' => 'required',
             'description' => 'required|max:255',
             'image' => 'image|file|max:1024'
         ];

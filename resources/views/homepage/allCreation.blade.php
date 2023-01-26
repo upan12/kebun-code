@@ -74,10 +74,18 @@
                                 <div class="grid-item col-lg-4 col-md-6 mb-5 cat1 all">
                                     <div
                                         class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                        <a class="popup-img btn-link" href="">
-                                            <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
-                                                alt="">
-                                        </a>
+                                        @if ($web_design->image)
+                                            <a class="popup-img btn-link"
+                                                href="{{ asset('storage/' . $web_design->image) }}">
+                                                <img class="img-fluid w-100 rounded-4"
+                                                    src="{{ asset('storage/' . $web_design->image) }}" alt="">
+                                            </a>
+                                        @else
+                                            <a class="popup-img btn-link" href="images/portfolio/01.jpg">
+                                                <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
+                                                    alt="">
+                                            </a>
+                                        @endif
                                         <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
                                             <div>
                                                 <small class="mb-2">{{ $web_design->categories_name }}</small>
@@ -113,10 +121,18 @@
                                 <div class="grid-item col-lg-4 col-md-6 mb-5 cat2 all">
                                     <div
                                         class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                        <a class="popup-img btn-link" href="">
-                                            <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
-                                                alt="">
-                                        </a>
+                                        @if ($app_design->image)
+                                            <a class="popup-img btn-link"
+                                                href="{{ asset('storage/' . $app_design->image) }}">
+                                                <img class="img-fluid w-100 rounded-4"
+                                                    src="{{ asset('storage/' . $app_design->image) }}" alt="">
+                                            </a>
+                                        @else
+                                            <a class="popup-img btn-link" href="images/portfolio/01.jpg">
+                                                <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
+                                                    alt="">
+                                            </a>
+                                        @endif
                                         <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
                                             <div>
                                                 <small class="mb-2">{{ $app_design->categories_name }}</small>
@@ -152,10 +168,18 @@
                                 <div class="grid-item col-lg-4 col-md-6 mb-5 cat3 all">
                                     <div
                                         class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                        <a class="popup-img btn-link" href="">
-                                            <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
-                                                alt="">
-                                        </a>
+                                        @if ($ui_ux->image)
+                                            <a class="popup-img btn-link"
+                                                href="{{ asset('storage/' . $ui_ux->image) }}">
+                                                <img class="img-fluid w-100 rounded-4"
+                                                    src="{{ asset('storage/' . $ui_ux->image) }}" alt="">
+                                            </a>
+                                        @else
+                                            <a class="popup-img btn-link" href="images/portfolio/01.jpg">
+                                                <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
+                                                    alt="">
+                                            </a>
+                                        @endif
                                         <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
                                             <div>
                                                 <small class="mb-2">{{ $ui_ux->categories_name }}</small>
@@ -191,10 +215,18 @@
                                 <div class="grid-item col-lg-4 col-md-6 mb-5 cat4 all">
                                     <div
                                         class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                        <a class="popup-img btn-link" href="">
-                                            <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
-                                                alt="">
-                                        </a>
+                                        @if ($desktop->image)
+                                            <a class="popup-img btn-link"
+                                                href="{{ asset('storage/' . $desktop->image) }}">
+                                                <img class="img-fluid w-100 rounded-4"
+                                                    src="{{ asset('storage/' . $desktop->image) }}" alt="">
+                                            </a>
+                                        @else
+                                            <a class="popup-img btn-link" href="images/portfolio/01.jpg">
+                                                <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
+                                                    alt="">
+                                            </a>
+                                        @endif
                                         <div
                                             class="portfolio-title d-flex justify-content-between align-items-center mt-3">
                                             <div>
