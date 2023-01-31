@@ -73,10 +73,18 @@
                                 <div class="grid-item col-lg-4 col-md-6 mb-5 cat{{ $allCr->categories_id }} all">
                                     <div
                                         class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                        <a class="popup-img btn-link" href="">
-                                            <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
-                                                alt="">
-                                        </a>
+                                        @if ($web_design->image)
+                                            <a class="popup-img btn-link"
+                                                href="{{ asset('storage/' . $web_design->image) }}">
+                                                <img class="img-fluid w-100 rounded-4"
+                                                    src="{{ asset('storage/' . $web_design->image) }}" alt="">
+                                            </a>
+                                        @else
+                                            <a class="popup-img btn-link" href="images/portfolio/01.jpg">
+                                                <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
+                                                    alt="">
+                                            </a>
+                                        @endif
                                         <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
                                             <div>
                                                 <small class="mb-2">{{ $allCr->categories_name }}</small>
