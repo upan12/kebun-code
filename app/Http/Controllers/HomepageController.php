@@ -14,63 +14,43 @@ class HomepageController extends Controller
 {
     public function index()
     {
-        $web_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'Web Design'], ['status', '2']])->latest()->get();
-        $app_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'App Design'], ['status', '2']])->latest()->get();
-        $ui_ux = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'UI/UX'], ['status', '2']])->latest()->get();
-        $desktop = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'Desktop'], ['status', '2']])->latest()->get();
+        $allCreations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as cories_name', 'creations.*')->where([['categories.name', 'Desktop'], ['status', '2']])->latest()->get();
 
         return view('homepage.index', [
             'active' => 'home',
             'categories' => Category::all(),
-            'web_designs' => $web_design,
-            'app_designs' => $app_design,
-            'ui_uxs' => $ui_ux,
-            'desktops' => $desktop,
+            'allCreations' => $allCreations
         ]);
     }
     public function creation(Creation $id)
     {
+        $creation = Creation::leftJoin('users', 'creations.user_id', '=', 'users.id')->where([['creations.id', $id->id]])->first();
         // dd($id);
         return view('homepage.creation', [
             'active' => 'creation',
-            'creation' => $id,
-            'creations' => Creation::all(),
-            'categories' => Category::all()
+            'creation' => $creation,
+            // 'creation' => Creation::leftJoin('users', 'creation.user_id', '=', 'users.id')->where('creation.user_id', $id),
+            // 'categories' => Category::all()
         ]);
     }
     public function allCreation()
     {
-        // $allCreations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->paginate(6);
-        $web_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'Web Design'], ['status', '2']])->latest()->get();
-        $app_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'App Design'], ['status', '2']])->latest()->get();
-        $ui_ux = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'UI/UX'], ['status', '2']])->latest()->get();
-        $desktop = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'Desktop'], ['status', '2']])->latest()->get();
+        $allCreations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name','categories.id as categories_id', 'creations.*')->where( [['status', '2']])->latest()->get();
 
         return view('homepage.allCreation', [
             'active' => 'creation',
-            // 'creations' => $allCreations,
-            'web_designs' => $web_design,
-            'app_designs' => $app_design,
-            'ui_uxs' => $ui_ux,
-            'desktops' => $desktop,
-            // 'categories' => Category::all()
+            'categories' => Category::all(),
+            'allCreations' => $allCreations
         ]);
     }
     public function myCreation()
     {
-        $web_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'Web Design'], ['user_id', Auth::id()]])->latest()->get();
-        $app_design = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'App Design'], ['user_id', Auth::id()]])->latest()->get();
-        $ui_ux = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'UI/UX'], ['user_id', Auth::id()]])->latest()->get();
-        $desktop = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where([['categories.name', 'Desktop'], ['user_id', Auth::id()]])->latest()->get();
-        // dd($web_design);
+        $allCreations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name','categories.id as categories_id', 'creations.*')->where( [['user_id', Auth::id()]])->latest()->get();
+
         return view('homepage.myCreation', [
             'active' => 'creation',
-            'web_designs' => $web_design,
-            'app_designs' => $app_design,
-            'ui_uxs' => $ui_ux,
-            'desktops' => $desktop,
-            'categories' => Category::all()
-
+            'categories' => Category::all(),
+            'allCreations' => $allCreations
         ]);
     }
     public function addCreation()
@@ -92,7 +72,6 @@ class HomepageController extends Controller
         // dd($request);
         $validatedData =  $request->validate([
             'title' => 'required|max:255',
-            'creator' => 'required|max:255',
             'technology' => 'required|max:255',
             'category_id' => 'required',
             'description' => 'required',

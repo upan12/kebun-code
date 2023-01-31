@@ -294,10 +294,9 @@
                     <div class="col-12 col-md-12 col-lg-6 ms-auto">
                         <div class="portfolio-filter d-sm-flex align-items-center justify-content-lg-end">
                             <button data-filter=".all" class="is-checked mb-2 mb-sm-0">All</button>
-                            <button data-filter=".cat1" class="mb-2 mb-sm-0">Web Design</button>
-                            <button data-filter=".cat2">App Design</button>
-                            <button data-filter=".cat3">UI /UX</button>
-                            <button data-filter=".cat4">Desktop</button>
+                            @foreach ($categories as $cat)
+                                <button data-filter=".cat{{ $cat->id }}">{{ $cat->name }}</button>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -306,7 +305,7 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="grid columns-3 row popup-gallery">
                             <div class="grid-sizer"></div>
-                            @if (!count($web_designs) && !count($app_designs) && !count($ui_uxs) && !count($desktops) )
+                            @if (!count($allCreations))
                                 <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 all">
                                     <div class="container">
                                         <div class="row justify-content-center text-center ">
@@ -317,8 +316,8 @@
                                                     <i class="bi bi-x fs-1 text-dark"></i>
                                                     <p class="font-w-5 lead mb-1">No Works have been added yet.
                                                     </p>
-                                                    <p class="font-w-2">Please Check your search keyword or
-                                                        <a href="/allCreation">See all Works</a>
+                                                    <p class="font-w-2">You can upload your creation
+                                                        <a href="/addCreation">Upload Now</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -326,8 +325,8 @@
                                     </div>
                                 </div>
                             @endif
-                            @forelse ($web_designs as $web_design)
-                                <div class="grid-item col-lg-4 col-md-6 mb-5 cat1 all">
+                            @foreach ($allCreations as $allCr)
+                                <div class="grid-item col-lg-4 col-md-6 mb-5 cat{{ $allCr->categories_id }} all">
                                     <div
                                         class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
                                         <a class="popup-img btn-link" href="">
@@ -336,159 +335,21 @@
                                         </a>
                                         <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
                                             <div>
-                                                <small class="mb-2">{{ $web_design->categories_name }}</small>
+                                                <small class="mb-2">{{ $allCr->categories_name }}</small>
                                                 <h6 class="mb-0">
                                                     <a class="btn-link"
-                                                        href="/creation/{{ $web_design->id }}">{{ $web_design->title }}</a>
+                                                        href="/creation/{{ $allCr->categories_id }}">{{ $allCr->title }}</a>
                                                 </h6>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            @empty
-                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat1">
-                                    <div class="container">
-                                        <div class="row justify-content-center text-center ">
-                                            <div class="col-12 col-lg-10">
-                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
-                                                    <div class="card-body p-0">
-                                                    </div>
-                                                    <i class="bi bi-x fs-1 text-dark"></i>
-                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
-                                                    </p>
-                                                    <p class="font-w-2">Please Check your search keyword or
-                                                        <a href="/allCreation">See all Works</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforelse
-                            @forelse ($app_designs as $app_design)
-                                <div class="grid-item col-lg-4 col-md-6 mb-5 cat2 all">
-                                    <div
-                                        class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                        <a class="popup-img btn-link" href="">
-                                            <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
-                                                alt="">
-                                        </a>
-                                        <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
-                                            <div>
-                                                <small class="mb-2">{{ $app_design->categories_name }}</small>
-                                                <h6 class="mb-0">
-                                                    <a class="btn-link"
-                                                        href="/creation/{{ $app_design->id }}">{{ $app_design->title }}</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @empty
-                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat2">
-                                    <div class="container">
-                                        <div class="row justify-content-center text-center ">
-                                            <div class="col-12 col-lg-10">
-                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
-                                                    <div class="card-body p-0">
-                                                    </div>
-                                                    <i class="bi bi-x fs-1 text-dark"></i>
-                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
-                                                    </p>
-                                                    <p class="font-w-2">Please Check your search keyword or
-                                                        <a href="/allCreation">See all Works</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforelse
-                            @forelse ($ui_uxs as $ui_ux)
-                                <div class="grid-item col-lg-4 col-md-6 mb-5 cat3 all">
-                                    <div
-                                        class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                        <a class="popup-img btn-link" href="">
-                                            <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
-                                                alt="">
-                                        </a>
-                                        <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
-                                            <div>
-                                                <small class="mb-2">{{ $ui_ux->categories_name }}</small>
-                                                <h6 class="mb-0">
-                                                    <a class="btn-link"
-                                                        href="/creation/{{ $ui_ux->id }}">{{ $ui_ux->title }}</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                @empty
-                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat3">
-                                    <div class="container">
-                                        <div class="row justify-content-center text-center ">
-                                            <div class="col-12 col-lg-10">
-                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
-                                                    <div class="card-body p-0">
-                                                    </div>
-                                                    <i class="bi bi-x fs-1 text-dark"></i>
-                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
-                                                    </p>
-                                                    <p class="font-w-2">Please Check your search keyword or
-                                                        <a href="/allCreation">See all Works</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforelse
-                            @forelse ($desktops as $desktop)
-                                <div class="grid-item col-lg-4 col-md-6 mb-5 cat4 all">
-                                    <div
-                                        class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
-                                        <a class="popup-img btn-link" href="">
-                                            <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
-                                                alt="">
-                                        </a>
-                                        <div class="portfolio-title d-flex justify-content-between align-items-center mt-3">
-                                            <div>
-                                                <small class="mb-2">{{ $desktop->categories_name }}</small>
-                                                <h6 class="mb-0">
-                                                    <a class="btn-link"
-                                                        href="/creation/{{ $desktop->id }}">{{ $desktop->title }}</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                @empty
-                                <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 cat4">
-                                    <div class="container">
-                                        <div class="row justify-content-center text-center ">
-                                            <div class="col-12 col-lg-10">
-                                                <div class="card p-2 p-md-4 border-0 bg-white rounded-4">
-                                                    <div class="card-body p-0">
-                                                    </div>
-                                                    <i class="bi bi-x fs-1 text-dark"></i>
-                                                    <p class="font-w-5 lead mb-1">No Works have been added yet.
-                                                    </p>
-                                                    <p class="font-w-2">Please Check your search keyword or
-                                                        <a href="/allCreation">See all Works</a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforelse
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
-    </div>
-    </section>
+        </section>
 
     <!--portfolio end-->
 
