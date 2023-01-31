@@ -19,6 +19,7 @@ class CreationFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(mt_rand(2, 5)),
+            'creator' => $this->faker->sentence(mt_rand(1, 2)),
             'technology' => $this->faker->sentence(mt_rand(2, 3)),
             'description' => $this->faker->sentence(mt_rand(5,10)),
             'link_website' => $this->faker->sentence(mt_rand(2, 5)),

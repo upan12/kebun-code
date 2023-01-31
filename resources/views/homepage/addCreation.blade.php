@@ -50,7 +50,7 @@
                                         </div>
                                     @enderror
                                 </div>
-                                {{-- <div class="form-group col-md-6">
+                                <div class="form-group col-md-6">
                                     <label class="font-w-6">Creator</label>
                                     <input type="text" name="creator"
                                         class="form-control @error('creator') is-invalid @enderror" placeholder="Creator"
@@ -60,7 +60,7 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                </div> --}}
+                                </div>
                                 <div class="form-group col-md-6">
                                     <label class="font-w-6">Technology</label>
                                     <input type="text" name="technology"
@@ -71,20 +71,6 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                </div>
-                                
-                                <div class="form-group col-md-6">
-                                    <label class="font-w-6">Link Source Code</label>
-                                    <input type="text" name="source_code" class="form-control"
-                                        placeholder="Link Source Code" value="{{ old('source_code') }}">
-                                    <div class="help-block with-errors"></div>
-                                    <p class="m-0"><small>*can be empty</small></p>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label class="font-w-6">Link Website</label>
-                                    <input type="text" name="link_website" class="form-control"
-                                        value="{{ old('link_website') }}" placeholder="Link Website">
-                                    <p class="m-0"><small>*can be empty</small></p>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="font-w-6">Category</label>
@@ -102,13 +88,17 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                        <label for="description" class="form-label font-w-6">Description</label>
-                                        <textarea class="form-control @error('category_id') is-invalid @enderror" id="description" name="description" rows="3">{{ old('description') }}</textarea>
-                                    @error('description')
-                                        <div id="" class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
+                                    <label class="font-w-6">Link Source Code</label>
+                                    <input type="text" name="source_code" class="form-control"
+                                        placeholder="Link Source Code" value="{{ old('source_code') }}">
+                                    <div class="help-block with-errors"></div>
+                                    <p><small>*can be empty</small></p>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="font-w-6">Link Website</label>
+                                    <input type="text" name="link_website" class="form-control"
+                                        value="{{ old('link_website') }}" placeholder="Link Website">
+                                    <p><small>*can be empty</small></p>
                                 </div>
                                 <!-- Account -->
                                 <div class="form-group col-md-12">
@@ -138,7 +128,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <div class="form-group col-md-12">
+                                    <div class="mb-3">
+                                        <label for="description" class="form-label font-w-6">Description</label>
+                                        <textarea class="form-control @error('category_id') is-invalid @enderror" id="description" name="description" rows="3">{{ old('description') }}</textarea>
+                                    @error('description')
+                                        <div id="" class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
 
                         </div>
                         <div class="col mt-4">
