@@ -103,16 +103,7 @@
                                                                 value="{{ $web_design->title }}">
                                                             <div class="help-block with-errors"></div>
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label class="font-w-6">Creator</label>
-                                                            <input type="text" name="creator" class="form-control"
-                                                                placeholder="Creator" required="required"
-                                                                data-error="Creator is required."
-                                                                value="{{ $web_design->creator }}">
-                                                            <div class="help-block with-errors"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
+                                                        
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Technology</label>
                                                             <input type="text" name="technology" class="form-control"
@@ -121,6 +112,8 @@
                                                                 value="{{ $web_design->technology }}">
                                                             <div class="help-block with-errors"></div>
                                                         </div>
+                                                    </div>
+                                                    <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Category</label>
                                                             <select class="form-select" name="category_id">
@@ -132,12 +125,17 @@
                                                                     @else
                                                                         <option value="{{ $category->id }}">
                                                                             {{ $category->name }}
-                                                                        </option>
-                                                                    @endif
-                                                                @endforeach
+                                                                            </option>
+                                                                            @endif
+                                                                            @endforeach
                                                             </select>
-                                                        </div>
-                                                    </div>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                    <label for="description"
+                                                                        class="form-label font-w-6">Description</label>
+                                                                    <textarea class="form-control" id="description" name="description" rows="3">{{ $web_design->description }}</textarea>
+                                                            </div>
+                                                            </div>
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Link Source Code</label>
@@ -176,13 +174,6 @@
                                                                     size of
                                                                     800K</p>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-md-12">
-                                                        <div class="mb-3">
-                                                            <label for="description"
-                                                                class="form-label font-w-6">Description</label>
-                                                            <textarea class="form-control" id="description" name="description" rows="3">{{ $web_design->description }}</textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -303,16 +294,6 @@
                                                             <div class="help-block with-errors"></div>
                                                         </div>
                                                         <div class="form-group col-md-6">
-                                                            <label class="font-w-6">Creator</label>
-                                                            <input type="text" name="creator" class="form-control"
-                                                                placeholder="Creator" required="required"
-                                                                data-error="Creator is required."
-                                                                value="{{ $app_design->creator }}">
-                                                            <div class="help-block with-errors"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="form-group col-md-6">
                                                             <label class="font-w-6">Technology</label>
                                                             <input type="text" name="technology" class="form-control"
                                                                 placeholder="Technology" required="required"
@@ -320,12 +301,14 @@
                                                                 value="{{ $app_design->technology }}">
                                                             <div class="help-block with-errors"></div>
                                                         </div>
+                                                    </div>
+                                                    <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Category</label>
                                                             <select class="form-select" name="category_id">
                                                                 @foreach ($categories as $category)
                                                                     @if (old('category_id', $app_design->category_id) == $category->id)
-                                                                        <option value="{{ $category->id }}">
+                                                                    <option value="{{ $category->id }}">
                                                                             {{ $category->name }}
                                                                         </option>
                                                                     @else
@@ -335,7 +318,12 @@
                                                                     @endif
                                                                 @endforeach
                                                             </select>
-                                                        </div>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                    <label for="description"
+                                                                        class="form-label font-w-6">Description</label>
+                                                                    <textarea class="form-control" id="description" name="description" rows="3">{{ $app_design->description }}</textarea>
+                                                            </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
@@ -377,14 +365,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group col-md-12">
-                                                        <div class="mb-3">
-                                                            <label for="description"
-                                                                class="form-label font-w-6">Description</label>
-                                                            <textarea class="form-control" id="description" name="description" rows="3">{{ $app_design->description }}</textarea>
-                                                        </div>
-                                                    </div>
-
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -502,16 +482,7 @@
                                                                 value="{{ $ui_ux->title }}">
                                                             <div class="help-block with-errors"></div>
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label class="font-w-6">Creator</label>
-                                                            <input type="text" name="creator" class="form-control"
-                                                                placeholder="Creator" required="required"
-                                                                data-error="Creator is required."
-                                                                value="{{ $ui_ux->creator }}">
-                                                            <div class="help-block with-errors"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
+                                                        
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Technology</label>
                                                             <input type="text" name="technology" class="form-control"
@@ -520,6 +491,8 @@
                                                                 value="{{ $ui_ux->technology }}">
                                                             <div class="help-block with-errors"></div>
                                                         </div>
+                                                    </div>
+                                                    <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Category</label>
                                                             <select class="form-select" name="category_id">
@@ -531,11 +504,16 @@
                                                                     @else
                                                                         <option value="{{ $category->id }}">
                                                                             {{ $category->name }}
-                                                                        </option>
-                                                                    @endif
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
+                                                                            </option>
+                                                                            @endif
+                                                                            @endforeach
+                                                                            </select>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                    <label for="description"
+                                                                                        class="form-label font-w-6">Description</label>
+                                                                                    <textarea class="form-control" id="description" name="description" rows="3">{{ $ui_ux->description }}</textarea>
+                                                                            </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
@@ -574,13 +552,6 @@
                                                                     size of
                                                                     800K</p>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-md-12">
-                                                        <div class="mb-3">
-                                                            <label for="description"
-                                                                class="form-label font-w-6">Description</label>
-                                                            <textarea class="form-control" id="description" name="description" rows="3">{{ $ui_ux->description }}</textarea>
                                                         </div>
                                                     </div>
 
@@ -700,16 +671,7 @@
                                                                 value="{{ $desktop->title }}">
                                                             <div class="help-block with-errors"></div>
                                                         </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label class="font-w-6">Creator</label>
-                                                            <input type="text" name="creator" class="form-control"
-                                                                placeholder="Creator" required="required"
-                                                                data-error="Creator is required."
-                                                                value="{{ $desktop->creator }}">
-                                                            <div class="help-block with-errors"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
+                                                        
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Technology</label>
                                                             <input type="text" name="technology" class="form-control"
@@ -718,6 +680,8 @@
                                                                 value="{{ $desktop->technology }}">
                                                             <div class="help-block with-errors"></div>
                                                         </div>
+                                                    </div>
+                                                    <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Category</label>
                                                             <select class="form-select" name="category_id">
@@ -733,7 +697,12 @@
                                                                     @endif
                                                                 @endforeach
                                                             </select>
-                                                        </div>
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                    <label for="description"
+                                                                        class="form-label font-w-6">Description</label>
+                                                                    <textarea class="form-control" id="description" name="description" rows="3">{{ $desktop->description }}</textarea>
+                                                            </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
@@ -772,13 +741,6 @@
                                                                     size of
                                                                     800K</p>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-md-12">
-                                                        <div class="mb-3">
-                                                            <label for="description"
-                                                                class="form-label font-w-6">Description</label>
-                                                            <textarea class="form-control" id="description" name="description" rows="3">{{ $desktop->description }}</textarea>
                                                         </div>
                                                     </div>
 

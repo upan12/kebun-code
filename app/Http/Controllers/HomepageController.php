@@ -92,7 +92,6 @@ class HomepageController extends Controller
         // dd($request);
         $validatedData =  $request->validate([
             'title' => 'required|max:255',
-            'creator' => 'required|max:255',
             'technology' => 'required|max:255',
             'category_id' => 'required',
             'description' => 'required',
@@ -116,7 +115,6 @@ class HomepageController extends Controller
         // dd($request->all());
         $rules = [
             'title' => 'required|max:255',
-            'creator' => 'required|max:255',
             'technology' => 'required|max:255',
             'category_id' => 'required',
             'description' => 'required|max:255',

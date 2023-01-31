@@ -51,17 +51,6 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="font-w-6">Creator</label>
-                                    <input type="text" name="creator"
-                                        class="form-control @error('creator') is-invalid @enderror" placeholder="Creator"
-                                        value="{{ old('creator') }}">
-                                    @error('creator')
-                                        <div id="" class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="form-group col-md-6">
                                     <label class="font-w-6">Technology</label>
                                     <input type="text" name="technology"
                                         class="form-control @error('technology') is-invalid @enderror"
@@ -82,6 +71,15 @@
                                         @endforeach
                                     </select>
                                     @error('category_id')
+                                        <div id="" class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-6">
+                                        <label for="description" class="form-label font-w-6">Description</label>
+                                        <textarea class="form-control @error('category_id') is-invalid @enderror" id="description" name="description" rows="3">{{ old('description') }}</textarea>
+                                    @error('description')
                                         <div id="" class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -128,20 +126,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-12">
-                                    <div class="mb-3">
-                                        <label for="description" class="form-label font-w-6">Description</label>
-                                        <textarea class="form-control @error('category_id') is-invalid @enderror" id="description" name="description" rows="3">{{ old('description') }}</textarea>
-                                    @error('description')
-                                        <div id="" class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
+                                
 
-                        </div>
-                        <div class="col mt-4">
-                            <button type="submit" class="btn btn-primary">Create Creation</button>
+                                <div class="col mt-4">
+                                    <button type="submit" class="btn btn-primary">Create Creation</button>
+                                </div>
                         </div>
                         </form>
                     </div>
