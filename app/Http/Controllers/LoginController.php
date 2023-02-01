@@ -20,8 +20,8 @@ class LoginController extends Controller
         // dd($request->all());
         // $userLogin = DB::table('users')->where('nisn', $request->nisn);
         $credentials = $request->validate([
-            'nisn' => 'required',
-            'password' => 'required',
+            'nisn' => 'required|numeric|min_digits:8',
+            'password' => 'required|min:8',
         ]);
         if (User::where('nisn', $credentials['nisn'])->first()?->status == 4 && Auth::attempt($credentials)) {
             $request->session()->regenerate();

@@ -128,7 +128,7 @@
                                                                                         <span
                                                                                             class="d-flex justify-content-between align-items-center text-dark font-w-6">
                                                                                             Made by :
-                                                                                            {{ $creation->creator }}
+                                                                                            {{ $creation->users_name }}
                                                                                         </span>
                                                                                     <li
                                                                                         class="list-group-item d-flex justify-content-between align-items-center">
@@ -142,16 +142,24 @@
                                                                                         class="list-group-item d-flex justify-content-between align-items-center">
                                                                                         <span
                                                                                             class="d-flex justify-content-between align-items-center text-dark font-w-6">
-                                                                                            Link Website :
-                                                                                            {{ $creation->link_website }}
+                                                                                            @if (!$creation->link_website)
+                                                                                                Link Website : --
+                                                                                            @else
+                                                                                                Link Website :
+                                                                                                {{ $creation->link_website }}
+                                                                                            @endif
                                                                                         </span>
                                                                                     </li>
                                                                                     <li
                                                                                         class="list-group-item d-flex justify-content-between align-items-center">
                                                                                         <span
                                                                                             class="d-flex justify-content-between align-items-center text-dark font-w-6">
-                                                                                            Source Code :
-                                                                                            {{ $creation->source_code }}
+                                                                                            @if (!$creation->source_code)
+                                                                                                Source Code : --
+                                                                                            @else
+                                                                                                Source Code :
+                                                                                                {{ $creation->source_code }}
+                                                                                            @endif
                                                                                         </span>
                                                                                     </li>
                                                                                     <li
@@ -426,7 +434,7 @@
                                                                                         <span
                                                                                             class="d-flex justify-content-between align-items-center text-dark font-w-6">
                                                                                             Made by :
-                                                                                            {{ $creation->creator }}
+                                                                                            {{ $creation->users_name }}
                                                                                         </span>
                                                                                     <li
                                                                                         class="list-group-item d-flex justify-content-between align-items-center">
@@ -440,16 +448,25 @@
                                                                                         class="list-group-item d-flex justify-content-between align-items-center">
                                                                                         <span
                                                                                             class="d-flex justify-content-between align-items-center text-dark font-w-6">
-                                                                                            Link Website :
-                                                                                            {{ $creation->link_website }}
+                                                                                            @if (!$creation->link_website)
+                                                                                                Link Website : --
+                                                                                            @else
+                                                                                                Link Website :
+                                                                                                {{ $creation->link_website }}
+                                                                                            @endif
                                                                                         </span>
+
                                                                                     </li>
                                                                                     <li
                                                                                         class="list-group-item d-flex justify-content-between align-items-center">
                                                                                         <span
                                                                                             class="d-flex justify-content-between align-items-center text-dark font-w-6">
-                                                                                            Source Code :
-                                                                                            {{ $creation->source_code }}
+                                                                                            @if (!$creation->source_code)
+                                                                                                Source Code : --
+                                                                                            @else
+                                                                                                Source Code :
+                                                                                                {{ $creation->source_code }}
+                                                                                            @endif
                                                                                         </span>
                                                                                     </li>
                                                                                     <li class="list-group-item d-flex justify-content-between align-items-center text-dark font-w-6"
@@ -770,7 +787,7 @@
                                                                                         <span
                                                                                             class="d-flex justify-content-between align-items-center text-dark font-w-6">
                                                                                             Made by :
-                                                                                            {{ $creation->creator }}
+                                                                                            {{ $creation->users_name }}
                                                                                         </span>
                                                                                     <li
                                                                                         class="list-group-item d-flex justify-content-between align-items-center">
@@ -784,16 +801,25 @@
                                                                                         class="list-group-item d-flex justify-content-between align-items-center">
                                                                                         <span
                                                                                             class="d-flex justify-content-between align-items-center text-dark font-w-6">
-                                                                                            Link Website :
-                                                                                            {{ $creation->link_website }}
+                                                                                            @if (!$creation->link_website)
+                                                                                                Link Website : --
+                                                                                            @else
+                                                                                                Link Website :
+                                                                                                {{ $creation->link_website }}
+                                                                                            @endif
                                                                                         </span>
+
                                                                                     </li>
                                                                                     <li
                                                                                         class="list-group-item d-flex justify-content-between align-items-center">
                                                                                         <span
                                                                                             class="d-flex justify-content-between align-items-center text-dark font-w-6">
-                                                                                            Source Code :
-                                                                                            {{ $creation->source_code }}
+                                                                                            @if (!$creation->source_code)
+                                                                                                Source Code : --
+                                                                                            @else
+                                                                                                Source Code :
+                                                                                                {{ $creation->source_code }}
+                                                                                            @endif
                                                                                         </span>
                                                                                     </li>
                                                                                     <li class="list-group-item d-flex justify-content-between align-items-center text-dark font-w-6"

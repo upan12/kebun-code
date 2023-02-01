@@ -38,7 +38,9 @@
                         <div class="bg-white shadow p-5 rounded-4">
                             <ul class="cases-meta list-unstyled text-muted">
                                 <li class="mb-3 border-bottom border-light pb-3">
-                                    <span class="text-dark font-w-6"> Creator: </span> {{ $creation->creator }}
+                                    <a href="creator/{{ $creation->user_id }}">
+                                        <span class="text-dark font-w-6"> Creator: </span> {{ $creation->name }}
+                                    </a>
                                 </li>
                                 <li class="mb-3 border-bottom border-light pb-3">
                                     <span class="text-dark font-w-6"> Technology: </span> {{ $creation->technology }}

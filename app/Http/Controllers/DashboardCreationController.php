@@ -25,9 +25,9 @@ class DashboardCreationController extends Controller
 
         // $creation = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->get();
 
-        $creation1 = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('creations.status', 1)->get();
-        $creation2 = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('creations.status', 2)->get();
-        $creation3 = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*')->where('creations.status', 3)->get();
+        $creation1 = Creation::leftJoin('users', 'creations.user_id', '=', 'users.id')->leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*', 'users.name as users_name')->where('creations.status', 1)->get();
+        $creation2 = Creation::leftJoin('users', 'creations.user_id', '=', 'users.id')->leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*', 'users.name as users_name')->where('creations.status', 2)->get();
+        $creation3 = Creation::leftJoin('users', 'creations.user_id', '=', 'users.id')->leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*', 'users.name as users_name')->where('creations.status', 3)->get();
 
         return view('dashboard.creation', [
             'active' => 'creation',

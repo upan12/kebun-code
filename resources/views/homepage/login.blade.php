@@ -26,16 +26,26 @@
                                         <div class="alert alert-danger" role="alert">
                                             {{ session('loginError') }}</div>
                                     @elseif (session()->has('loginSuccess'))
-                                    <div class="alert alert-success" role="alert">
-                                        {{ session('loginSuccess') }}</div>
+                                        <div class="alert alert-success" role="alert">
+                                            {{ session('loginSuccess') }}</div>
                                     @endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="nisn" class="form-control" placeholder="NISN" required>
+                                    <input type="text" name="nisn" class="@error('nisn') is-invalid @enderror form-control" placeholder="NISN"
+                                    value="{{ old('nisn') }}" >
+                                    @error('nisn')
+                                        <div id="" class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="password" class="form-control" placeholder="Password"
-                                        required>
+                                    <input type="password" name="password" class=" @error('password') is-invalid @enderror form-control" placeholder="Password" value="{{ old('password') }}" >
+                                    @error('password')
+                                        <div id="" class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                                 {{-- <div class="mt-4 mb-5">
                                     <div class="remember-checkbox d-flex align-items-center justify-content-between">

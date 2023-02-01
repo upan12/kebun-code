@@ -38,7 +38,7 @@
                                 @endauth
                                 @guest
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link {{ $active === 'creation' ? 'active' : '' }}" href="allCreation">Creation</a>
+                                        <a class="nav-link {{ $active === 'creation' ? 'active' : '' }}" href="/allCreation">Creation</a>
                                     </li>
                                 @endguest
                                 <li class="nav-item dropdown">
