@@ -14,6 +14,19 @@
 
     <!-- Title -->
     <title>KebunKode</title>
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
 
     <!-- Favicon Icon -->
     <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -113,7 +126,7 @@
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         @yield('script')
-        
+
     </body>
 
 

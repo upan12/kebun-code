@@ -60,8 +60,8 @@
                                                     <i class="bi bi-x fs-1 text-dark"></i>
                                                     <p class="font-w-5 lead mb-1">No Works have been added yet.
                                                     </p>
-                                                    <p class="font-w-2">Please Check your search keyword or
-                                                        <a href="/allCreation">See all Works</a>
+                                                    <p class="font-w-2">You can upload your creations
+                                                        <a href="/addCreation">Upload Now!</a>
                                                     </p>
                                                 </div>
                                             </div>

@@ -63,11 +63,19 @@ class LoginController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|min:5|max:15',
             'nisn' => 'required|numeric|min_digits:8|max_digits:12|unique:users',
-            // 'username' => 'required|min:3|max:255|unique:users',
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:8|max:255',
+            'no_hp' => 'required|numeric|min_digits:10|max_digits:13',
+            'description' => 'required|min:8|max:255',
+            'image' => 'file|max:8000'
         ]);
         // dd('registrasi berhasil');
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('user-profile');
+        }
+        $validatedData['facebook'] = $request->facebook;
+        $validatedData['instagram'] = $request->instagram;
+        $validatedData['github'] = $request->github;
 
         // $validatedData['password'] = bcrypt($validatedData['password']);
         $validatedData['password'] = Hash::make($validatedData['password']);

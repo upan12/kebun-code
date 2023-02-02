@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                         <label for="description" class="form-label font-w-6">Description</label>
-                                        <textarea class="form-control @error('category_id') is-invalid @enderror" id="description" name="description" rows="3">{{ old('description') }}</textarea>
+                                        <textarea class="form-control @error('category_id') is-invalid @enderror" placeholder="Description" id="description" name="description" rows="3">{{ old('description') }}</textarea>
                                     @error('description')
                                         <div id="" class="invalid-feedback">
                                             {{ $message }}
