@@ -38,40 +38,38 @@
                     </div>
                     <div class="col-lg-7 col-md-12 mt-5 mt-lg-0 ps-lg-6">
                         <div class="team-description">
-                            <h2 class="mb-3">{{ $user->name }} 
+                            <h2 class="mb-3">{{ $user->name }}
                             </h2>
                             @auth
                                 <button class="button btn-primary">EDIT</button>
                             @endauth
-                            <p class="lead my-3 text-dark">We are focused on helping brands grow through digital
-                                transformation services. We bring real solutions to each client’s problems through a deep
-                                understanding of their market, solution, and vision</p>
+                            <p class="lead my-3 text-dark">{{ $user->description }}</p>
                             <div class="team-cntct d-flex justify-content-between">
                                 <ul class="media-icon list-unstyled font-w-5">
                                     <li class="mb-2">
                                         <i class="text-primary fs-4 align-middle bi bi-envelope me-2"></i>
-                                        <a class="btn-link" href="mailto:themeht23@gmail.com">themeht23@gmail.com</a>
+                                        <a class="btn-link" href="{{ $user->email }}">{{ $user->email }}</a>
                                     </li>
                                     <li>
                                         <i class="text-primary fs-4 align-middle bi bi-telephone me-2"></i>
-                                        <a class="btn-link" href="tel:+912345678900">+91-234-567-8900</a>
+                                        <a class="btn-link" href="{{ $user->no_hp }}">{{ $user->no_hp }}</a>
                                     </li>
                                 </ul>
                                 <div>
-                                    <h6>Follow Us:</h6>
+                                    <h6>Follow Me:</h6>
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item">
-                                            <a class="border rounded px-2 py-1 text-dark" href="#">
+                                            <a class="border rounded px-2 py-1 text-dark" href="{{ $user->facebook }}">
                                                 <i class="bi bi-facebook"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="border rounded px-2 py-1 text-dark" href="#">
+                                            <a class="border rounded px-2 py-1 text-dark" href="{{ $user->instagram }}">
                                                 <i class="bi bi-instagram"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="border rounded px-2 py-1 text-dark" href="#">
+                                            <a class="border rounded px-2 py-1 text-dark" href="{{ $user->github }}">
                                                 <i class="bi bi-github"></i>
                                             </a>
                                         </li>
@@ -93,7 +91,7 @@
                 <div class="row justify-content-center text-center mb-6">
                     <div class="col-12 col-lg-8">
                         <div>
-                            <h2>Stevendesu's Creations</h2>
+                            <h2>{{ $user->name }}'s Creations</h2>
                             <p class="lead mb-0">We are a team of experienced developers who are passionate about their
                                 work. No coding required to make customizations.</p>
                         </div>
@@ -101,20 +99,21 @@
                 </div>
                 <!-- / .row -->
                 <div class="row">
-                    @for ($i = 1; $i <= 4; $i++)
+                    @foreach ($creations as $creation)
                         <div class="col-12 col-lg-3 col-md-6 mb-4 mb-lg-0">
                             <div class="hover-translate bg-white shadow px-3 pt-4 pb-5 mb-5 rounded-4">
                                 <div class="d-flex align-items-center">
-                                    <h6 class="mb-0 me-2"><a class="btn-link" href="team-single.html">KebunKode</a></h6>
-                                    <span class="text-muted">- Web Design</span>
+                                    {{-- <h6 class="mb-0 me-2"><a class="btn-link" href="team-single.html">{{ $creation->title }}</a></h6> --}}
+                                    
                                 </div>
                                 <div class="mt-3 mb-4">
                                     <img class="img-fluid rounded-4" src="/images/team/01.jpg" alt="">
                                 </div>
-                                <p>Illo magni maiores fugit perferendis adipisci quia aliquam eum perspiciatis adipisci.</p>
+                                <span class="text-muted">- {{ $creation->categories_name }}</span>
+                                <p>{{ $creation->title }}</p>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
         </section>

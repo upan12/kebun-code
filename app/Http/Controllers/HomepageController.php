@@ -15,7 +15,7 @@ class HomepageController extends Controller
 {
     public function index()
     {
-        $allCreations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name','categories.id as categories_id', 'creations.*')->where( [['status', '2']])->latest()->get();
+        $allCreations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['status', '2']])->latest()->get();
 
         return view('homepage.index', [
             'active' => 'home',
@@ -37,7 +37,7 @@ class HomepageController extends Controller
     }
     public function allCreation()
     {
-        $allCreations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name','categories.id as categories_id', 'creations.*')->where( [['status', '2']])->latest()->get();
+        $allCreations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['status', '2']])->latest()->get();
 
         return view('homepage.allCreation', [
             'active' => 'creation',
@@ -47,7 +47,7 @@ class HomepageController extends Controller
     }
     public function myCreation()
     {
-        $allCreations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name','categories.id as categories_id', 'creations.*')->where( [['user_id', Auth::id()]])->latest()->get();
+        $allCreations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['user_id', Auth::id()]])->latest()->get();
 
         // dd($web_design);
         return view('homepage.myCreation', [
@@ -60,10 +60,14 @@ class HomepageController extends Controller
     public function profile(User $id)
     {
         $user = User::select()->where('id', '=', $id->id)->first();
+        $creations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['user_id', $id->id]])->get();
+        // $creations = Creation::select()->where('user_id', '=', $id->id)->get();
         // dd($id->id);
         return view('homepage.profile', [
             'active' => 'creation',
-            'user' => $user
+            'user' => $user,
+            'categories' => Category::all(),
+            'creations' => $creations
         ]);
     }
     public function addCreation()
