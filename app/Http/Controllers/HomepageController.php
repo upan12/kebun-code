@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Category;
 use App\Models\Creation;
 use Illuminate\Support\Str;
@@ -24,9 +25,9 @@ class HomepageController extends Controller
     }
     public function creation(Creation $id)
     {
-        $creation = Creation::leftJoin('users', 'creations.user_id', '=', 'users.id')->select('categories.name as categories_name', 'creations.*', 'users.name as users_name')->where([['creations.id', $id->id]])->first();
+        $creation = Creation::leftJoin('users', 'creations.user_id', '=', 'users.id')->leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*', 'users.name as user_name')->where([['creations.id', $id->id]])->first();
 
-        // dd($id);
+        // dd($creation);
         return view('homepage.creation', [
             'active' => 'creation',
             'creation' => $creation,
@@ -54,6 +55,15 @@ class HomepageController extends Controller
             'categories' => Category::all(),
             'allCreations' => $allCreations
 
+        ]);
+    }
+    public function profile(User $id)
+    {
+        $user = User::select()->where('id', '=', $id->id)->first();
+        // dd($id->id);
+        return view('homepage.profile', [
+            'active' => 'creation',
+            'user' => $user
         ]);
     }
     public function addCreation()

@@ -39,7 +39,7 @@
                             <ul class="cases-meta list-unstyled text-muted">
                                 <li class="mb-3 border-bottom border-light pb-3">
                                     <a href="creator/{{ $creation->user_id }}">
-                                        <span class="text-dark font-w-6"> Creator: </span> {{ $creation->name }}
+                                        <span class="text-dark font-w-6"> Creator: </span> {{ $creation->user_name }}
                                     </a>
                                 </li>
                                 <li class="mb-3 border-bottom border-light pb-3">

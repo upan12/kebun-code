@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,8 @@ Route::get('/addCreation', [HomepageController::class, 'addCreation'])->middlewa
 Route::post('/create/creation', [HomepageController::class, 'createCreation']);
 Route::put('/updateCreation/{creation}', [HomepageController::class, 'updateCreation']);
 Route::delete('/deleteCreation/{creation}', [HomepageController::class, 'deleteCreation']);
+Route::get('/creation/creator/{id}', [HomepageController::class, 'profile']);
+
 
 // dashboard
 

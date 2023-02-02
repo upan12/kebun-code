@@ -21,8 +21,8 @@
                                 </li>
                                 @auth
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle {{ $active === 'creation' ? 'active' : '' }}" href="#"
-                                            data-bs-toggle="dropdown">Creation</a>
+                                        <a class="nav-link dropdown-toggle {{ $active === 'creation' ? 'active' : '' }}"
+                                            href="#" data-bs-toggle="dropdown">Creation</a>
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <a class="dropdown-item" href="/allCreation">All creation</a>
@@ -35,15 +35,20 @@
                                             </li>
                                         </ul>
                                     </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link {{ $active === 'profile' ? 'active' : '' }}" href="/creation/creator/{{ auth()->user()['id'] }}">My Profile</a>
+                                    </li>
                                 @endauth
                                 @guest
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link {{ $active === 'creation' ? 'active' : '' }}" href="/allCreation">Creation</a>
+                                        <a class="nav-link {{ $active === 'creation' ? 'active' : '' }}"
+                                            href="/allCreation">Creation</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link {{ $active === 'aboutUs' ? 'active' : '' }}"
+                                            href="/aboutUs">About us</a>
                                     </li>
                                 @endguest
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link {{ $active === 'aboutUs' ? 'active' : '' }}" href="/aboutUs">About us</a>
-                                </li>
                             </ul>
                         </div>
 

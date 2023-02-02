@@ -38,7 +38,8 @@
                         <div class="portfolio-filter d-sm-flex align-items-center justify-content-lg-end">
                             <button data-filter=".all" class="is-checked mb-2 mb-sm-0">All</button>
                             @foreach ($categories as $cat)
-                            <button data-filter=".cat{{ $cat->id }}" class="mb-2 mb-sm-0">{{ $cat->name }}</button>
+                                <button data-filter=".cat{{ $cat->id }}"
+                                    class="mb-2 mb-sm-0">{{ $cat->name }}</button>
                             @endforeach
                         </div>
                     </div>
@@ -48,7 +49,7 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="grid columns-3 row popup-gallery">
                             <div class="grid-sizer"></div>
-                            @if (!count($allCreations) )
+                            @if (!count($allCreations))
                                 <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-8 px-3 px-lg-6 rounded-4 all">
                                     <div class="container">
                                         <div class="row justify-content-center text-center ">
@@ -73,8 +74,7 @@
                                     <div
                                         class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
                                         @if ($allCr->image)
-                                            <a class="popup-img btn-link"
-                                                href="{{ asset('storage/' . $allCr->image) }}">
+                                            <a class="popup-img btn-link" href="{{ asset('storage/' . $allCr->image) }}">
                                                 <img class="img-fluid w-100 rounded-4"
                                                     src="{{ asset('storage/' . $allCr->image) }}" alt="">
                                             </a>
