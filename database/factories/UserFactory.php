@@ -27,7 +27,6 @@ class UserFactory extends Factory
             'github' => $this->faker->sentence(mt_rand(2, 5)),
             'description' => $this->faker->sentence(mt_rand(5, 10)),
             'status' => '1',
-            
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
             'remember_token' => Str::random(10)
