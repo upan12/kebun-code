@@ -43,7 +43,9 @@ Route::get('/addCreation', [HomepageController::class, 'addCreation'])->middlewa
 Route::post('/create/creation', [HomepageController::class, 'createCreation']);
 Route::put('/updateCreation/{creation}', [HomepageController::class, 'updateCreation']);
 Route::delete('/deleteCreation/{creation}', [HomepageController::class, 'deleteCreation']);
-Route::get('/creation/creator/{id}', [HomepageController::class, 'profile']);
+Route::get('/profile/{id}', [HomepageController::class, 'profile']);
+Route::get('/profile/edit/{id}', [HomepageController::class, 'editProfile']);
+Route::post('/profile/update', [HomepageController::class, 'updateProfile']);
 
 
 // dashboard
@@ -57,7 +59,7 @@ Route::resource('/admin/category', DashboardCategoryController::class);
 
 
 // dashboard user
-Route::resource('/admin/user', DashboardUserController::class)->middleware('auth'); 
+Route::resource('/admin/user', DashboardUserController::class)->middleware('auth');
 Route::put('/user/check/{user}', [DashboardUserController::class, 'check_user']);
 Route::put('/user/disable/{user}', [DashboardUserController::class, 'disable_user']);
 Route::put('/user/active/{user}', [DashboardUserController::class, 'active_user']);

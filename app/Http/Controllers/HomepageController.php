@@ -57,6 +57,20 @@ class HomepageController extends Controller
 
         ]);
     }
+    public function editProfile(Request $request)
+    {
+        // dd($request->id);
+        $user = User::select()->where('id', '=', $request->id)->first();
+        $creations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['user_id', $request->id]])->get();
+        // $creations = Creation::select()->where('user_id', '=', $id->id)->get();
+        // dd($id->id);
+        return view('homepage.editProfil', [
+            'active' => 'creation',
+            'user' => $user,
+            'categories' => Category::all(),
+            'creations' => $creations
+        ]);
+    }
     public function profile(User $id)
     {
         $user = User::select()->where('id', '=', $id->id)->first();
@@ -64,11 +78,53 @@ class HomepageController extends Controller
         // $creations = Creation::select()->where('user_id', '=', $id->id)->get();
         // dd($id->id);
         return view('homepage.profile', [
-            'active' => 'creation',
+            'active' => 'profile',
             'user' => $user,
             'categories' => Category::all(),
             'creations' => $creations
         ]);
+    }
+    public function updateProfile(Request $request, User $user)
+    {
+        // dd($request->all());
+        // dd($request->id);
+        $validatedData = $request->validate( [
+            'name' => 'required|min:5|max:15',
+            // 'nisn' => 'required|numeric|min_digits:8|max_digits:12|unique:users',
+            // 'email' => 'required|email:dns|unique:users',
+            // 'password' => 'required|min:8|max:255',
+            'no_hp' => 'required|numeric|min_digits:10|max_digits:13',
+            'description' => 'required|min:8|max:255',
+            'image' => 'image|file|max:1024'
+        ]);
+
+        // $validatedData = $request->validate($validatedData);
+        
+        if ($request->file('image')) {
+            if($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('user-profile');
+        }
+        
+        $validatedData['facebook'] = $request->facebook;
+        $validatedData['instagram'] = $request->instagram;
+        $validatedData['github'] = $request->github;
+        User::where('id', $request->id)->update($validatedData);
+
+        // User::where('id', $request->id)
+        //       ->update( ['name' => $request->name],
+        //                 ['nisn' => $request->nisn],
+        //                 ['email' => $request->email],
+        //                 ['no_hp' => $request->no_hp],
+        //                 ['facebook' => $request->facebook],
+        //                 ['instagram' => $request->instagram],
+        //                 ['github' => $request->github],
+        //                 ['description' => $request->description]
+        //             );
+              
+        // dd('berhasil');
+        return redirect('/creation/creator/'. Auth()->user()['id'])->with('Profile has been Updated!');
     }
     public function addCreation()
     {

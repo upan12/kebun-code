@@ -33,43 +33,58 @@
                 <div class="row align-items-center">
                     <div class="col-lg-5 col-md-12">
                         <div class="shadow p-4 bg-white rounded-4">
-                            <img class="img-fluid w-100 rounded-4" src="/images/team/01.jpg" alt="">
+                            @if ($user->image)
+                                <img class="img-fluid w-100 rounded-4" src="{{ asset('storage/' . $user->image) }}"
+                                    alt="">
+                            @else
+                                <img class="img-fluid w-100 rounded-4" src="/images/team/01.jpg" alt="">
+                            @endif
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-12 mt-5 mt-lg-0 ps-lg-6">
                         <div class="team-description">
-                            <h2 class="mb-3">{{ $user->name }}
+                            <div class="row">
+                                    <h2 class="mb-3 ">{{ $user->name }}
+                                @auth
+                                    
+                                        <a class=" btn btn-primary ms-2"
+                                            href="/profile/edit/{{ $user->id }}">edit</a>
+                                @endauth
+                            </div>
                             </h2>
-                            @auth
-                                <button class="button btn-primary">EDIT</button>
-                            @endauth
+
+
                             <p class="lead my-3 text-dark">{{ $user->description }}</p>
                             <div class="team-cntct d-flex justify-content-between">
                                 <ul class="media-icon list-unstyled font-w-5">
                                     <li class="mb-2">
                                         <i class="text-primary fs-4 align-middle bi bi-envelope me-2"></i>
-                                        <a class="btn-link" href="{{ $user->email }}">{{ $user->email }}</a>
+                                        <a class="btn-link" href="mailto:{{ $user->email }}">{{ $user->email }}</a>
                                     </li>
                                     <li>
                                         <i class="text-primary fs-4 align-middle bi bi-telephone me-2"></i>
-                                        <a class="btn-link" href="{{ $user->no_hp }}">{{ $user->no_hp }}</a>
+                                        <a class="btn-link" href="whatsapp:contact={{ $user->no_hp }}"
+                                            target="_blank">{{ $user->no_hp }}</a>
                                     </li>
                                 </ul>
                                 <div>
                                     <h6>Follow Me:</h6>
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item">
-                                            <a class="border rounded px-2 py-1 text-dark" href="{{ $user->facebook }}">
+                                            <a class="border rounded px-2 py-1 text-dark"
+                                                href="https://www.facebook.com/{{ $user->facebook }}" target="_blank">
                                                 <i class="bi bi-facebook"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="border rounded px-2 py-1 text-dark" href="{{ $user->instagram }}">
+                                            <a class="border rounded px-2 py-1 text-dark"
+                                                href="https://www.instagram.com/{{ $user->instagram }}" target="_blank">
                                                 <i class="bi bi-instagram"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a class="border rounded px-2 py-1 text-dark" href="{{ $user->github }}">
+                                            <a class="border rounded px-2 py-1 text-dark"
+                                                href="https://github.com/{{ $user->github }}" target="_blank">
                                                 <i class="bi bi-github"></i>
                                             </a>
                                         </li>
@@ -92,8 +107,6 @@
                     <div class="col-12 col-lg-8">
                         <div>
                             <h2>{{ $user->name }}'s Creations</h2>
-                            <p class="lead mb-0">We are a team of experienced developers who are passionate about their
-                                work. No coding required to make customizations.</p>
                         </div>
                     </div>
                 </div>
@@ -104,7 +117,7 @@
                             <div class="hover-translate bg-white shadow px-3 pt-4 pb-5 mb-5 rounded-4">
                                 <div class="d-flex align-items-center">
                                     {{-- <h6 class="mb-0 me-2"><a class="btn-link" href="team-single.html">{{ $creation->title }}</a></h6> --}}
-                                    
+
                                 </div>
                                 <div class="mt-3 mb-4">
                                     <img class="img-fluid rounded-4" src="/images/team/01.jpg" alt="">

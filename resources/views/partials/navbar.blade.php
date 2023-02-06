@@ -36,7 +36,7 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link {{ $active === 'profile' ? 'active' : '' }}" href="/creation/creator/{{ auth()->user()['id'] }}">My Profile</a>
+                                        <a class="nav-link {{ $active === 'profile' ? 'active' : '' }}" href="/profile/{{ auth()->user()['id'] }}">My Profile</a>
                                     </li>
                                 @endauth
                                 @guest

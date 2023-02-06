@@ -67,7 +67,7 @@ class LoginController extends Controller
             'password' => 'required|min:8|max:255',
             'no_hp' => 'required|numeric|min_digits:10|max_digits:13',
             'description' => 'required|min:8|max:255',
-            'image' => 'file|max:8000'
+            'image' => 'image|file|max:8000'
         ]);
         // dd('registrasi berhasil');
         if ($request->file('image')) {
