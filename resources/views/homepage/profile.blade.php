@@ -44,12 +44,11 @@
                     <div class="col-lg-7 col-md-12 mt-5 mt-lg-0 ps-lg-6">
                         <div class="team-description">
                             <div class="row">
-                                    <h2 class="mb-3 ">{{ $user->name }}
-                                @auth
-                                    
-                                        <a class=" btn btn-primary ms-2"
-                                            href="/profile/edit/{{ $user->id }}">edit</a>
-                                @endauth
+                                <h2 class="mb-3 ">{{ $user->name }}
+                                    @auth
+
+                                        <a class=" btn btn-primary ms-2" href="/profile/edit/{{ $user->id }}">edit</a>
+                                    @endauth
                             </div>
                             </h2>
 
@@ -63,7 +62,7 @@
                                     </li>
                                     <li>
                                         <i class="text-primary fs-4 align-middle bi bi-telephone me-2"></i>
-                                        <a class="btn-link" href="whatsapp:contact={{ $user->no_hp }}"
+                                        <a class="btn-link" href="https://api.whatsapp.com/send?phone={{ $user->no_hp }}"
                                             target="_blank">{{ $user->no_hp }}</a>
                                     </li>
                                 </ul>
@@ -112,21 +111,65 @@
                 </div>
                 <!-- / .row -->
                 <div class="row">
+                    @if (!count($creations))
+                        <div class="grid-item col-lg-12 col-md-12 bg-light-2 py-4 px-3 px-lg-3 rounded-4">
+                            <div class="container">
+                                <div class="row justify-content-center text-center ">
+                                    <div class="col-12 col-lg-10">
+                                        <div class="card p-2 p-md-2 border-0 bg-white rounded-4">
+                                            <div class="card-body p-0">
+                                            </div>
+                                            <i class="bi bi-x fs-1 text-dark"></i>
+                                            @auth
+                                            <p class="font-w-5 lead mb-1">No Works have been added by you.
+                                            </p>
+                                            <p class="font-w-2">You can upload your creations
+                                                <a href="/addCreation">Upload Now!</a>
+                                            </p>
+                                            @endauth
+                                            @guest
+                                            <p class="font-w-5 lead mb-1">No Works have been added by {{ $user->name }}.
+                                            </p>
+                                            <p class="font-w-2">See all creations.
+                                                <a href="/addCreation">See all!</a>
+                                            </p>
+                                            @endguest
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                    @auth
                     @foreach ($creations as $creation)
                         <div class="col-12 col-lg-3 col-md-6 mb-4 mb-lg-0">
-                            <div class="hover-translate bg-white shadow px-3 pt-4 pb-5 mb-5 rounded-4">
-                                <div class="d-flex align-items-center">
-                                    {{-- <h6 class="mb-0 me-2"><a class="btn-link" href="team-single.html">{{ $creation->title }}</a></h6> --}}
+                            <div class="hover-translate bg-white shadow px-3 pt-3 pb-2  rounded-4">
 
-                                </div>
-                                <div class="mt-3 mb-4">
-                                    <img class="img-fluid rounded-4" src="/images/team/01.jpg" alt="">
+                                <div class="mb-2">
+                                    <img class="img-fluid rounded-4" src="/images/portfolio/large/01.jpg" alt="">
                                 </div>
                                 <span class="text-muted">- {{ $creation->categories_name }}</span>
-                                <p>{{ $creation->title }}</p>
+                                {{-- <p>{{ $creation->title }}</p> --}}
+                                <a class="btn-link" href="/creation/{{ $creation->id }}"><p>{{ $creation->title }}</p></a>
                             </div>
                         </div>
                     @endforeach
+                    @endauth
+                    @guest
+                    @foreach ($creationsVerif as $creation)
+                    <div class="col-12 col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <div class="hover-translate bg-white shadow px-3 pt-3 pb-2  rounded-4">
+
+                            <div class="mb-2">
+                                <img class="img-fluid rounded-4" src="/images/portfolio/large/01.jpg" alt="">
+                            </div>
+                            <span class="text-muted">- {{ $creation->categories_name }}</span>
+                            {{-- <p>{{ $creation->title }}</p> --}}
+                            <a class="btn-link" href="/creation/{{ $creation->id }}"><p>{{ $creation->title }}</p></a>
+                        </div>
+                    </div>
+                @endforeach
+                    @endguest
                 </div>
             </div>
         </section>

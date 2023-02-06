@@ -31,8 +31,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7 col-12 pe-lg-10">
-                        <img class="img-fluid w-100 rounded-4 mb-5" src="{{ asset('storage/' . $creation->image) }}"
-                            alt="">
+                        @if ($creation->image)
+                            <img class="img-fluid w-100 rounded-4 mb-5" src="{{ asset('storage/' . $creation->image) }}"
+                                alt="">
+                        @else
+                            <img class="img-fluid w-100 rounded-4 mb-5" src="/images/portfolio/01.jpg" alt="">
+                        @endif
                     </div>
                     <div class="col-lg-5 col-12">
                         <div class="bg-white shadow p-5 rounded-4">

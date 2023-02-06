@@ -66,7 +66,7 @@ class LoginController extends Controller
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:8|max:255',
             'no_hp' => 'required|numeric|min_digits:10|max_digits:13',
-            'description' => 'required|min:8|max:255',
+            'description' => 'required|min:20|max:255',
             'image' => 'image|file|max:8000'
         ]);
         // dd('registrasi berhasil');

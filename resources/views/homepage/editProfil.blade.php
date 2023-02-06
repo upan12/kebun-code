@@ -20,8 +20,8 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="" class="font-w-6">Email</label>
-                                            <input id="" type="email" name="email"
+                                            <label for="email" class="font-w-6">Email</label>
+                                            <input id="email" type="email" name="email"
                                                 class="form-control @error('email') is-invalid @enderror"
                                                 placeholder="Email" value="{{ $user->email }}" disabled>
                                             @error('email')
@@ -33,8 +33,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="" class="font-w-6">NISN</label>
-                                            <input id="" type="number" name="nisn"
+                                            <label for="nisn" class="font-w-6">NISN</label>
+                                            <input id="nisn" type="number" name="nisn"
                                                 class="form-control @error('nisn') is-invalid @enderror" placeholder="NISN"
                                                 value="{{ $user->nisn }}" disabled>
                                             @error('nisn')
@@ -48,8 +48,8 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="" class="font-w-6">Name</label>
-                                            <input id="" type="text" name="name"
+                                            <label for="name" class="font-w-6">Name</label>
+                                            <input id="name" type="text" name="name"
                                                 class="form-control @error('name') is-invalid @enderror" placeholder="Name"
                                                 value="{{ $user->name }}">
                                             @error('name')
@@ -61,11 +61,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="" class="font-w-6">WhatsApp Number</label>
-                                            <input id="" type="number" name="no_hp"
+                                            <label for="wa" class="font-w-6">WhatsApp Number</label>
+                                            <input id="wa" type="number" name="no_hp"
                                                 class="form-control @error('no_hp') is-invalid @enderror"
                                                 placeholder="No Handphone" value="{{ $user->no_hp }}">
-                                            <p class="text-muted" class="text-muted"><small>*Ex: 081234567890</small></p>
+                                            <p class="text-muted" class="text-muted"><small>*Ex: 6281234567890</small></p>
                                             @error('no_hp')
                                                 <div id="" class="invalid-feedback">
                                                     {{ $message }}
@@ -78,8 +78,8 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="" class="font-w-6">Facebook</label><p class="text-muted ms-2 d-inline"><small>*Can be empty</small></p>
-                                            <input id="" type="text" name="facebook"
+                                            <label for="facebook" class="font-w-6">Facebook</label><p class="text-muted ms-2 d-inline"><small>*Can be empty</small></p>
+                                            <input id="facebook" type="text" name="facebook"
                                                 class="form-control @error('facebook') is-invalid @enderror"
                                                 placeholder="Facebook account" value="{{ $user->facebook }}">
                                             <p class="text-muted"><small>*Ex : laura.tita.503</small></p>
@@ -92,8 +92,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="" class="font-w-6 ">Instagram</label><p class="text-muted ms-2 d-inline"><small>*Can be empty</small></p>
-                                            <input id="" type="text" name="instagram"
+                                            <label for="ig" class="font-w-6 ">Instagram</label><p class="text-muted ms-2 d-inline"><small>*Can be empty</small></p>
+                                            <input id="ig" type="text" name="instagram"
                                                 class="form-control @error('instagram') is-invalid @enderror"
                                                 placeholder="Instagram account" value="{{ $user->instagram }}">
                                             <p class="text-muted"><small>*Ex : nin.raa_</small></p>
@@ -108,8 +108,8 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="" class="font-w-6">Github</label><p class="text-muted ms-2 d-inline"><small>*Can be empty</small></p>
-                                            <input id="" type="text" name="github"
+                                            <label for="github" class="font-w-6">Github</label><p class="text-muted ms-2 d-inline"><small>*Can be empty</small></p>
+                                            <input id="github" type="text" name="github"
                                                 class="form-control @error('github') is-invalid @enderror"
                                                 placeholder="Github account" value="{{ $user->github }}">
                                             <p class="text-muted"><small>*Ex : lauratita</small></p>
@@ -121,12 +121,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="" class="font-w-6">Description</label>
+                                        <label for="description" class="font-w-6">Description</label>
                                         <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Description" id="description"
                                             name="description" rows="3">{{ $user->description }}</textarea>
 
                                         @error('description')
-                                            <div id="" class="invalid-feedback">
+                                            <div id="description" class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
                                         @enderror
@@ -140,7 +140,7 @@
                                                 <img src="{{ asset('storage/' . $user->image) }}" alt="user-profile"
                                                     class="d-block rounded" height="200" id="uploadedAvatar" />
                                             @else
-                                                <img src="images/portfolio/large/01.jpg" alt="user-profile"
+                                                <img src="/images/team/01.jpg" alt="user-profile"
                                                     class="d-block rounded" height="200" id="uploadedAvatar" />
                                             @endif
                                             <div class="button-wrapper">

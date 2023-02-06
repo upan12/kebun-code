@@ -65,7 +65,7 @@ class HomepageController extends Controller
         // $creations = Creation::select()->where('user_id', '=', $id->id)->get();
         // dd($id->id);
         return view('homepage.editProfil', [
-            'active' => 'creation',
+            'active' => 'profile',
             'user' => $user,
             'categories' => Category::all(),
             'creations' => $creations
@@ -75,13 +75,15 @@ class HomepageController extends Controller
     {
         $user = User::select()->where('id', '=', $id->id)->first();
         $creations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['user_id', $id->id]])->get();
+        $creationsVerif = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['user_id', $id->id], ['status', '2']])->get();
         // $creations = Creation::select()->where('user_id', '=', $id->id)->get();
         // dd($id->id);
         return view('homepage.profile', [
             'active' => 'profile',
             'user' => $user,
             'categories' => Category::all(),
-            'creations' => $creations
+            'creations' => $creations,
+            'creationsVerif' => $creationsVerif
         ]);
     }
     public function updateProfile(Request $request, User $user)
