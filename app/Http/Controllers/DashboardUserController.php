@@ -91,6 +91,7 @@ class DashboardUserController extends Controller
             'email' => 'required|max:255',
         ];
 
+        
         $validateData = $request->validate($rules);
 
         User::where('id', $user->id)

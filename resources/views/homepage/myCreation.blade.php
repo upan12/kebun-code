@@ -98,11 +98,10 @@
                                                             <label class="font-w-6">Title</label>
                                                             <input type="text" name="title" class="form-control"
                                                                 placeholder="Title" required="required"
-                                                                data-error="Title is required."
-                                                                value="{{ $allCr->title }}">
+                                                                data-error="Title is required." value="{{ $allCr->title }}">
                                                             <div class="help-block with-errors"></div>
                                                         </div>
-                                                        
+
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Technology</label>
                                                             <input type="text" name="technology" class="form-control"
@@ -124,17 +123,17 @@
                                                                     @else
                                                                         <option value="{{ $category->id }}">
                                                                             {{ $category->name }}
-                                                                            </option>
-                                                                            @endif
-                                                                            @endforeach
+                                                                        </option>
+                                                                    @endif
+                                                                @endforeach
                                                             </select>
-                                                            </div>
-                                                            <div class="form-group col-md-6">
-                                                                    <label for="description"
-                                                                        class="form-label font-w-6">Description</label>
-                                                                    <textarea class="form-control" id="description" name="description" rows="3">{{ $allCr->description }}</textarea>
-                                                            </div>
-                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="description"
+                                                                class="form-label font-w-6">Description</label>
+                                                            <textarea class="form-control" id="description" name="description" rows="3">{{ $allCr->description }}</textarea>
+                                                        </div>
+                                                    </div>
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
                                                             <label class="font-w-6">Link Source Code</label>
@@ -189,14 +188,17 @@
                                     <div
                                         class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
                                         @if ($allCr->image)
-                                            <a class="popup-img btn-link"
-                                                href="{{ asset('storage/' . $allCr->image) }}">
+                                            <a class="popup-img btn-link" href="{{ asset('storage/' . $allCr->image) }}">
                                                 <img class="img-fluid w-100 rounded-4"
+                                                    style="height: 230px; object-fit: cover;
+                                        overflow: hidden;"
                                                     src="{{ asset('storage/' . $allCr->image) }}" alt="">
                                             </a>
                                         @else
                                             <a class="popup-img btn-link" href="images/portfolio/01.jpg">
                                                 <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg"
+                                                    style="height: 230px; object-fit: cover;
+                                        overflow: hidden;"
                                                     alt="">
                                             </a>
                                         @endif
@@ -215,7 +217,7 @@
                                                 @endif
                                                 <h6 class="mb-0">
                                                     <a class="btn-link"
-                                                        href="/creation/{{ $allCr->id }}">{{ $allCr->title }}</a>
+                                                        href="/creation/{{ $allCr->code }}">{{ $allCr->title }}</a>
                                                 </h6>
                                             </div>
                                             <a class=" btn-link dropdown-toggle" data-bs-toggle="dropdown"
@@ -225,8 +227,7 @@
                                             <ul class="dropdown-menu">
                                                 <li>
                                                     <a class="dropdown-item" href="" data-bs-toggle="modal"
-                                                        data-bs-target="#editModalCenter{{ $allCr->id }}"><i
-                                                            class="bx bx-edit-alt me-1"></i> Edit</a>
+                                                        data-bs-target="#editModalCenter{{ $allCr->id }}"><i class="bi bi-pencil-square"></i> Edit</a>
                                                 </li>
                                                 <li>
                                                     <form action="/deleteCreation/{{ $allCr->id }}"
@@ -235,8 +236,7 @@
                                                         @method('delete')
                                                         @csrf
                                                         <button class="dropdown-item" type="button"
-                                                            onclick="deleteCreationVerified()"><i
-                                                                class="bx bx-trash me-1"></i>
+                                                            onclick="deleteCreationVerified()"><i class="bi bi-trash3"></i>
                                                             Delete</button>
                                                     </form>
                                                 </li>

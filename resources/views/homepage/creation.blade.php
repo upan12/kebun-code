@@ -42,7 +42,7 @@
                         <div class="bg-white shadow p-5 rounded-4">
                             <ul class="cases-meta list-unstyled text-muted">
                                 <li class="mb-3 border-bottom border-light pb-3">
-                                    <a href="/profile/{{ $creation->user_id }}">
+                                    <a href="/profile/{{ $creation->user_code }}">
                                         <span class="text-dark font-w-6"> Creator: </span> {{ $creation->user_name }}
                                     </a>
                                 </li>

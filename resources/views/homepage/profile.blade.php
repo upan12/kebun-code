@@ -47,7 +47,7 @@
                                 <h2 class="mb-3 ">{{ $user->name }}
                                     @auth
 
-                                        <a class=" btn btn-primary ms-2" href="/profile/edit/{{ $user->id }}">edit</a>
+                                        <a class=" btn btn-primary ms-2" href="/profile/edit/{{ $user->code }}">edit</a>
                                     @endauth
                             </div>
                             </h2>
@@ -121,18 +121,18 @@
                                             </div>
                                             <i class="bi bi-x fs-1 text-dark"></i>
                                             @auth
-                                            <p class="font-w-5 lead mb-1">No Works have been added by you.
-                                            </p>
-                                            <p class="font-w-2">You can upload your creations
-                                                <a href="/addCreation">Upload Now!</a>
-                                            </p>
+                                                <p class="font-w-5 lead mb-1">No Works have been added by you.
+                                                </p>
+                                                <p class="font-w-2">You can upload your creations
+                                                    <a href="/addCreation">Upload Now!</a>
+                                                </p>
                                             @endauth
                                             @guest
-                                            <p class="font-w-5 lead mb-1">No Works have been added by {{ $user->name }}.
-                                            </p>
-                                            <p class="font-w-2">See all creations.
-                                                <a href="/addCreation">See all!</a>
-                                            </p>
+                                                <p class="font-w-5 lead mb-1">No Works have been added by {{ $user->name }}.
+                                                </p>
+                                                <p class="font-w-2">See all creations.
+                                                    <a href="/addCreation">See all!</a>
+                                                </p>
                                             @endguest
                                         </div>
                                     </div>
@@ -140,36 +140,30 @@
                             </div>
                         </div>
                     @endif
-                    @auth
                     @foreach ($creations as $creation)
                         <div class="col-12 col-lg-3 col-md-6 mb-4 mb-lg-0">
                             <div class="hover-translate bg-white shadow px-3 pt-3 pb-2  rounded-4">
 
-                                <div class="mb-2">
-                                    <img class="img-fluid rounded-4" src="/images/portfolio/large/01.jpg" alt="">
-                                </div>
+                                @if ($creation->image)
+                                    <a class="popup-img btn-link" href="{{ asset('storage/' . $creation->image) }}">
+                                        <img class="img-fluid w-100 rounded-4"
+                                            style="height: 230px; object-fit: cover;
+                                        overflow: hidden;"
+                                            src="{{ asset('storage/' . $creation->image) }}" alt="">
+                                    </a>
+                                @else
+                                    <a class="popup-img btn-link" href="images/portfolio/01.jpg">
+                                        <img class="img-fluid w-100 rounded-4" src="images/portfolio/01.jpg" alt="">
+                                    </a>
+                                @endif
                                 <span class="text-muted">- {{ $creation->categories_name }}</span>
                                 {{-- <p>{{ $creation->title }}</p> --}}
-                                <a class="btn-link" href="/creation/{{ $creation->id }}"><p>{{ $creation->title }}</p></a>
+                                <a class="btn-link" href="/creation/{{ $creation->code }}">
+                                    <p>{{ $creation->title }}</p>
+                                </a>
                             </div>
                         </div>
                     @endforeach
-                    @endauth
-                    @guest
-                    @foreach ($creationsVerif as $creation)
-                    <div class="col-12 col-lg-3 col-md-6 mb-4 mb-lg-0">
-                        <div class="hover-translate bg-white shadow px-3 pt-3 pb-2  rounded-4">
-
-                            <div class="mb-2">
-                                <img class="img-fluid rounded-4" src="/images/portfolio/large/01.jpg" alt="">
-                            </div>
-                            <span class="text-muted">- {{ $creation->categories_name }}</span>
-                            {{-- <p>{{ $creation->title }}</p> --}}
-                            <a class="btn-link" href="/creation/{{ $creation->id }}"><p>{{ $creation->title }}</p></a>
-                        </div>
-                    </div>
-                @endforeach
-                    @endguest
                 </div>
             </div>
         </section>

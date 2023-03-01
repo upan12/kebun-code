@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Creation;
+use Illuminate\Support\Str;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Database\Seeder;
 
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
             'nisn' => '11223344',
             'email' => 'admin@gmail.com',
             'no_hp' => '08511223344',
+            'code' => Str::random(13),
             'facebook' => 'facebook',
             'instagram' => 'instagram',
             'github' => 'github',

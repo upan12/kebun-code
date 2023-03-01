@@ -78,7 +78,8 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="facebook" class="font-w-6">Facebook</label><p class="text-muted ms-2 d-inline"><small>*Can be empty</small></p>
+                                            <label for="facebook" class="font-w-6">Facebook</label>
+                                            <p class="text-muted ms-2 d-inline"><small>*Can be empty</small></p>
                                             <input id="facebook" type="text" name="facebook"
                                                 class="form-control @error('facebook') is-invalid @enderror"
                                                 placeholder="Facebook account" value="{{ $user->facebook }}">
@@ -92,7 +93,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="ig" class="font-w-6 ">Instagram</label><p class="text-muted ms-2 d-inline"><small>*Can be empty</small></p>
+                                            <label for="ig" class="font-w-6 ">Instagram</label>
+                                            <p class="text-muted ms-2 d-inline"><small>*Can be empty</small></p>
                                             <input id="ig" type="text" name="instagram"
                                                 class="form-control @error('instagram') is-invalid @enderror"
                                                 placeholder="Instagram account" value="{{ $user->instagram }}">
@@ -108,7 +110,8 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="github" class="font-w-6">Github</label><p class="text-muted ms-2 d-inline"><small>*Can be empty</small></p>
+                                            <label for="github" class="font-w-6">Github</label>
+                                            <p class="text-muted ms-2 d-inline"><small>*Can be empty</small></p>
                                             <input id="github" type="text" name="github"
                                                 class="form-control @error('github') is-invalid @enderror"
                                                 placeholder="Github account" value="{{ $user->github }}">
@@ -140,8 +143,8 @@
                                                 <img src="{{ asset('storage/' . $user->image) }}" alt="user-profile"
                                                     class="d-block rounded" height="200" id="uploadedAvatar" />
                                             @else
-                                                <img src="/images/team/01.jpg" alt="user-profile"
-                                                    class="d-block rounded" height="200" id="uploadedAvatar" />
+                                                <img src="/images/team/01.jpg" alt="user-profile" class="d-block rounded"
+                                                    height="200" id="uploadedAvatar" />
                                             @endif
                                             <div class="button-wrapper">
                                                 <label for="upload" class="btn btn-outline-primary" tabindex="0">

@@ -75,7 +75,8 @@
                                         class="portfolio-item hover-translate position-relative bg-white shadow p-3 rounded-4">
                                         @if ($allCr->image)
                                             <a class="popup-img btn-link" href="{{ asset('storage/' . $allCr->image) }}">
-                                                <img class="img-fluid w-100 rounded-4"
+                                                <img class="img-fluid w-100 rounded-4" style="height: 230px; object-fit: cover;
+                                                overflow: hidden;"
                                                     src="{{ asset('storage/' . $allCr->image) }}" alt="">
                                             </a>
                                         @else
@@ -89,7 +90,7 @@
                                                 <small class="mb-2">{{ $allCr->categories_name }}</small>
                                                 <h6 class="mb-0">
                                                     <a class="btn-link"
-                                                        href="/creation/{{ $allCr->id }}">{{ $allCr->title }}</a>
+                                                        href="/creation/{{ $allCr->code }}">{{ $allCr->title }}</a>
                                                 </h6>
                                             </div>
                                         </div>

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Cviebrock\EloquentSluggable\ServiceProvider;
 
 class HomepageController extends Controller
 {
@@ -23,9 +24,10 @@ class HomepageController extends Controller
             'allCreations' => $allCreations
         ]);
     }
-    public function creation(Creation $id)
+    public function creation(Request $request)
     {
-        $creation = Creation::leftJoin('users', 'creations.user_id', '=', 'users.id')->leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*', 'users.name as user_name')->where([['creations.id', $id->id]])->first();
+        // dd($request->code);
+        $creation = Creation::leftJoin('users', 'creations.user_id', '=', 'users.id')->leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'creations.*', 'users.name as user_name', 'users.code as user_code')->where([['creations.code', $request->code]])->first();
 
         // dd($creation);
         return view('homepage.creation', [
@@ -59,9 +61,9 @@ class HomepageController extends Controller
     }
     public function editProfile(Request $request)
     {
-        // dd($request->id);
-        $user = User::select()->where('id', '=', $request->id)->first();
-        $creations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['user_id', $request->id]])->get();
+        // dd($request->code);
+        $user = User::select()->where('code', '=', $request->code)->first();
+        $creations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['user_id', $user->id]])->get();
         // $creations = Creation::select()->where('user_id', '=', $id->id)->get();
         // dd($id->id);
         return view('homepage.editProfil', [
@@ -71,13 +73,14 @@ class HomepageController extends Controller
             'creations' => $creations
         ]);
     }
-    public function profile(User $id)
+    public function profile(Request $request)
     {
-        $user = User::select()->where('id', '=', $id->id)->first();
-        $creations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['user_id', $id->id]])->get();
-        $creationsVerif = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['user_id', $id->id], ['status', '2']])->get();
-        // $creations = Creation::select()->where('user_id', '=', $id->id)->get();
-        // dd($id->id);
+        $user = User::select()->where('code', '=', $request->code)->first();
+        // dd($request->code);
+        $creations = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['user_id', $user->id]])->get();
+        $creationsVerif = Creation::leftJoin('categories', 'creations.category_id', '=', 'categories.id')->select('categories.name as categories_name', 'categories.id as categories_id', 'creations.*')->where([['user_id', $user->id], ['status', '2']])->get();
+        // $creations = Creation::select()->where('user_id', '=', $user->id)->get();
+        // dd($creations);
         return view('homepage.profile', [
             'active' => 'profile',
             'user' => $user,
@@ -90,7 +93,7 @@ class HomepageController extends Controller
     {
         // dd($request->all());
         // dd($request->id);
-        $validatedData = $request->validate( [
+        $validatedData = $request->validate([
             'name' => 'required|min:5|max:15',
             // 'nisn' => 'required|numeric|min_digits:8|max_digits:12|unique:users',
             // 'email' => 'required|email:dns|unique:users',
@@ -101,14 +104,14 @@ class HomepageController extends Controller
         ]);
 
         // $validatedData = $request->validate($validatedData);
-        
+
         if ($request->file('image')) {
-            if($request->oldImage) {
+            if ($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
             $validatedData['image'] = $request->file('image')->store('user-profile');
         }
-        
+
         $validatedData['facebook'] = $request->facebook;
         $validatedData['instagram'] = $request->instagram;
         $validatedData['github'] = $request->github;
@@ -124,9 +127,9 @@ class HomepageController extends Controller
         //                 ['github' => $request->github],
         //                 ['description' => $request->description]
         //             );
-              
+
         // dd('berhasil');
-        return redirect('/creation/creator/'. Auth()->user()['id'])->with('Profile has been Updated!');
+        return redirect('/profile/' . Auth()->user()['code'])->with('Profile has been Updated!');
     }
     public function addCreation()
     {
@@ -145,6 +148,8 @@ class HomepageController extends Controller
     public function createCreation(Request $request)
     {
         // dd($request);
+        $code = Str::random(13);
+
         $validatedData =  $request->validate([
             'title' => 'required|max:255',
             'technology' => 'required|max:255',
@@ -160,11 +165,13 @@ class HomepageController extends Controller
         $validatedData['link_website'] = $request->link_website;
         $validatedData['user_id'] = $request->user_id;
         $validatedData['status'] = $request->status;
+        $validatedData['code'] = $code;
 
         Creation::create($validatedData);
 
         return redirect('/myCreation')->with('createSuccess', 'createSuccess');
     }
+
     public function updateCreation(Request $request, Creation $creation)
     {
         // dd($request->all());
@@ -173,6 +180,8 @@ class HomepageController extends Controller
             'technology' => 'required|max:255',
             'category_id' => 'required',
             'description' => 'required|max:255',
+            'source_code' => 'required|max:255',
+            'link_website' => 'required|max:255',
             'image' => 'image|file|max:1024'
         ];
 

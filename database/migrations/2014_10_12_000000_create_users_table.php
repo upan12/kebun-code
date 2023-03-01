@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nisn');
             $table->string('email');
             $table->string('no_hp');
+            $table->string('code')->unique();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
             $table->string('github')->nullable();

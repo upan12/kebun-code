@@ -36,15 +36,15 @@ Route::get('/forgot', function () {
 });
 Route::get('/', [HomepageController::class, 'index']);
 Route::get('aboutUs', [HomepageController::class, 'aboutUs']);
-Route::get('/creation/{id}', [HomepageController::class, 'creation']);
+Route::get('/creation/{code}', [HomepageController::class, 'creation']);
 Route::get('/allCreation', [HomepageController::class, 'allCreation']);
 Route::get('/myCreation', [HomepageController::class, 'myCreation'])->middleware('auth');
 Route::get('/addCreation', [HomepageController::class, 'addCreation'])->middleware('auth');
 Route::post('/create/creation', [HomepageController::class, 'createCreation']);
 Route::put('/updateCreation/{creation}', [HomepageController::class, 'updateCreation']);
 Route::delete('/deleteCreation/{creation}', [HomepageController::class, 'deleteCreation']);
-Route::get('/profile/{id}', [HomepageController::class, 'profile']);
-Route::get('/profile/edit/{id}', [HomepageController::class, 'editProfile']);
+Route::get('/profile/{code}', [HomepageController::class, 'profile']);
+Route::get('/profile/edit/{code}', [HomepageController::class, 'editProfile']);
 Route::post('/profile/update', [HomepageController::class, 'updateProfile']);
 
 
@@ -59,10 +59,10 @@ Route::resource('/admin/category', DashboardCategoryController::class);
 
 
 // dashboard user
-Route::resource('/admin/user', DashboardUserController::class)->middleware('auth');
-Route::put('/user/check/{user}', [DashboardUserController::class, 'check_user']);
-Route::put('/user/disable/{user}', [DashboardUserController::class, 'disable_user']);
-Route::put('/user/active/{user}', [DashboardUserController::class, 'active_user']);
+Route::resource('/admin/user', DashboardUserController::class)->middleware(['auth', 'isAdmin']);
+Route::put('/user/check/{user}', [DashboardUserController::class, 'check_user'])->middleware(['auth', 'isAdmin']);
+Route::put('/user/disable/{user}', [DashboardUserController::class, 'disable_user'])->middleware(['auth', 'isAdmin']);
+Route::put('/user/active/{user}', [DashboardUserController::class, 'active_user'])->middleware(['auth', 'isAdmin']);
 
 // dashboard active
 

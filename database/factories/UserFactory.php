@@ -21,6 +21,7 @@ class UserFactory extends Factory
             'name' => $this->faker->sentence(2),
             'nisn' => $this->faker->randomNumber(8),
             'email' => Str::random(7) . '@gmail.com',
+            'code' => Str::random(13),
             'no_hp' => '085'. $this->faker->randomNumber(9),
             'facebook' => $this->faker->sentence(mt_rand(2, 5)),
             'instagram' => $this->faker->sentence(mt_rand(2, 5)),

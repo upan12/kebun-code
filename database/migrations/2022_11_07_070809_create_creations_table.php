@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->foreignId('user_id');
             $table->string('technology');
+            $table->string('code')->unique();
             $table->text('description');
             $table->string('link_website')->nullable();
             $table->string('source_code')->nullable();
